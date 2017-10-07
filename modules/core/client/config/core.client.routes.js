@@ -29,7 +29,19 @@
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: '/modules/core/client/views/home.client.view.html',
+        templateUrl: '/modules/core/client/views/index.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('user', {
+        url: '/user',
+        templateUrl: '/modules/core/client/views/user.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('administrator', {
+        url: '/administrator',
+        templateUrl: '/modules/core/client/views/administrator.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
