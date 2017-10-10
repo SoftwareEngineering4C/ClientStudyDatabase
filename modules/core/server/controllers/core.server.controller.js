@@ -2,7 +2,9 @@
 
 var validator = require('validator'),
   path = require('path'),
-  config = require(path.resolve('./config/config'));
+  config = require(path.resolve('./config/config')),
+  mongoose = require('mongoose'),
+  Study = require('../models/study.server.model.js');
 
 /**
  * Render the main application page
@@ -27,6 +29,13 @@ exports.renderIndex = function (req, res) {
   res.render('modules/core/server/views/index', {
     user: JSON.stringify(safeUserObject),
     sharedConfig: JSON.stringify(config.shared)
+  });
+};
+
+exports.listResponse = function (req, res) {
+  mongoose.connect(config.db.uri);
+  Study.find().exec(function (err, studies) {
+    res.json(studies);
   });
 };
 
