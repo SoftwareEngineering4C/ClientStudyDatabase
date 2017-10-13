@@ -10,24 +10,53 @@
   </head>
 
   <body ng-app="app" style="background-color:#7B7D7D">
-    <h1 class="text-center">Admin</h1>
+    <h1 class="text-center">Coordinator</h1>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="row">
+      <div class="col-md-4"></div>
+      <div class="col-md-4" align="center" id="username">
+
+        <input type="text" class="form-control" placeholder="Username" ng-model="username">
+
+      </div>
+
+    </div>
+
+
+     <br>
+     <br>
+     <br>
+
+     <div class="row">
+       <div class="col-md-4"></div>
+        <div class="col-md-4" align="center" id="password">
+
+       <input type="password" class="form-control" placeholder="Password" ng-model="password">
+
+     </div>
+   </div>
+
+
+<div class="row">
 	<div class="text-center">
-	<div  class="vertical-center">
-	<br>
-		<br>
-		<br>
-    <td><button class="btn btn-primary" ng-click="addStudy()" ui-sref="home">Add New Study</button></td>
-    <br>
-    <br>
-  	<br>
-  	<br>
+	   <div class="vertical-center">
+	       <br>
+    <td><button class="btn btn-primary" ng-click="Login()" ui-sref="home">Login</button></td>
+    <td>&nbsp</td>
+    <td>&nbsp</td>
+    <td>&nbsp</td>
+    <td>&nbsp</td>
 		<button class="btn btn-primary" ui-sref="home">Back</button>
 		<br>
 		<br>
 		<br>
-
+    </div>
 	</div>
-	</div>
+</div>
 
   </body>
 
