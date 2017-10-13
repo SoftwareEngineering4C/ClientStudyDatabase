@@ -1,0 +1,168 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="2348" measuredH="1294" mockupW="2348" mockupH="1268">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::iPhone" x="0" y="26" w="576" h="1019" measuredW="282" measuredH="573" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <model>IPhone5</model>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TextArea" x="93" y="225" w="391" h="256" measuredW="200" measuredH="140" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hello%20User%21%0A%20%0AThis%20website%20is%20intended%20to%20.........%0AYou%20have%20the%20option%20to%20view%20a%20list%20of%20our%20full%20and%20up%20to%20date%20studies%20we%20are%20offering%20or%20use%20our%20innovative%20filter%20system%20to%20display%20which%20study%20best%20suits%20you%20based%20on%20some%20informatiobn%20you%20provide.%0A%20%0AOnce%20you%20decide%20which%20study/studies%20best%20suits%20you%2C%20you%27ll%20have%20the%20option%20to%20notify%20our%20coordinators%20and%20also%20be%20given%20feedback%20informing%20you%20that%20your%20message%20was%20sent%20to%20our%20coordinators.</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="93" y="859" w="114" h="27" measuredW="114" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>View%20all%20studies</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Button" x="372" y="859" w="102" h="27" measuredW="102" measuredH="27" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Filter%20System</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::iPhone" x="576" y="26" w="576" h="1019" measuredW="282" measuredH="573" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <model>IPhone5</model>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::ComboBox" x="754" y="363" w="-1" h="-1" measuredW="54" measuredH="24" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Age</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::TextInput" x="754" y="387" w="54" h="-1" measuredW="40" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>0-17</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::TextInput" x="754" y="414" w="54" h="-1" measuredW="48" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18-27</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::TextInput" x="754" y="441" w="54" h="-1" measuredW="54" measuredH="27" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>28-%2037</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::StickyNote" x="670" y="335" w="84" h="295" measuredW="109" measuredH="123" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20is%20a%20sample%2C%20ranges%20can%20differ%20and%20%20be%20more%20than%2037%20%0ABased%20on%20the%20selection%20user%20eligable%20for%20studies%20on%20the%20right%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::ComboBox" x="754" y="477" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::ComboBox" x="754" y="495" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::ComboBox" x="754" y="519" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::ComboBox" x="754" y="543" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::Accordion" x="846" y="345" w="210" h="324" measuredW="233" measuredH="267" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20Three%0A-%20Expaned%20description%20of%20Study%20Three%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0ABrief%20description%20of%20Study%20Five</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::Button" x="943" y="603" w="113" h="27" measuredW="112" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Apply%20for%20study</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::Arrow" x="474" y="867" w="204" h="10" measuredW="150" measuredH="100" zOrder="16" locked="false" isInGroup="-1"/>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::iPhone" x="1167" y="26" w="576" h="1019" measuredW="282" measuredH="573" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <model>IPhone5</model>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::ComboBox" x="1345" y="363" w="-1" h="-1" measuredW="54" measuredH="24" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Age</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::TextInput" x="1345" y="387" w="54" h="-1" measuredW="40" measuredH="27" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>0-17</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::TextInput" x="1345" y="414" w="54" h="-1" measuredW="48" measuredH="27" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18-27</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::TextInput" x="1345" y="441" w="54" h="-1" measuredW="54" measuredH="27" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>28-%2037</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::StickyNote" x="1261" y="335" w="84" h="295" measuredW="109" measuredH="123" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20is%20a%20sample%2C%20ranges%20can%20differ%20and%20%20be%20more%20than%2037%20%0ABased%20on%20the%20selection%20user%20eligable%20for%20studies%20on%20the%20right%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::ComboBox" x="1345" y="477" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::ComboBox" x="1345" y="495" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::ComboBox" x="1345" y="519" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::ComboBox" x="1345" y="543" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Accordion" x="1437" y="345" w="210" h="324" measuredW="233" measuredH="267" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20Three%0A-%20Expaned%20description%20of%20Study%20Three%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0ABrief%20description%20of%20Study%20Five</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Button" x="1534" y="603" w="113" h="27" measuredW="112" measuredH="27" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Apply%20for%20study</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Alert" x="1365" y="468" w="-1" h="-1" measuredW="200" measuredH="149" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0AYour%20application%20for%20Study%20Three%20has%20been%20sent%20to%20our%20coordinators%20%0AOk</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::Arrow" x="1044" y="617" w="232" h="10" measuredW="150" measuredH="100" zOrder="30" locked="false" isInGroup="-1"/>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::iPhone" x="1772" y="26" w="576" h="1019" measuredW="282" measuredH="573" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <model>IPhone5</model>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Accordion" x="1885" y="320" w="351" h="400" measuredW="224" measuredH="348" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20One%0A-%20Expaned%20description%20of%20Study%20One%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0ABrief%20description%20of%20Study%20Two%0ABrief%20description%20of%20Study%20Three%0ABrief%20description%20of%20Study%20Four%0ABrief%20description%20of%20Study%20Five</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::Arrow" x="151" y="892" w="10" h="392" measuredW="150" measuredH="100" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::Arrow" x="161" y="1284" w="1914" h="10" measuredW="150" measuredH="100" zOrder="34" locked="false" isInGroup="-1"/>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::Arrow" x="2075" y="725" w="10" h="559" measuredW="150" measuredH="100" zOrder="35" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
