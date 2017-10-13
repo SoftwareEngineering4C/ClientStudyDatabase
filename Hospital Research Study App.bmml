@@ -1,0 +1,412 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="3185" measuredH="2631" mockupW="2999" mockupH="2620">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="960" y="11" w="500" h="500" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Home%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Button" x="1150" y="347" w="-1" h="-1" measuredW="135" measuredH="27" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Administrator%20Login</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Button" x="1150" y="295" w="135" h="27" measuredW="62" measuredH="27" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Guest%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Image" x="1147" y="155" w="141" h="117" measuredW="77" measuredH="79" zOrder="3" locked="false" isInGroup="-1"/>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="721" y="1026" w="500" h="500" measuredW="450" measuredH="400" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Filter%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1460" y="511" w="500" h="500" measuredW="450" measuredH="400" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Login%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="1650" y="847" w="135" h="27" measuredW="78" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Password</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Button" x="1650" y="795" w="135" h="27" measuredW="111" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>E-mail%20address</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::Image" x="1647" y="655" w="141" h="117" measuredW="77" measuredH="79" zOrder="8" locked="false" isInGroup="-1"/>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Button" x="1690" y="904" w="-1" h="-1" measuredW="54" measuredH="27" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Login</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="186" y="2047" w="500" h="500" measuredW="450" measuredH="400" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Details%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Accordion" x="286" y="2162" w="323" h="300" measuredW="310" measuredH="375" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20One%0A-%20Expaned%20description%20of%20Study%20One%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20Added%20this%20line%20to%20demonstrate%20the%20admin%20edititng%0ABrief%20description%20of%20Study%20Two%0ABrief%20description%20of%20Study%20Three%0ABrief%20description%20of%20Study%20Four%0ABrief%20description%20of%20Study%20Five</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1460" y="1050" w="500" h="500" measuredW="450" measuredH="400" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Admin%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::DataGrid" x="1471" y="1205" w="474" h="229" measuredW="382" measuredH="229" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%5Cr%28Study%20names%29%20%2C%20Last%20Updated%20%28Admin%20Initials%29%2C%20Edit%2C%20Delete%20%0A%5BStudy%20One%5D%5Cr%2C%201/1/2017%20%28DP%29%20%2C%20%28o%29%2C%20%5B%5D%0A%5BStudy%20Two%5D%5Cr%2C%202/2/2017%20%28HY%29%20%2C%20%28%29%2C%20%5B%5D%0A%5BStudy%20Three%5D%5Cr%2C%203/3/2017%20%20%28NE%29%2C%20%28%29%2C%20%5B%5D%0A%5BStudy%20Four%5D%5Cr%2C%204/4/2017%20%28VM%29%2C%20%28%29%2C%20%5Bx%5D%0A%5BStudy%20Five%5D%5Cr%2C%205/5/2017%20%28KL%29%20%2C%28%29%2C%20%5B%5D%0AAdd%20new...%5Cr</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="2026" y="1576" w="500" h="500" measuredW="450" measuredH="400" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Add%20Study%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="23" controlTypeID="com.balsamiq.mockups::List" x="2091" y="1695" w="371" h="288" measuredW="100" measuredH="132" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20Six%0A-%20Expaned%20description%20of%20Study%20Six%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::Button" x="2393" y="1983" w="69" h="49" measuredW="64" measuredH="27" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="186" y="1026" w="500" h="500" measuredW="450" measuredH="400" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Details%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::Accordion" x="286" y="1141" w="300" h="300" measuredW="224" measuredH="348" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20One%0A-%20Expaned%20description%20of%20Study%20One%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0ABrief%20description%20of%20Study%20Two%0ABrief%20description%20of%20Study%20Three%0ABrief%20description%20of%20Study%20Four%0ABrief%20description%20of%20Study%20Five</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::Arrow" x="2470" y="1476" w="98" h="10" measuredW="150" measuredH="100" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::Arrow" x="1712" y="926" w="10" h="125" measuredW="150" measuredH="100" zOrder="19" locked="false" isInGroup="-1"/>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="2576" y="1576" w="500" h="500" measuredW="450" measuredH="400" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Add%20Study%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::List" x="2641" y="1695" w="371" h="288" measuredW="100" measuredH="132" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20Six%0A-%20Expaned%20description%20of%20Study%20Six%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::Button" x="2943" y="1983" w="69" h="49" measuredW="64" measuredH="27" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::Arrow" x="2470" y="2002" w="106" h="10" measuredW="150" measuredH="100" zOrder="23" locked="false" isInGroup="-1"/>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Alert" x="2726" y="1781" w="-1" h="-1" measuredW="200" measuredH="133" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0AAre%20you%20sure%20you%20want%20to%20upload%20this%20study%0ANo%2C%20Yes</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1456" y="1582" w="500" h="518" measuredW="450" measuredH="400" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Admin%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::DataGrid" x="1467" y="1737" w="474" h="262" measuredW="382" measuredH="229" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%5Cr%28Study%20names%29%20%2C%20Last%20Updated%20%28Admin%20Initials%29%2C%20Edit%2C%20Delete%20%0A%5BStudy%20One%5D%5Cr%2C%2010/1/2017%20%28JP%29%20%2C%20%28%29%2C%20%5B%5D%0A%5BStudy%20Two%5D%5Cr%2C%202/2/2017%20%28HY%29%20%2C%20%28%29%2C%20%5B%5D%0A%5BStudy%20Three%5D%5Cr%2C%203/3/2017%20%20%28NE%29%2C%20%28%29%2C%20%5B%5D%0A%5BStudy%20Four%5D%5Cr%2C%205/5/2017%20%28KL%29%20%2C%28%29%2C%20%5B%5D%0A%5BStudy%20Five%5D%5Cr%2C%2010/1/2017%20%28JP%29%2C%20%28%29%2C%20%5B%5D%0AAdd%20new...%5Cr</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="2026" y="1049" w="500" h="500" measuredW="450" measuredH="400" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Edit%20Study%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::List" x="2091" y="1168" w="371" h="288" measuredW="100" measuredH="132" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>-%20Expaned%20description%20of%20Study%20One%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20Added%20this%20line%20to%20demonstrate%20the%20admin%20edititng</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::Button" x="2393" y="1456" w="69" h="50" measuredW="64" measuredH="27" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="45" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="2568" y="1041" w="500" h="500" measuredW="450" measuredH="400" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Edit%20Study%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::List" x="2633" y="1160" w="371" h="288" measuredW="100" measuredH="132" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>-%20Expaned%20description%20of%20Study%20One%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20Added%20this%20line%20to%20demonstrate%20the%20admin%20edititng</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Button" x="2935" y="1448" w="69" h="49" measuredW="64" measuredH="27" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::Alert" x="2718" y="1246" w="-1" h="-1" measuredW="200" measuredH="133" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0AAre%20you%20sure%20you%20want%20to%20edit%20this%20study%0ANo%2C%20Yes</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="2026" y="2112" w="500" h="500" measuredW="450" measuredH="400" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Admin%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::DataGrid" x="2037" y="2267" w="474" h="229" measuredW="382" measuredH="229" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Name%5Cr%28Study%20names%29%20%2C%20Last%20Updated%20%28Admin%20Initials%29%2C%20Edit%2C%20Delete%20%0A%5BStudy%20One%5D%5Cr%2C%201/1/2017%20%28DP%29%20%2C%20%28o%29%2C%20%5B%5D%0A%5BStudy%20Two%5D%5Cr%2C%202/2/2017%20%28HY%29%20%2C%20%28%29%2C%20%5B%5D%0A%5BStudy%20Three%5D%5Cr%2C%203/3/2017%20%20%28NE%29%2C%20%28%29%2C%20%5B%5D%0A%5BStudy%20Four%5D%5Cr%2C%204/4/2017%20%28VM%29%2C%20%28%29%2C%20%5Bx%5D%0A%5BStudy%20Five%5D%5Cr%2C%205/5/2017%20%28KL%29%20%2C%28%29%2C%20%5B%5D%0AAdd%20new...%5Cr</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::Alert" x="2176" y="2315" w="-1" h="-1" measuredW="200" measuredH="133" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0AAre%20you%20sure%20you%20want%20to%20delete%20Study%20Four%3F%0ANo%2C%20Yes</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::Arrow" x="1854" y="1246" w="172" h="10" measuredW="150" measuredH="100" zOrder="38" locked="false" isInGroup="-1"/>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Arrow" x="1550" y="1415" w="541" h="190" measuredW="150" measuredH="100" zOrder="39" locked="false" isInGroup="-1"/>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::Arrow" x="1905" y="1349" w="171" h="791" measuredW="150" measuredH="100" zOrder="40" locked="false" isInGroup="-1"/>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Arrow" x="1572" y="1541" w="10" h="53" measuredW="150" measuredH="100" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>New%20and%20Current%20Admin%20page%20with%20Changes</text>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="2568" y="2112" w="500" h="500" measuredW="450" measuredH="400" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Study%20One%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::List" x="2633" y="2231" w="371" h="288" measuredW="100" measuredH="132" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>-%20Expaned%20description%20of%20Study%20One%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20Added%20this%20line%20to%20demonstrate%20the%20admin%20edititng</text>
+      </controlProperties>
+    </control>
+    <control controlID="61" controlTypeID="com.balsamiq.mockups::StickyNote" x="3076" y="2267" w="109" h="148" measuredW="109" measuredH="123" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20page%20would%20pop%20up%20displaying%20the%20info%20of%20the%20selscted%20study%27s%20hyperlink</text>
+      </controlProperties>
+    </control>
+    <control controlID="64" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="460" y="511" w="500" h="500" measuredW="450" measuredH="400" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20User%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::TextArea" x="505" y="655" w="411" h="240" measuredW="200" measuredH="140" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Hello%20User%21%0A%20%0AThis%20website%20is%20intended%20to%20.........%0AYou%20have%20the%20option%20to%20view%20a%20list%20of%20our%20full%20and%20up%20to%20date%20studies%20we%20are%20offering%20or%20use%20our%20innovative%20filter%20system%20to%20display%20which%20study%20best%20suits%20you%20based%20on%20some%20informatiobn%20you%20provide.%0A%20%0AOnce%20you%20decide%20which%20study/studies%20best%20suits%20you%2C%20you%27ll%20have%20the%20option%20to%20notify%20our%20coordinators%20and%20also%20be%20given%20feedback%20informing%20you%20that%20your%20message%20was%20sent%20to%20our%20coordinators.</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::Button" x="495" y="937" w="-1" h="-1" measuredW="114" measuredH="27" zOrder="47" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>View%20all%20studies</text>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Button" x="841" y="937" w="-1" h="-1" measuredW="102" measuredH="27" zOrder="48" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Filter%20System</text>
+      </controlProperties>
+    </control>
+    <control controlID="78" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1168" w="-1" h="-1" measuredW="54" measuredH="24" zOrder="49" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Age</text>
+      </controlProperties>
+    </control>
+    <control controlID="79" controlTypeID="com.balsamiq.mockups::TextInput" x="800" y="1192" w="54" h="-1" measuredW="40" measuredH="27" zOrder="50" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>0-17</text>
+      </controlProperties>
+    </control>
+    <control controlID="80" controlTypeID="com.balsamiq.mockups::TextInput" x="800" y="1219" w="54" h="-1" measuredW="48" measuredH="27" zOrder="51" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18-27</text>
+      </controlProperties>
+    </control>
+    <control controlID="81" controlTypeID="com.balsamiq.mockups::TextInput" x="800" y="1246" w="54" h="-1" measuredW="54" measuredH="27" zOrder="52" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>28-%2037</text>
+      </controlProperties>
+    </control>
+    <control controlID="82" controlTypeID="com.balsamiq.mockups::StickyNote" x="701" y="1133" w="99" h="239" measuredW="109" measuredH="123" zOrder="53" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>This%20is%20a%20sample%2C%20ranges%20can%20differ%20and%20%20be%20more%20than%2037%20%0ABased%20on%20the%20selection%20user%20eligable%20for%20studies%20on%20the%20right%20</text>
+      </controlProperties>
+    </control>
+    <control controlID="83" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1282" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="54" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="91" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1300" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="55" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="92" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1324" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="56" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="93" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1348" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="57" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="94" controlTypeID="com.balsamiq.mockups::Accordion" x="892" y="1150" w="300" h="300" measuredW="233" measuredH="267" zOrder="58" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20Three%0A-%20Expaned%20description%20of%20Study%20Three%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0ABrief%20description%20of%20Study%20Five</text>
+      </controlProperties>
+    </control>
+    <control controlID="95" controlTypeID="com.balsamiq.mockups::Button" x="1072" y="1388" w="113" h="27" measuredW="112" measuredH="27" zOrder="59" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Apply%20for%20study</text>
+      </controlProperties>
+    </control>
+    <control controlID="96" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="721" y="1541" w="500" h="500" measuredW="450" measuredH="400" zOrder="60" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Filter%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="97" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1683" w="-1" h="-1" measuredW="54" measuredH="24" zOrder="61" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Age</text>
+      </controlProperties>
+    </control>
+    <control controlID="98" controlTypeID="com.balsamiq.mockups::TextInput" x="800" y="1707" w="54" h="-1" measuredW="40" measuredH="27" zOrder="62" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>0-17</text>
+      </controlProperties>
+    </control>
+    <control controlID="99" controlTypeID="com.balsamiq.mockups::TextInput" x="800" y="1734" w="54" h="-1" measuredW="48" measuredH="27" zOrder="63" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>18-27</text>
+      </controlProperties>
+    </control>
+    <control controlID="100" controlTypeID="com.balsamiq.mockups::TextInput" x="800" y="1761" w="54" h="-1" measuredW="54" measuredH="27" zOrder="64" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>28-%2037</text>
+      </controlProperties>
+    </control>
+    <control controlID="101" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1797" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="65" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="102" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1815" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="66" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="103" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1839" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="67" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="104" controlTypeID="com.balsamiq.mockups::ComboBox" x="800" y="1863" w="-1" h="-1" measuredW="64" measuredH="24" zOrder="68" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Other</text>
+      </controlProperties>
+    </control>
+    <control controlID="105" controlTypeID="com.balsamiq.mockups::Accordion" x="892" y="1665" w="300" h="300" measuredW="233" measuredH="267" zOrder="69" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Brief%20description%20of%20Study%20Three%0A-%20Expaned%20description%20of%20Study%20Three%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0A-%20More%20expanded%20details%0ABrief%20description%20of%20Study%20Five</text>
+      </controlProperties>
+    </control>
+    <control controlID="106" controlTypeID="com.balsamiq.mockups::Button" x="1072" y="1903" w="113" h="27" measuredW="112" measuredH="27" zOrder="70" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Apply%20for%20study</text>
+      </controlProperties>
+    </control>
+    <control controlID="107" controlTypeID="com.balsamiq.mockups::Alert" x="871" y="1743" w="-1" h="-1" measuredW="200" measuredH="149" zOrder="71" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alert%0AYour%20application%20for%20Study%20Three%20has%20been%20sent%20to%20our%20coordinators%20%0AOk</text>
+      </controlProperties>
+    </control>
+    <control controlID="108" controlTypeID="com.balsamiq.mockups::Arrow" x="1150" y="1414" w="10" h="135" measuredW="150" measuredH="100" zOrder="72" locked="false" isInGroup="-1"/>
+    <control controlID="109" controlTypeID="com.balsamiq.mockups::Arrow" x="292" y="952" w="203" h="89" measuredW="150" measuredH="100" zOrder="73" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="110" controlTypeID="com.balsamiq.mockups::Arrow" x="950" y="952" w="-1" h="-1" measuredW="150" measuredH="100" zOrder="74" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>top</direction>
+      </controlProperties>
+    </control>
+    <control controlID="111" controlTypeID="com.balsamiq.mockups::Arrow" x="686" y="2085" w="794" h="270" measuredW="150" measuredH="100" zOrder="75" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+        <text>Updated%20studies%20after%20admin%20added%2C%20edited%2C%20or%20deleted%20studies</text>
+      </controlProperties>
+    </control>
+    <control controlID="112" controlTypeID="com.balsamiq.mockups::Arrow" x="426" y="1526" w="10" h="521" measuredW="150" measuredH="100" zOrder="76" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Updated%20page</text>
+      </controlProperties>
+    </control>
+    <control controlID="113" controlTypeID="com.balsamiq.mockups::Button" x="1471" y="1476" w="-1" h="-1" measuredW="124" measuredH="27" zOrder="77" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Edit%20filter%20system</text>
+      </controlProperties>
+    </control>
+    <control controlID="114" controlTypeID="com.balsamiq.mockups::Button" x="1471" y="2020" w="124" h="27" measuredW="124" measuredH="27" zOrder="78" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Edit%20filter%20system</text>
+      </controlProperties>
+    </control>
+    <control controlID="115" controlTypeID="com.balsamiq.mockups::Button" x="2037" y="2534" w="-1" h="-1" measuredW="124" measuredH="27" zOrder="79" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Edit%20filter%20system</text>
+      </controlProperties>
+    </control>
+    <control controlID="116" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="1454" y="2131" w="500" h="500" measuredW="450" measuredH="400" zOrder="80" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <text>Hospital%20Research%20Study%20Filter%20Code%20Page%0Ahttp%3A//UF-Vascular-Neurology</text>
+      </controlProperties>
+    </control>
+    <control controlID="117" controlTypeID="com.balsamiq.mockups::List" x="1519" y="2250" w="371" h="288" measuredW="100" measuredH="126" zOrder="81" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%20that%20contains%20filter%20system</text>
+      </controlProperties>
+    </control>
+    <control controlID="118" controlTypeID="com.balsamiq.mockups::Button" x="1821" y="2538" w="69" h="49" measuredW="64" measuredH="27" zOrder="82" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Submit</text>
+      </controlProperties>
+    </control>
+    <control controlID="119" controlTypeID="com.balsamiq.mockups::Arrow" x="1550" y="2047" w="10" h="196" measuredW="150" measuredH="100" zOrder="83" locked="false" isInGroup="-1"/>
+    <control controlID="120" controlTypeID="com.balsamiq.mockups::Arrow" x="877" y="310" w="265" h="216" measuredW="150" measuredH="100" zOrder="84" locked="false" isInGroup="-1">
+      <controlProperties>
+        <direction>bottom</direction>
+      </controlProperties>
+    </control>
+    <control controlID="121" controlTypeID="com.balsamiq.mockups::Arrow" x="1285" y="360" w="219" h="166" measuredW="150" measuredH="100" zOrder="85" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>
