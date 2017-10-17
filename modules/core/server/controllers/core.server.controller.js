@@ -6,6 +6,8 @@ var validator = require('validator'),
   mongoose = require('mongoose'),
   Study = require('../models/study.server.model.js');
 
+  mongoose.connect(config.db.uri);
+
 /**
  * Render the main application page
  */
@@ -33,7 +35,6 @@ exports.renderIndex = function (req, res) {
 };
 
 exports.listResponse = function (req, res) {
-  mongoose.connect(config.db.uri);
   Study.find().exec(function (err, studies) {
     res.json(studies);
   });

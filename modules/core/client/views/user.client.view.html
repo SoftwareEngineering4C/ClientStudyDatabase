@@ -9,21 +9,33 @@
     <script src="script.js"></script>
   </head>
 
-  <body ng-app="app" style="background-color:#7B7D7D">
-    <h1 class="text-center">Guest</h1>
-	<div class="text-center">
-	<div  class="vertical-center">
-	<br>
-		<br>
-		<br>
-		<button class="btn btn-primary" ui-sref="home">Back</button>
-		<br>
-		<br>
-		<br>
+	  <body ng-app="app" style="background-color:#7B7D7D">
+	    <h1 class="text-center">User</h1>
+		<div class="text-center">
+			<div class="vertical-center" ng-controller="HomeController" ng-init="find()">
+			<br>
+				<br>
+				<br>
+				<button class=".btn-default" type="button" ui-sref="home">Back</button>
+				<br>
+				<br>
+				<br>
 
-	</div>
-	</div>
 
-  </body>
+				<table class="table table-striped table-hover">
+		        <tr>
+		          <th>Code</th>
+		          <th>Building Name</th>
+		        </tr>
+		        <tr ng-repeat="study in studies">
+		         	<td ng-bind="study.name"></td>
+                	<td ng-bind="study.requiredGender"></td>
+		        </tr>
+		      </table>
+
+			</div>
+		</div>
+
+	  </body>
 
 </html>
