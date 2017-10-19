@@ -9,19 +9,13 @@
     <script src="script.js"></script>
   </head>
 
-	  <body ng-app="app" style="background-color:#7B7D7D">
+	<body ng-app="app" style="background-color:#7B7D7D">
 	    <h1 class="text-center">User</h1>
 		<div class="text-center">
 			<div class="vertical-center" ng-controller="HomeController" ng-init="find()">
-			<br>
-				<br>
-				<br>
-				<button class=".btn-default" type="button" ui-sref="home">Back</button>
-				<br>
-				<br>
-				<br>
+  			<br>
+  			<br>
 
-				
 				<table class="table table-striped table-hover">
 		        <tr>
 		          <th>Code</th>
@@ -29,13 +23,16 @@
 		        </tr>
 		        <tr ng-repeat="study in studies">
 		         	<td ng-bind="study.name"></td>
-                	<td ng-bind="study.requiredGender"></td>
+              <td ng-bind="study.requiredGender"></td>
 		        </tr>
 		      </table>
 
+          <br>
+          <button class=".btn-default" type="button" ui-sref="home">Back</button>
+
 			</div>
 		</div>
-	    
+
 	  </body>
 
 </html>

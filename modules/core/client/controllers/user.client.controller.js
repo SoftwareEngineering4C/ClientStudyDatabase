@@ -3,10 +3,9 @@
 
   angular
     .module('core')
-    .controller('UserController', ['$scope', 'Listings', 
-  	
-  	function($scope, Listings) {
-	    $scope.studies = Studies.getAll();
-  	}
-  	])
+    .controller('UserController', UserController);
+
+  function UserController($scope) {
+    var vm = this;
+  }
 }());

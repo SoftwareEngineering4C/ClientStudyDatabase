@@ -34,13 +34,13 @@
         controllerAs: 'vm'
       })
       .state('user', {
-        url: '/user',
+        url: '^/user',
         templateUrl: '/modules/core/client/views/user.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
       .state('administrator', {
-        url: '/administrator',
+        url: '^/administrator',
         templateUrl: '/modules/core/client/views/administrator.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
