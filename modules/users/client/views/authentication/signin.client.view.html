@@ -1,116 +1,78 @@
-<!-- <div>
-  <h3 class="col-xs-12 text-center">Or with your account</h3>
+<div ng-controller="AuthenticationController">
+
+  <h3 class="col-md-12 text-center">Coordinator Login</h3>
+
   <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
-    <form name="vm.userForm" ng-submit="vm.signin(vm.userForm.$valid)" class="signin" novalidate autocomplete="off">
+
+    <form name="userForm" ng-submit="signup(userForm.$valid)" class="signin" novalidate autocomplete="off">
+
       <fieldset>
+
+
         <div class="form-group" show-errors>
-          <uib-alert type="danger" ng-show="vm.error" class="text-center text-danger">
-            <span ng-bind="vm.error"></span>
-          </uib-alert>
-          <label for="usernameOrEmail">Username or Email</label>
-          <input type="text" id="usernameOrEmail" name="usernameOrEmail" class="form-control" ng-model="vm.credentials.usernameOrEmail" placeholder="Username or Email" required autofocus>
-          <div ng-messages="vm.userForm.usernameOrEmail.$error" role="alert">
-            <p class="help-block error-text" ng-message="required">Username or Email is required.</p>
+
+          <label for="email">Email</label>
+
+          <input type="email" id="email" name="email" class="form-control" ng-model="credentials.email" placeholder="Email" lowercase required>
+
+          <div ng-messages="userForm.email.$error" role="alert">
+
+            <p class="help-block error-text" ng-message="required">Email address is required.</p>
+
+            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+
           </div>
+
         </div>
+
         <div class="form-group" show-errors>
+
           <label for="password">Password</label>
-          <input type="password" id="password" name="password" class="form-control" ng-model="vm.credentials.password" placeholder="Password" required>
-          <div ng-messages="vm.userForm.password.$error" role="alert">
+
+            <input type="password" id="password" name="password" class="form-control" ng-model="credentials.password" placeholder="Password" popover="{{popoverMsg}}" popover-trigger="focus" password-validator required>
+
+          <div ng-messages="userForm.password.$error" role="alert">
+
             <p class="help-block error-text" ng-message="required">Password is required.</p>
+
+            <div ng-repeat="passwordError in passwordErrors">
+
+              <p class="help-block error-text" ng-show="userForm.password.$error.requirements">{{passwordError}}</p>
+
+            </div>
+
           </div>
+
         </div>
+
+        <div class="form-group" ng-show="!userForm.password.$error.required">
+
+          <label>Password Requirements</label>
+
+          <progressbar value="requirementsProgress" type="{{requirementsColor}}"><span style="color:white; white-space:nowrap;">{{requirementsProgress}}%</span></progressbar>
+
+        </div>
+
         <div class="text-center form-group">
-          <button type="submit" class="btn btn-primary">Sign in</button>
+
+          <button type="submit" class="btn btn-primary" ui-sref="administrator">Log in</button>
+
           &nbsp; or&nbsp;
-          <a ui-sref="authentication.signup">Sign up</a>
+
+          <a ui-sref="authentication.signup" class="show-signup">Register</a>
+
         </div>
-        <div class="text-center forgot-password">
-          <a ui-sref="password.forgot">Forgot your password?</a>
+
+        <div ng-show="error" class="text-center text-danger">
+
+          <strong ng-bind="error"></strong>
+
         </div>
-        <br />
+
       </fieldset>
+
     </form>
+
   </div>
+
 </div>
- -->
-
- 
-
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
-  </head>
-
-  <body ng-app="directoryApp">
-
-    <div class="container">
-      <div class="row">
-        <h1></h1>
-        <h1> <font color="blue">Hospital Research Study</font> </h1>
-      </div>
-      <div class="row" ng-controller="ListingsController">
-        <div class="col-md-6">
-          <div class="input-group" id="searchBar">
-
-            <!--
-                Implement a way to filter through listings using the search bar
-              -->
-            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
-            <input type="text" class="form-control" ng-model="search" placeholder="Search for studies">
-          </div>
-          <div class="tableWrapper">
-            <table class="study">
-              <tr>
-                <th>Brief Description of Studies</th>
-
-                <!-- <th>Building Name</th> -->
-                <th></th>
-              </tr>
-
-          
-
-                 <tr nowrap ng-repeat="item in listings | filter:search | orderBy: 'code'"
-                  ng-click = "showDetails(listings.indexOf(item))">
-
-                <td>{{item.code}} </td>
-                
-               <td><button class="btn btn-info pull-right">More Info</button></td>
-                </tr>
-
-
-
-            </table>
-          </div>
-          
-
-        </div>
-        <div class="col-md-6">
-          <div class="jumbotron">
-            <h2>Detailed Information: </h2>
-            <!--
-              Include a way to display detailed information about an individual listing:
-                   * consider how to use ng-click within the the table to implement this feature
-             -->
-
-              <!-- <h3> Code: {{add.code}}</h3> -->
-              <h3> {{add.name}}</h3>
-              <!-- <h3> Latitude: {{add.coordinates.latitude}}</h3>
-              <h3> Longitude: {{add.coordinates.longitude}}</h3>
-              <h3> Address: {{add.address}}</h3> -->
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="app.js"></script>
-    <script src="listingController.js"></script>
-    <script src="listingFactory.js"></script>
-  </body>
-</html>

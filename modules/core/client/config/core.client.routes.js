@@ -39,15 +39,21 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('administrator', {
-        url: '/administrator',
-        templateUrl: '/modules/core/client/views/administrator.client.view.html',
+      .state('filter', {
+        url: '/filter',
+        templateUrl: '/modules/core/client/views/filter.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('coordinatorstudy', {
-        url: '/coordinatorstudy',
-        templateUrl: '/modules/core/client/views/coordinatorstudy.client.view.html',
+      .state('signin', {
+        url: '/signin',
+        templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
+        controller: 'AuthenticationController',
+        controllerAs: 'vm'
+      })
+      .state('administrator', {
+        url: '/administrator',
+        templateUrl: '/modules/core/client/views/administrator.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
