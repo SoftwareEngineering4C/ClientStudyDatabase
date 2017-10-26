@@ -1,4 +1,4 @@
-angular.module('core').factory('Studies', ['$http', 
+angular.module('core').factory('Studies', ['$http',
   function($http) {
     var methods = {
       getAll: function() {
