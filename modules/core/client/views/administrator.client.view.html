@@ -16,10 +16,30 @@
 	<br>
 		<br>
 		<br>
-		<button class="btn btn-primary" ui-sref="home">Back</button>
-		<br>
-		<br>
-		<br>
+
+<div class="pageCenter">
+      <div class="tableWrapper" ng-app="app">
+        <div class="col-md-4" ng-controller="HomeController"  ng-init="find()" >
+
+
+          <table class="table table-striped table-hover">
+            <tr>
+              <th>Study Name</th>
+            </tr>
+
+            <tr ng-repeat="study in studies">
+              <td ng-bind="study.study_name"></td>
+
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" ui-sref="home">Back</button>
+    <br>
+    <br>
+    <br>
 
 	</div>
 	</div>
