@@ -4,11 +4,13 @@
   angular
     .module('core')
     .controller('HomeController', HomeController);
+    //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
   function HomeController($scope, Studies) {
     var vm = this;
 
     $scope.loading = true;
+  
 
     $scope.find = function() {
     	Studies.getAll().then(function(response) {
@@ -19,5 +21,17 @@
         $scope.error = 'Unable to retrieve studies!\n' + error;
     });
   	}
+
+    $scope.showDetails = function(index) {
+    $scope.add = $scope.studies[index];
+
+  }
+
+
+
   }
 }());
+
+
+
+
