@@ -15,10 +15,10 @@
 
   <body ng-app="app" style="background-color:#7B7D7D">
 
-      <h1 class="text-center">List of All Studies for Guest</h1>
-      
+      <h1 class="text-center">Ongoing Studies</h1>
+
     <!-- Search Box Style -->
-   <style> 
+   <style>
         input[type=text] {
         width: 200px;
         box-sizing: border-box;
@@ -27,7 +27,7 @@
         font-size: 16px;
         background-color: white;
         background-image: url('searchicon.png');
-        background-position: 10px 10px; 
+        background-position: 10px 10px;
         background-repeat: no-repeat;
         padding: 12px 20px 12px 40px;
         -webkit-transition: width 0.4s ease-in-out;
@@ -54,7 +54,7 @@
 
         <div uib-accordion-group class="panel-default" is-open="status.open">
        <uib-accordion-heading>
-        Study Name: {{study.study_name}} 
+        Study Name: {{study.study_name}}
 
         <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
       </uib-accordion-heading>
@@ -69,9 +69,9 @@
      </div>
 
      <br><br><br> <br><br><br> <br> <br>
-      <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button> 
-      
-      
+      <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button>
+
+
 
        <br> <br><br><br> <br> <br>
 
