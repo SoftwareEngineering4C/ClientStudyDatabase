@@ -34,14 +34,32 @@
         controllerAs: 'vm'
       })
       .state('user', {
-        url: '^/user',
+        url: '/user',
         templateUrl: '/modules/core/client/views/user.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
+      .state('filter', {
+        url: '/filter',
+        templateUrl: '/modules/core/client/views/filter.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+      .state('signin', {
+        url: '/signin',
+        templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
+        controller: 'AuthenticationController',
+        controllerAs: 'vm'
+      })
       .state('administrator', {
-        url: '^/administrator',
+        url: '/administrator',
         templateUrl: '/modules/core/client/views/administrator.client.view.html',
+        controller: 'HomeController',
+        controllerAs: 'vm'
+      })
+	  .state('adminStudyView', {
+        url: '/adminStudyView',
+        templateUrl: '/modules/core/client/views/adminDispAll.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })
