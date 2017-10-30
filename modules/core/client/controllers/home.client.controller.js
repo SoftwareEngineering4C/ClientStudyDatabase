@@ -24,8 +24,10 @@
 
     $scope.showDetails = function(index) {
     $scope.add = $scope.studies[index];
+    console.log("add: " + $scope.add.hemorrhage);
 
   }
+
 
 
 
