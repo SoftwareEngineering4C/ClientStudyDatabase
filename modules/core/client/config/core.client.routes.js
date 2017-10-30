@@ -53,7 +53,7 @@
       })
       .state('administrator', {
         url: '/administrator',
-        templateUrl: '/modules/core/client/views/administrator.client.view.html',
+        templateUrl: '/modules/core/client/views/addRequirements.client.view.html',
         controller: 'HomeController',
         controllerAs: 'vm'
       })

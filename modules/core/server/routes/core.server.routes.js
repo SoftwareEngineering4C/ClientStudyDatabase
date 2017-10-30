@@ -7,6 +7,7 @@ module.exports = function (app) {
   //Routes to access database
   app.route('/list').get(core.listResponse);
 
+  app.route('/api/requirements').get(core.listRequirements)
 
   // Define error pages
   app.route('/server-error').get(core.renderServerError);

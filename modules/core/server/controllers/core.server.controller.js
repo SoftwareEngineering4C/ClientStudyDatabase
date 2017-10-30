@@ -4,7 +4,8 @@ var validator = require('validator'),
   path = require('path'),
   config = require(path.resolve('./config/config')),
   mongoose = require('mongoose'),
-  Study = require('../models/study.server.model.js');
+  Study = require('../models/study.server.model.js'),
+  Requirement = require('../models/requirement.server.model.js');
 
   mongoose.connect(config.db.uri);
 
@@ -37,6 +38,12 @@ exports.renderIndex = function (req, res) {
 exports.listResponse = function (req, res) {
   Study.find().exec(function (err, studies) {
     res.json(studies);
+  });
+};
+
+exports.listRequirements = function (req, res) {
+  Requirement.find().exec(function (err, requirements) {
+    res.json(requirements);
   });
 };
 
