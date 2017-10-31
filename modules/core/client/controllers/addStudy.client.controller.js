@@ -3,10 +3,10 @@
 
   angular
     .module('core')
-    .controller('AddRequirementController', AddRequirementController);
+    .controller('AddStudyController', AddStudyController);
     //AddRequirementController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
-  function AddRequirementController($scope, $sce, Requirements, Studies) {
+  function AddStudyController($scope, $sce, Requirements, Studies) {
     var vm = this;
 
     $scope.requirementsAddedToStudy = [];
