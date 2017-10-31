@@ -60,12 +60,9 @@
 
     $scope.addNewStudyToDatabase = function()
     {
-      console.log($scope.listOfDatabaseNames);
-
       var newStudy = $scope.listOfDatabaseNames;
-
+      
       Studies.create(newStudy);
-
     }
 
 

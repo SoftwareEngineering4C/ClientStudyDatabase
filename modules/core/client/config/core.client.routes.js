@@ -53,6 +53,10 @@
       })
       .state('administrator', {
         url: '/administrator',
+        templateUrl: '/modules/core/client/views/administrator.client.view.html'
+      })
+      .state('addStudy', {
+        url: '/addStudy',
         templateUrl: '/modules/core/client/views/addStudy.client.view.html'
       })
       .state('not-found', {
