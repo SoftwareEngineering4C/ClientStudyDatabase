@@ -53,9 +53,7 @@
       })
       .state('administrator', {
         url: '/administrator',
-        templateUrl: '/modules/core/client/views/administrator.client.view.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
+        templateUrl: '/modules/core/client/views/addStudy.client.view.html'
       })
       .state('not-found', {
         url: '/not-found',

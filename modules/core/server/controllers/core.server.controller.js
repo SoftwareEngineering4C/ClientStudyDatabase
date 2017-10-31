@@ -4,7 +4,8 @@ var validator = require('validator'),
   path = require('path'),
   config = require(path.resolve('./config/config')),
   mongoose = require('mongoose'),
-  Study = require('../models/study.server.model.js');
+  Study = require('../models/study.server.model.js'),
+  Requirement = require('../models/requirement.server.model.js');
 
   mongoose.connect(config.db.uri);
 
@@ -39,6 +40,27 @@ exports.listResponse = function (req, res) {
     res.json(studies);
   });
 };
+
+exports.listRequirements = function (req, res) {
+  Requirement.find().exec(function (err, requirements) {
+    res.json(requirements);
+  });
+};
+
+exports.createStudy = function (req, res) {
+  var study = new Study(req.body);
+
+  console.log(study);
+
+  study.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(study);
+    }
+  });
+}
 
 /**
  * Render the server error page

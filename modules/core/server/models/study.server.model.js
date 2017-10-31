@@ -2,11 +2,11 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var studySchema = new Schema({
-  name: {
+  study_name: {
     type: String
   },
-  gender: {
-    type: String
+  lar_consent: {
+    type: Boolean
   }
 });
 
