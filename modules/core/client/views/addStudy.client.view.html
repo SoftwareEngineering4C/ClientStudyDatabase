@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <title>UF Directory</title>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body ng-app="directoryApp">
+    <div class="container">
+      <div class="row">
+        <h1>Add New Study</h1>
+        <br>
+      </div>
+      <div class="row" ng-controller="AddStudyController">
+        <div class="col-md-7">
+          <div class="form-group row-md-6">
+            <div class="input-group">
+              <div class="form-group row-md-6">
+                <label for="Study Name">Study Name:</label>
+                <input type="text" ng-model="listOfDatabaseNames.study_name" class="form-control" id="Study Name" placeholder="Study Name">
+              </div>
+              <div class="form-group row-md-6 top-buffer">
+                <table class="table table-hover" ng-init=findRequirements()>
+                  <tr>
+                    <th>Requirement Name</th>
+                    <th>Type of Requirement</th>
+                    <th>Parameter</th>
+                    <th></th>
+                  </tr>
+                  <tr ng-repeat="requirement in requirementsAddedToStudy track by $index">
+                    <td ng-bind="requirement.requirementName"></td>
+                    <td ng-bind="requirement.typeOfRequirement"></td>
+                    <td ng-if="isBoolean(requirement)">
+                      <form action="">
+                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=true>  True<br>
+                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=false>  False<br>
+                      </form>
+                    </td>
+                    <td ng-if="isNumeric(requirement)">
+                      <form action="">
+                        <input type="text" ng-model="listOfDatabaseNames[requirement.databaseName]"><br>
+                      </form>
+                    </td>
+                    <td><button type="button" class="form-control btn btn-danger"
+                      ng-click="removeRequirementFromStudy(requirement)">Remove</button></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <div class="form-group row-md-6">
+            <div class="form-group col-md-6">
+              <button type="button" class="form-control"
+              ng-click="addNewStudyToDatabase()">Add Study</button>
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-5 top-buffer">
+          <div class="input-group" id="searchBar">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" class="form-control" placeholder="Search" ng-model="searchEntry" ng-change="filterListOfRequirements()">
+          </div>
+
+          <br>
+
+          <table class="table table-hover" ng-init=findRequirements()>
+            <tr>
+              <th>Requirement Name</th>
+              <th>Type of Requirement</th>
+              <th></th>
+            </tr>
+            <tr ng-repeat="requirement in requirementsNotAddedToStudyandFiltered track by $index">
+              <td ng-bind="requirement.requirementName"></td>
+              <td ng-bind="requirement.typeOfRequirement"></td>
+              <td><button type="button" class="form-control btn btn-primary"
+                ng-click="addRequirementToStudy(requirement)">Add Requirement</button></td>
+            </tr>
+          </table>
+
+          </div>
+
+        </div>
+
+    </div>
+
+  </body>
+
+</html>
