@@ -50,8 +50,6 @@ exports.listRequirements = function (req, res) {
 exports.createStudy = function (req, res) {
   var study = new Study(req.body);
 
-  console.log(study);
-
   study.save(function(err) {
     if(err) {
       console.log(err);
@@ -60,7 +58,32 @@ exports.createStudy = function (req, res) {
       res.json(study);
     }
   });
-}
+};
+
+exports.deleteStudy = function(req, res) {
+  var study = req.study;
+
+  study.remove(function(err) {
+    if(err) {
+      res.status(400).send(err);
+    }
+    else {
+      res.end();
+    }
+  })
+
+};
+
+exports.studyById = function(req, res, next, id) {
+  Study.findById(id).exec(function(err, study) {
+    if(err) {
+      res.status(400).send(err);
+    } else {
+      req.study = study;
+      next();
+    }
+  });
+};
 
 /**
  * Render the server error page
