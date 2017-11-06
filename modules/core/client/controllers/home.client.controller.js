@@ -16,29 +16,22 @@
     	Studies.getAll().then(function(response) {
         $scope.loading = false; //remove loader
         $scope.studies = response.data;
-    }, function(error) {
+      }, function(error) {
         $scope.loading = false;
         $scope.error = 'Unable to retrieve studies!\n' + error;
-    });
-  	}
-
-    $scope.findRequirements = function() {
-    	Requirements.getAll().then(function(response) {
-        $scope.loading = false; //remove loader
-        $scope.requirements = response.data;
-    }, function(error) {
-        $scope.loading = false;
-        $scope.error = 'Unable to retrieve requirements!\n' + error;
-    });
+      });
   	}
 
     $scope.showDetails = function(index) {
-    $scope.add = $scope.studies[index];
-    console.log("add: " + $scope.add.hemorrhage);
+      $scope.add = $scope.studies[index];
+    }
 
-  }
+    $scope.deleteStudy = function(study) {
+      var id = study._id;
 
-
+      Studies.delete(id);
+      
+    }
 
 
   }

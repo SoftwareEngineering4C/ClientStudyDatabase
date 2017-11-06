@@ -7,6 +7,11 @@ angular.module('core').factory('Studies', ['$http',
 
       create: function(study) {
         return $http.post('http://localhost:3000/api/studies', study);
+      },
+
+      delete: function(id) {
+        console.log("factory");
+        return $http.delete('http://localhost:3000/api/studies/' + id);
       }
     };
 
