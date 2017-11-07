@@ -18,26 +18,7 @@
       <h1 class="text-center">Ongoing Studies</h1>
 
     <!-- Search Box Style -->
-   <style>
-        input[type=text] {
-        width: 200px;
-        box-sizing: border-box;
-        border: 3px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        background-color: white;
-        background-image: url('searchicon.png');
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        padding: 12px 20px 12px 40px;
-        -webkit-transition: width 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out;
-        }
-
-        input[type=text]:focus {
-        width: 100%;
-        }
-  </style>
+  
 
         <form>
       <input type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies">
@@ -62,9 +43,16 @@
       <h3> {{add.description}}</h3>
       </h3>
     </div>
+    </h3>
+    
   </uib-accordion>
 
-     </div>
+
+</div>
+
+  </div>
+
+  
 
      <br><br><br> <br><br><br> <br> <br>
       <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button>
