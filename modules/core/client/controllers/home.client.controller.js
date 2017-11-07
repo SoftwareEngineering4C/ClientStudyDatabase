@@ -13,10 +13,11 @@
 
 
     $scope.find = function() {
+
     	Studies.getAll().then(function(response) {
-        $scope.loading = false; //remove loader
-        $scope.studies = response.data;
-      }, function(error) {
+            $scope.loading = false; //remove loader
+            $scope.studies = response.data;
+            }, function(error) {
         $scope.loading = false;
         $scope.error = 'Unable to retrieve studies!\n' + error;
       });
@@ -30,9 +31,11 @@
       var id = study._id;
 
       Studies.delete(id);
-      
+
     }
 
 
   }
+
+
 }());
