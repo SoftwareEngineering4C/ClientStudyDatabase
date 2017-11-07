@@ -41,6 +41,7 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+<<<<<<< HEAD
 
 
 
@@ -87,3 +88,9 @@ a:hover .header-profile-image {
 
 
 
+=======
+.top-buffer
+{
+  margin-top:35px; 
+}
+>>>>>>> 535adea7ed35b34fbfc00c910ba7401427184429
