@@ -42,29 +42,6 @@
       .state('filter', {
         url: '/filter',
         templateUrl: '/modules/core/client/views/filter.client.view.html',
-<<<<<<< HEAD
-        controller: 'HomeController',
-        controllerAs: 'vm'
-      })
-      .state('signin', {
-        url: '/signin',
-        templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',
-        controller: 'AuthenticationController',
-        controllerAs: 'vm'
-      })
-      .state('administrator', {
-        url: '/administrator',
-        templateUrl: '/modules/core/client/views/administrator.client.view.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
-      })
-	  .state('adminStudyView', {
-        url: '/adminStudyView',
-        templateUrl: '/modules/core/client/views/adminDispAll.client.view.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
-      })
-=======
         controller: 'HomeController',
         controllerAs: 'vm'
       })
@@ -86,7 +63,6 @@
         url: '/addRequirement',
         templateUrl: '/modules/core/client/views/addRequirement.client.view.html'
       })
->>>>>>> 535adea7ed35b34fbfc00c910ba7401427184429
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
