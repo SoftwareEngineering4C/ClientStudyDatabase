@@ -11,7 +11,7 @@
 </div>
 
 
-  
+
 <body ng-app="app" style="background-color:#7B7D7D">
 
   <h5 class ="text-center"><strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong></h5>
@@ -46,14 +46,10 @@
       <h3> {{add.description}}</h3>
       </h3>
     </h3>
-    
+
   </uib-accordion>
 </div>
     <!-- ******************* End of Drop down feature with deatails info ******************** -->
-
-<<<<<<< HEAD
-  
-=======
 
     <h3> {{add.description}}</h3>
     </h3>
@@ -62,13 +58,12 @@
 
    </div>
 
->>>>>>> master
 
   <section id="filters">
     <h2>Filter</h2>
-    
+
     <fieldset>
-    Age: 
+    Age:
     <select data-ng-model="search.age_lower_bound">
       <option value="">All</option>
       <option value="17">Below 18</option>
@@ -80,45 +75,45 @@
       <option value="9">>80-84</option>
       <option value="9">>85-89</option>
       <option value="9">>90+</option>
-    </select> 
+    </select>
     </fieldset>
 
 <!-- NO GENDER IN DATABASE *********************************************** -->
     <fieldset>
-    Gender:  
+    Gender:
     <select data-ng-model="search.age_lower_bound">
       <option value="">Both</option>
       <option value="17">Male</option>
       <option value="18" value="19" value="20">Female</option>
-    </select> 
+    </select>
     </fieldset>
 <!-- NO GENDER IN DATABASE *********************************************** -->
 
     <fieldset>
-    LAR Consent: 
+    LAR Consent:
     <select data-ng-model="search.lar_consent">
       <option value="True">Yes</option>
       <option value="False">No</option>
-    </select> 
+    </select>
     </fieldset>
 
 
   </section>
     <br><br>
-    
+
 <!--     Age type:<br>
     Below 18 <input type="checkbox"  data-ng-model="search.age_lower_bound" ng-true-value="17" ng-false-value="" /><br>
     Premium <input type="checkbox"  data-ng-model="search.carType" ng-true-value="Premium" ng-false-value="" /><br>
-    
+
     <br><br>
-    
+
     Provider:<br>
     Atlas Choice <input type="checkbox"  data-ng-model="search.company" ng-true-value="Atlas Choice" ng-false-value="" /><br>
-    Holiday Autos <input type="checkbox"  data-ng-model="search.company" ng-true-value="Holiday Autos" ng-false-value="" /><br> 
-    Avis <input type="checkbox"  data-ng-model="search.company" ng-true-value="Avis" ng-false-value="" /><br>  
-    
+    Holiday Autos <input type="checkbox"  data-ng-model="search.company" ng-true-value="Holiday Autos" ng-false-value="" /><br>
+    Avis <input type="checkbox"  data-ng-model="search.company" ng-true-value="Avis" ng-false-value="" /><br>
+
     </fieldset>
-  
+
   </section> -->
 
 
@@ -127,4 +122,3 @@
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
 </body>
 </html>
-
