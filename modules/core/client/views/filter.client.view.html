@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.flexcontainer {
+   display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: column;
+   flex-direction: column;
+}
+</style>
+</head>
+<body>
+
+<div class="text-center">
+<h2>Client Study Filter</h2>
+
+<br>
+<br>
+
+
+</div>
+<div>
+  <br>
+  <br>
+
+<div class="col-sm-3">
+<div class ="flexcontainer">
+<div class="dropdown">
+  <button class="btn btn-primary">Age</button>
+
+<br>
+<br>
+
+
+  <div class="dropdown-content" style="left:0;">
+    <a href="#">Below 18</a>
+    <a href="#">18-20</a>
+    <a href="#">21-29</a>
+    <a href="#">30-34</a>
+    <a href="#">35-50</a>
+    <a href="#">50-79</a>
+    <a href="#">80-84</a>
+    <a href="#">85-89</a>
+    <a href="#">90 + </a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary">Gender</button>
+
+  <br>
+  <br>
+
+  <div class="dropdown-content" style="left:0;">
+    <a href="#">Male</a>
+    <a href="#">Female</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary">LAR Consent</button>
+
+  <br>
+  <br>
+
+  <div class="dropdown-content" style="left:0;">
+    <a href="#">Yes</a>
+    <a href="#">No</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary">TIA</button>
+
+  <br>
+  <br>
+
+  <div class="dropdown-content" style="left:0;">
+    <a href="#">Yes</a>
+    <a href="#">No</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary">Minor Stroke</button>
+
+  <br>
+  <br>
+
+  <div class="dropdown-content" style="left:0;">
+    <a href="#">Yes</a>
+    <a href="#">No</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary">Hemorrhage</button>
+
+  <br>
+  <br>
+
+  <div class="dropdown-content" style="left:0;">
+    <a href="#">Yes</a>
+    <a href="#">Yes</a>
+  </div>
+</div>
+
+<div class="dropdown">
+  <button class="btn btn-primary">Stenosis Percentage</button>
+
+  <br>
+  <br>
+
+  <div class="dropdown-content" style="left:0;">
+    <a href="#">Greater than 70</a>
+    <a href="#">Greater than 50</a>
+    <a href="#">Less than 50</a>
+  </div>
+</div>
+</div>
+
+
+</div>
+
+<div class="col-md-6">
+<body ng-app="app" style="background-color:#7B7D7D">
+
+  <h5 class ="text-center"><strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong></h5>
+
+
+       <div class="vertical-center" ng-controller="HomeController" ng-init="find()">
+        <uib-accordion close-others="oneAtATime">
+
+
+          <h3 nowrap ng-repeat="study in studies | orderBy: 'study_name'"
+           ng-click = "showDetails(studies.indexOf(study))">
+
+      <div uib-accordion-group class="panel-default" is-open="status.open">
+     <uib-accordion-heading>
+      Study Name: {{study.study_name}}
+
+      <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+    </uib-accordion-heading>
+
+
+  
+    <h3> {{add.description}}</h3>
+    </h3>
+  </div>
+</uib-accordion>
+
+   </div>
+
+
+
+
+     <br> <br><br><br> <br> <br>
+</div>
+
+</body>
+</html>

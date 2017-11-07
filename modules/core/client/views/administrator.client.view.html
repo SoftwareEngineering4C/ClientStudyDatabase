@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 
@@ -9,7 +11,10 @@
     <script src="script.js"></script>
   </head>
 
+  <br>
+
   <body ng-app="app" style="background-color:#7B7D7D">
+<<<<<<< HEAD
     <h1 class="text-center">Admin</h1>
 	<div class="text-center" ng-controller="HomeController">
 	<div class="vertical-center">
@@ -25,5 +30,74 @@
 	</div>
 
   </body>
+=======
+
+      <h1 class="text-center">Ongoing Studies</h1>
+
+    <!-- Search Box Style -->
+   <style>
+        input[type=text] {
+        width: 200px;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        background-color: white;
+        background-image: url('searchicon.png');
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        }
+
+        input[type=text]:focus {
+        width: 100%;
+        }
+  </style>
+
+        <form>
+      <input type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies"><br>
+        </form>
+
+        <button class="btn btn-primary" type="button" ui-sref="addStudy">Add New Study</button>
+
+
+      <!-- End of Search Box Styel -->
+
+         <div class="vertical-center" ng-controller="HomeController" ng-init="find()">
+          <uib-accordion close-others="oneAtATime">
+
+
+            <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'"
+             ng-click = "showDetails(studies.indexOf(study))">
+
+        <div uib-accordion-group class="panel-default" is-open="status.open">
+       <uib-accordion-heading>
+        Study Name: {{study.study_name}}
+
+        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+      </uib-accordion-heading>
+
+      <h3> {{study.description}}</h3>
+
+      <button class="btn btn-danger" ng-click="deleteStudy(study)">Delete</button>
+
+      </h3>
+    </div>
+  </uib-accordion>
+
+     </div>
+
+     <br><br><br><br>
+      <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button>
+
+
+
+       <br> <br><br><br> <br> <br>
+
+    </body>
+
+>>>>>>> 535adea7ed35b34fbfc00c910ba7401427184429
 
 </html>

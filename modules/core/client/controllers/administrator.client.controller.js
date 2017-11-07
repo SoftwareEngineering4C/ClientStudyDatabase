@@ -3,10 +3,10 @@
 
   angular
     .module('core')
-    .controller('HomeController', HomeController);
+    .controller('AdministratorController', AdministratorController);
     //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
-  function HomeController($scope, Studies, Requirements) {
+  function AdministratorController($scope, Studies) {
     var vm = this;
 
     $scope.loading = true;
@@ -25,14 +25,5 @@
     $scope.showDetails = function(index) {
       $scope.add = $scope.studies[index];
     }
-
-    $scope.deleteStudy = function(study) {
-      var id = study._id;
-
-      Studies.delete(id);
-      
-    }
-
-
   }
 }());
