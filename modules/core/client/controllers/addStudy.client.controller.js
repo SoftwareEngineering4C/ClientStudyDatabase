@@ -6,7 +6,7 @@
     .controller('AddStudyController', AddStudyController);
     //AddRequirementController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
-  function AddStudyController($scope, $sce, Requirements, Studies) {
+  function AddStudyController($scope, $state, $window, $sce, Requirements, Studies) {
     var vm = this;
 
     $scope.requirementsAddedToStudy = [];
@@ -61,8 +61,10 @@
     $scope.addNewStudyToDatabase = function()
     {
       var newStudy = $scope.listOfDatabaseNames;
-      
+
       Studies.create(newStudy);
+
+      $window.location.href = '/administrator';
     }
 
 
