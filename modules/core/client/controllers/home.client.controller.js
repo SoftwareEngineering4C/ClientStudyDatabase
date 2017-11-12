@@ -13,10 +13,11 @@
 
 
     $scope.find = function() {
+
     	Studies.getAll().then(function(response) {
-        $scope.loading = false; //remove loader
-        $scope.studies = response.data;
-      }, function(error) {
+            $scope.loading = false; //remove loader
+            $scope.studies = response.data;
+            }, function(error) {
         $scope.loading = false;
         $scope.error = 'Unable to retrieve studies!\n' + error;
       });
@@ -30,9 +31,15 @@
       var id = study._id;
 
       Studies.delete(id);
-      
+
     }
+
+    $scope.matchAge = function(age){
+     return age.amount >= $scope.search.age_lower_bound && item.amount <= $scope.search.age_upper_bound;
+}
 
 
   }
+
+
 }());
