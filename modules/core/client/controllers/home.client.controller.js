@@ -34,10 +34,6 @@
 
     }
 
-    $scope.matchAge = function(age){
-     return age.amount >= $scope.search.age_lower_bound && item.amount <= $scope.search.age_upper_bound;
-}
-
 
   }
 
