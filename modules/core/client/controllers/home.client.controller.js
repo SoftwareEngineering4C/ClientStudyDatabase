@@ -6,7 +6,7 @@
     .controller('HomeController', HomeController);
     //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
-  function HomeController($scope, Studies, Requirements) {
+  function HomeController($window, $scope, Studies, Requirements) {
     var vm = this;
 
     $scope.loading = true;
@@ -29,9 +29,8 @@
 
     $scope.deleteStudy = function(study) {
       var id = study._id;
-
       Studies.delete(id);
-
+      $window.location.href = '/administrator';
     }
 
 
