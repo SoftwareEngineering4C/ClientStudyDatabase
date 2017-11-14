@@ -10,6 +10,14 @@
     var vm = this;
 
     $scope.loading = true;
+    $scope.edit = false;
+    $scope.submitted = false;
+
+    $scope.submit = function(study){
+      console.log(people);
+      $scope.edit = false;
+      $scope.submitted = false;
+    }
 
 
     $scope.find = function() {
@@ -33,7 +41,6 @@
       Studies.delete(id);
 
     }
-
 
   }
 
