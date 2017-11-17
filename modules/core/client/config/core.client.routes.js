@@ -41,9 +41,7 @@
       })
       .state('filter', {
         url: '/filter',
-        templateUrl: '/modules/core/client/views/filter.client.view.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
+        templateUrl: '/modules/core/client/views/filter.client.view.html'
       })
       .state('signin', {
         url: '/signin',

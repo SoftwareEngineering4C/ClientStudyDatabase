@@ -10,6 +10,9 @@ module.exports = function (app) {
   app.route('/api/requirements')
     .get(core.listRequirements);
 
+  app.route('/api/requirements' + '/:databaseName')
+    .get(core.findOneRequirement);
+
   app.route('/api/studies')
     .post(core.createStudy);
 
@@ -26,4 +29,5 @@ module.exports = function (app) {
   app.route('/*').get(core.renderIndex);
 
   app.param('studyId', core.studyById);
+  app.param('databaseName', core.requirementByDatabaseName);
 };

@@ -85,6 +85,22 @@ exports.studyById = function(req, res, next, id) {
   });
 };
 
+exports.requirementByDatabaseName = function(req, res, next, databaseName) {
+  Requirement.findOne({databaseName: databaseName}).exec(function(err, requirement) {
+    if(err) {
+      res.status(400).send(err);
+    } else {
+      req.requirement = requirement;
+      next();
+    }
+  });
+};
+
+exports.findOneRequirement = function(req, res) {
+  res.json(req.requirement);
+}
+
+
 /**
  * Render the server error page
  */
