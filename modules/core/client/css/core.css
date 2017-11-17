@@ -45,14 +45,6 @@ a:hover .header-profile-image {
 
 
 
-<<<<<<< HEAD
-=======
-
-
-
-
-
->>>>>>> development
 /* For Filter */
 
 
@@ -60,8 +52,6 @@ a:hover .header-profile-image {
 #filters { float: right; width: 28%; border-radius: 5px; border: 1px solid #ddd; }
 #filters h2 { background: #ddd; padding: 0.1em 2%; margin-bottom: 0.5em; border-top-left-radius: 5px; border-top-right-radius: 5px; margin-top: 0; font-size: 1.2em; padding: 0.5em 6%; }
 #filters fieldset { margin: 5%; }
-<<<<<<< HEAD
-=======
 
 
 /* for search box animation */
@@ -153,7 +143,7 @@ a:hover .header-profile-image {
   /* border: 1px solid #3079ed; */
   border: 0px;
   color: #fff;
-  text-shadow: 0 1px rgba(0,0,0,0.1); 
+  text-shadow: 0 1px rgba(0,0,0,0.1);
   background-color: #4d90fe;
   padding: 17px 0px;
   font-family: roboto;
@@ -177,9 +167,8 @@ a:hover .header-profile-image {
   display: inline-block;
   opacity: 0.6;
   transition: opacity ease 0.5s;
-} 
+}
 
 .login-help{
   font-size: 12px;
 }
->>>>>>> development

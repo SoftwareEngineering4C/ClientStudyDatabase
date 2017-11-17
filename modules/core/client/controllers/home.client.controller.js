@@ -6,13 +6,13 @@
     .controller('HomeController', HomeController);
     //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
-  function HomeController($scope, Studies, Requirements) {
+  function HomeController($scope, $window, Studies, Requirements) {
     var vm = this;
 
     $scope.loading = true;
     $scope.edit = false;
     $scope.submitted = false;
-  
+
 
     $scope.submit = function(study){
       console.log(people);
@@ -38,9 +38,8 @@
 
     $scope.deleteStudy = function(study) {
       var id = study._id;
-
       Studies.delete(id);
-
+      $window.location.href = '/administrator';
     }
 
   }
