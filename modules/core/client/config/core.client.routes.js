@@ -30,7 +30,7 @@
       .state('home', {
         url: '/',
         templateUrl: '/modules/core/client/views/home.client.view.html',
-        controller: 'AuthenticationController',
+        controller: 'HomeController',
         controllerAs: 'vm'
       })
       .state('user', {
