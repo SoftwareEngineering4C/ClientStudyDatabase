@@ -33,7 +33,7 @@
 
 
      <!-- ******************* Drop down feature with deatails info ******************** -->
-       <div class="vertical-center" ng-controller="FilterController" ng-init="find()">
+       <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
 
 
 
@@ -71,7 +71,10 @@
       <button class="btn btn-primary" type="button" >Contact Coordinator</button>
 
       </h3>
-    </h3>
+      <div ng-if="noStudiesThatMatchParameters">
+        <br><br>
+        <h4>There are no studies that match the inclusion/exclusion principles</h4>
+      </div>
 
   </uib-accordion>
 </div>
@@ -80,37 +83,28 @@
   <section id="filters">
     <h2>Filter</h2>
 
-    <fieldset>
-      Age:
-      <input type="text" ng-change="filterStudies(0)" ng-model="filter.age">
-      </input>
-    </fieldset>
-
-    <fieldset>
-      Gender:
-      <select ng-change="filterStudies(0)" ng-model="filter.gender">
-        <option selected>N/A</option>
-        <option ng-value="male">Male</option>
-        <option ng-value="female">Female</option>
-      </select>
-    </fieldset>
-
-    <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies track by $index">
+    <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies | orderBy: 'requirementName' track by $index">
       <p ng-bind="requirement.requirementName"></p>
       <span ng-if="isBoolean(requirement)">
-        <form action="" ng-change="filterStudies($index)">
-          <input ng-change="filterStudies($index)" type="radio" ng-model=listOfAnswersByDatabaseName[requirement.databaseName] ng-value="">  N/A<br>
-          <input ng-change="filterStudies($index)" type="radio" ng-model=listOfAnswersByDatabaseName[requirement.databaseName] ng-value=true>  True<br>
-          <input ng-change="filterStudies($index)" type="radio" ng-model=listOfAnswersByDatabaseName[requirement.databaseName] ng-value=false>  False<br>
+        <form action="">
+          <input ng-change="filterStudies()" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="">  N/A<br>
+          <input ng-change="filterStudies()" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=true>  True<br>
+          <input ng-change="filterStudies()" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=false>  False<br>
         </form>
       </span>
-      <span ng-if="isNumeric(requirement) || isRange(requirement)">
-        <form action="" ng-change="filterStudies($index)">
-          <input type="text" ng-model=listOfAnswersByDatabaseName[requirement.databaseName]><br>
+      <span ng-if="isRange(requirement)">
+        <form action="">
+          <input ng-change="filterStudies()" type="text" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]"><br>
+        </form>
+      </span>
+      <span ng-if="isGender(requirement)">
+        <form action="">
+          <input ng-change="filterStudies()" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=""> N/A<br>
+          <input ng-change="filterStudies()" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="male">  Male<br>
+          <input ng-change="filterStudies()" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="female">  Female<br>
         </form>
       </span>
     </fieldset>
-
   </section>
     <br><br>
 
