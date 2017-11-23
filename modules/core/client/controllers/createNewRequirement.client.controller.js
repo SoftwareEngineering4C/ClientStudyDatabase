@@ -36,6 +36,7 @@
 
         Requirements.create(requirement);
 
+        $window.location.href = '/addStudy';
       }
 
 
