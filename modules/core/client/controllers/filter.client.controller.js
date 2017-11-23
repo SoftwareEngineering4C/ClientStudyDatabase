@@ -18,6 +18,8 @@
     $scope.loading = true;
     $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = [];
 
+
+
     $scope.find = function() {
     	Studies.getAll().then(function(response) {
             $scope.loading = false; //remove loader
@@ -28,6 +30,8 @@
         $scope.error = 'Unable to retrieve studies!\n' + error;
       });
   	};
+
+
 
     $scope.findRequirements = function() {
     	Requirements.getAll().then(function(response) {
@@ -41,6 +45,8 @@
       });
     };
 
+
+
     $scope.init = function()
     {
       $scope.find();
@@ -49,18 +55,7 @@
 
 
 
-    function findOneRequirement(databaseName, callback, i)
-    {
-      Requirements.getOne(databaseName).then(function(response) {
-        var requirement = response.data;
-        callback(requirement, i);
-      }, function(error) {
-        $scope.loading = false;
-      });
-    };
-
-
-    $scope.filterStudies = function()
+    $scope.filterStudies = function(requirement)
     {
       $scope.noStudiesThatMatchParameters = false;
       $scope.listOfAnswersByRequirement = [];
@@ -80,7 +75,6 @@
 
       Object.keys($scope.listOfAnswersByRequirement).forEach(function(i) {
         var currentRequirement = $scope.listOfAnswersByRequirement[i];
-        console.log(currentRequirement);
 
         if (currentRequirement.typeOfRequirement === "Boolean")
         {
@@ -89,6 +83,10 @@
             {
               //filters by checking if the study's requirement value is equal to the answer from the html page
               return study[currentRequirement.databaseName] === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+            }
+            else
+            {
+              return true;
             }
           });
         }
@@ -111,13 +109,31 @@
                 return study[currentRequirement.databaseName].upper_bound >= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
               }
             }
+            else
+            {
+              return true;
+            }
+          });
+        }
+        else if (currentRequirement.typeOfRequirement === "Gender")
+        {
+          $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
+            if (study[currentRequirement.databaseName] != undefined)
+            {
+              //filters by checking if the study's requirement value is equal to the answer from the html page
+              return study[currentRequirement.databaseName] === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+            }
+            else
+            {
+              return true;
+            }
           });
         }
       });
 
       if ($scope.studiesThatMatchFilterParameters.length > 0)
       {
-        findAllRequirementsAvailableInFilteredStudies();
+        findAllRequirementsAvailableInFilteredStudies(requirement);
       }
       else
       {
@@ -127,7 +143,7 @@
     };
 
 
-    function findAllRequirementsAvailableInFilteredStudies()
+    function findAllRequirementsAvailableInFilteredStudies(requirement)
     {
       setOfAllRequirementsPossibleFromFilteredStudies.clear();
       $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = [];
@@ -145,6 +161,9 @@
           }
         })
       }
+
+      //adds last changed requirement
+      setOfAllRequirementsPossibleFromFilteredStudies.add(requirement.databaseName);
 
       setOfAllRequirementsPossibleFromFilteredStudies.delete("$$hashKey");
       setOfAllRequirementsPossibleFromFilteredStudies.delete("_id");
@@ -165,12 +184,6 @@
     }
 
 
-
-    $scope.action = function()
-    {
-      console.log($scope.listOfAnswersByDatabaseName);
-
-    };
 
     $scope.isRange = function(requirement)
     {

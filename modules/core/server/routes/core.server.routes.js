@@ -8,7 +8,8 @@ module.exports = function (app) {
   app.route('/list').get(core.listResponse);
 
   app.route('/api/requirements')
-    .get(core.listRequirements);
+    .get(core.listRequirements)
+    .post(core.createNewRequirement);
 
   app.route('/api/requirements' + '/:databaseName')
     .get(core.findOneRequirement);

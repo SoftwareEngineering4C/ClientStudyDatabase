@@ -60,6 +60,19 @@ exports.createStudy = function (req, res) {
   });
 };
 
+exports.createNewRequirement = function (req, res) {
+  var requirement = new Requirement(req.body);
+
+  requirement.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(requirement);
+    }
+  });
+};
+
 exports.deleteStudy = function(req, res) {
   var study = req.study;
 

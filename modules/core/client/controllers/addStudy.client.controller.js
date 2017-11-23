@@ -61,6 +61,7 @@
     $scope.addNewStudyToDatabase = function()
     {
       var newStudy = $scope.listOfDatabaseNames;
+      console.log(newStudy);
       Studies.create(newStudy);
       $window.location.href = '/administrator';
     }
@@ -70,21 +71,10 @@
     {
       $scope.requirementsNotAddedToStudyandFiltered = [];
 
-      if ($scope.searchEntry != "")
-      {
-        for (var row in $scope.requirementsNotAddedToStudy)
-        {
-          if ($scope.requirementsNotAddedToStudy[row]['requirementName'].toLowerCase().search
-            ($scope.searchEntry.toLowerCase()) != -1)
-          {
-            $scope.requirementsNotAddedToStudyandFiltered.push($scope.requirementsNotAddedToStudy[row])
-          }
-        }
-      }
-      else
-      {
-        $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudy;
-      }
+      $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudy.filter(function(requirement) {
+        console.log(requirement.requirementName);
+        return requirement.requirementName.toLowerCase().search($scope.searchEntry.toLowerCase()) > -1;
+      });
     }
 
 
@@ -102,10 +92,22 @@
     }
 
 
-
-    $scope.isNumeric = function(requirement)
+    $scope.isGender = function(requirement)
     {
-      if (requirement.typeOfRequirement == 'Numeric')
+      if (requirement.typeOfRequirement == 'Gender')
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+
+    $scope.isRange = function(requirement)
+    {
+      if (requirement.typeOfRequirement == 'Range')
       {
         return true;
       }

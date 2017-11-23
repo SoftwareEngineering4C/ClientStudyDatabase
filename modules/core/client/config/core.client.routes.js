@@ -51,6 +51,10 @@
         url: '/addStudy',
         templateUrl: '/modules/core/client/views/addStudy.client.view.html'
       })
+      .state('createNewRequirement', {
+        url: '/createNewRequirement',
+        templateUrl: '/modules/core/client/views/createNewRequirement.client.view.html'
+      })
       .state('addRequirement', {
         url: '/addRequirement',
         templateUrl: '/modules/core/client/views/addRequirement.client.view.html'

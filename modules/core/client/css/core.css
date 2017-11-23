@@ -1,6 +1,12 @@
 .content {
   margin-top: 50px;
 }
+.left-margin {
+  margin-left: 10px;
+}
+.bottom-margin {
+  margin-bottom: 50px;
+}
 .undecorated-link:hover {
   text-decoration: none;
 }
@@ -42,14 +48,16 @@ a:hover .header-profile-image {
   display: inline;
 }
 
-
+#eg {
+  color: gray;
+}
 
 
 /* For Filter */
 
 
 
-#filters { float: right; width: 28%; border-radius: 5px; border: 1px solid #ddd; }
+#filters { border-radius: 5px; border: 1px solid #ddd; }
 #filters h2 { background: #ddd; padding: 0.1em 2%; margin-bottom: 0.5em; border-top-left-radius: 5px; border-top-right-radius: 5px; margin-top: 0; font-size: 1.2em; padding: 0.5em 6%; }
 #filters fieldset { margin: 5%; }
 
