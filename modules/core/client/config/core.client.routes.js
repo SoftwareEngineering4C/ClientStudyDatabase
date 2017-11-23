@@ -33,17 +33,9 @@
         controller: 'HomeController',
         controllerAs: 'vm'
       })
-      .state('user', {
-        url: '/user',
-        templateUrl: '/modules/core/client/views/user.client.view.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
-      })
       .state('filter', {
         url: '/filter',
-        templateUrl: '/modules/core/client/views/filter.client.view.html',
-        controller: 'HomeController',
-        controllerAs: 'vm'
+        templateUrl: '/modules/core/client/views/filter.client.view.html'
       })
       .state('signin', {
         url: '/signin',
@@ -58,6 +50,10 @@
       .state('addStudy', {
         url: '/addStudy',
         templateUrl: '/modules/core/client/views/addStudy.client.view.html'
+      })
+      .state('createNewRequirement', {
+        url: '/createNewRequirement',
+        templateUrl: '/modules/core/client/views/createNewRequirement.client.view.html'
       })
       .state('addRequirement', {
         url: '/addRequirement',
