@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <title>UF Directory</title>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body ng-app="directoryApp">
+    <div class="container" ng-controller="CreateNewRequirementController">
+      <div class="row">
+        <h1>Create New Requirement</h1>
+        <br>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>
+            Requirement Name:
+          </h3>
+          <h5 id="eg">
+            e.g. Time From Episode Onset to Treatment in Days
+          </h5>
+          <input type="text" ng-model="newRequirement.name">
+          <br><br>
+          <h3>
+            Requirement Type:
+          </h3>
+          <select ng-model="newRequirement.type">
+            <option value="Boolean">Boolean</option>
+            <option value="Range">Range</option>
+          </select>
+          <br><br><br><br>
+          <button class="btn btn-primary" ng-click="addRequirementToDatabase()">Create New Requirement</button>
+          <br><br><br><br><br>
+          <button class="btn btn-primary" ui-sref="addStudy">Back</button>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+
+</html>

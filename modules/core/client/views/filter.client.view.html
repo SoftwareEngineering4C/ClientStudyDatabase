@@ -1,124 +1,88 @@
 <!DOCTYPE html>
 <html>
-
-<body>
-
-
-<div class="text-center">
-
-<br>
-<br>
-</div>
-
-
-
-<body ng-app="app" style="background-color:#7B7D7D">
-
-  <h5 class ="text-center"><strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong></h5>
-
-  <!-- ******************* Search box ******************** -->
-   <form>
-      <input type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies">
-        </form>
-
-     <!-- *************** End of Search box *************** -->
-
-
-     <!-- ******************* Drop down feature with deatails info ******************** -->
-       <div class="vertical-center" ng-controller="HomeController" ng-init="find()">
-
-
-
-        <div class="col-md-6">
-         <uib-accordion close-others="oneAtATime">
-
-
-            <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'"
-             ng-click = "showDetails(studies.indexOf(study))">
-
-        <div uib-accordion-group class="panel-default" is-open="status.open">
-       <uib-accordion-heading>
-        Study Name: {{study.study_name}}
-
-        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-      </uib-accordion-heading>
-
-      <h3> {{add.description}}</h3>
-      </h3>
-    </h3>
-
-  </uib-accordion>
-</div>
-    <!-- ******************* End of Drop down feature with deatails info ******************** -->
-
-    <h3> {{add.description}}</h3>
-    </h3>
+  <div class="text-center">
+    <br>
+    <br>
   </div>
-</uib-accordion>
 
-   </div>
-
-
-  <section id="filters">
-    <h2>Filter</h2>
-
-    <fieldset>
-    Age:
-    <select data-ng-model="search.age_lower_bound">
-      <option value="">All</option>
-      <option value="17">Below 18</option>
-      <option value="18" value="19" value="20">18-20</option>
-      <option value="21" value="22" value="23" value="24" value="25" value="26" value="27" value="28" value="29">21-29</option>
-      <option value="9">30-34</option>
-      <option value="9">>35-50</option>
-      <option value="9">>50-79</option>
-      <option value="9">>80-84</option>
-      <option value="9">>85-89</option>
-      <option value="9">>90+</option>
-    </select>
-    </fieldset>
-
-<!-- NO GENDER IN DATABASE *********************************************** -->
-    <fieldset>
-    Gender:
-    <select data-ng-model="search.age_lower_bound">
-      <option value="">Both</option>
-      <option value="17">Male</option>
-      <option value="18" value="19" value="20">Female</option>
-    </select>
-    </fieldset>
-<!-- NO GENDER IN DATABASE *********************************************** -->
-
-    <fieldset>
-    LAR Consent:
-    <select data-ng-model="search.lar_consent">
-      <option value="True">Yes</option>
-      <option value="False">No</option>
-    </select>
-    </fieldset>
-
-
-  </section>
-    <br><br>
-
-<!--     Age type:<br>
-    Below 18 <input type="checkbox"  data-ng-model="search.age_lower_bound" ng-true-value="17" ng-false-value="" /><br>
-    Premium <input type="checkbox"  data-ng-model="search.carType" ng-true-value="Premium" ng-false-value="" /><br>
-
-    <br><br>
-
-    Provider:<br>
-    Atlas Choice <input type="checkbox"  data-ng-model="search.company" ng-true-value="Atlas Choice" ng-false-value="" /><br>
-    Holiday Autos <input type="checkbox"  data-ng-model="search.company" ng-true-value="Holiday Autos" ng-false-value="" /><br>
-    Avis <input type="checkbox"  data-ng-model="search.company" ng-true-value="Avis" ng-false-value="" /><br>
-
-    </fieldset>
-
-  </section> -->
-
-
-     <br> <br><br><br> <br> <br>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-</body>
+  <body ng-app="app" style="background-color:#7B7D7D">
+    <script>
+      $('.dropdown-toggle').dropdown();
+    </script>
+    <h4 class ="text-center">
+      <strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong>
+    </h4>
+    <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
+      <div class="col-md-7">
+        <uib-accordion close-others="oneAtATime">
+          <h3 nowrap ng-repeat="study in studiesThatMatchFilterParameters | orderBy: 'study_name'">
+            <div uib-accordion-group class="panel-default" is-open="status.open">
+              <uib-accordion-heading>
+                Study Name: {{study.study_name}}
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+              </uib-accordion-heading>
+              <h3>
+                <strong>
+                  <em> Inclusion Criteria </em>
+                </strong>
+              </h3>
+              <h4 data-ng-repeat="x in study.inclusion">
+                »{{x}}
+              </h4>
+              <h3>
+                <strong>
+                  <em> Exclusion Criteria</em>
+                </strong>
+              </h3>
+              <h4 data-ng-repeat="x in study.exclusion">
+                »{{x}}
+              </h4>
+              <h3>
+                <strong>
+                  <em> Coordinator Information </em>
+                </strong>
+              </h3>
+              <h4> {{study.coordinator}}</h4>
+              <h4> {{study.coordinator_phone_number}}</h4>
+              <h4> {{study.coordinator_email}}</h4>
+              <br>
+              <button class="btn btn-primary" type="button" >Contact Coordinator</button>
+            </div>
+          </h3>
+          <div ng-if="noStudiesThatMatchParameters">
+            <br><br>
+            <h4>There are no studies that match the inclusion/exclusion principles</h4>
+          </div>
+        </uib-accordion>
+      </div>
+      <div class="col-md-5">
+        <section id="filters">
+          <h2>Filter</h2>
+          <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies | orderBy: 'requirementName' track by $index">
+            <p ng-bind="requirement.requirementName"></p>
+            <span ng-if="isBoolean(requirement)">
+              <form action="">
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="">  N/A<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=true>  True<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=false>  False<br>
+              </form>
+            </span>
+            <span ng-if="isRange(requirement)">
+              <form action="">
+                <input ng-change="filterStudies(requirement)" type="text" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]"><br>
+              </form>
+            </span>
+            <span ng-if="isGender(requirement)">
+              <form action="">
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="male">  Male<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="female">  Female<br>
+              </form>
+            </span>
+          </fieldset>
+        </section>
+        <br><br>
+      </div>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  </body>
 </html>

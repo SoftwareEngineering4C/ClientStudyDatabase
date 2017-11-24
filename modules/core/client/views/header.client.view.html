@@ -30,6 +30,7 @@
 
           </li>
 
+
           <li>
               <a ui-sref="administrator">View Studies</a>
           </li>
@@ -41,6 +42,14 @@
       <li ui-sref-active="active">
         <a ui-sref="authentication.signup">Sign Up</a>
       </li>
+
+           <li>
+               <a ui-sref="filter">Filter</a>
+           </li>
+       </ul>
+    <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
+
+
       <li class="divider-vertical"></li>
       <li ui-sref-active="active">
         <a ui-sref="authentication.signin">Sign In</a>
@@ -53,8 +62,19 @@
           <span ng-bind="vm.authentication.user.displayName"></span> <b class="caret"></b>
         </a>
         <ul class="dropdown-menu" role="menu">
+
           <li ui-sref-active="active" ng-repeat="item in vm.accountMenu.items">
             <a ui-sref="{{item.state}}" ng-bind="item.title"></a>
+
+          <li ui-sref-active="active">
+            <a ui-sref="settings.profile">Edit Profile</a>
+          </li>
+          <li ui-sref-active="active">
+            <a ui-sref="settings.picture">Change Profile Picture</a>
+          </li>
+          <li ui-sref-active="active" ng-show="authentication.user.provider === 'local'">
+            <a ui-sref="settings.password">Change Password</a>
+
           </li>
           <li class="divider"></li>
           <li>

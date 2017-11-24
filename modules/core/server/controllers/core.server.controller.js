@@ -60,6 +60,19 @@ exports.createStudy = function (req, res) {
   });
 };
 
+exports.createNewRequirement = function (req, res) {
+  var requirement = new Requirement(req.body);
+
+  requirement.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(requirement);
+    }
+  });
+};
+
 exports.deleteStudy = function(req, res) {
   var study = req.study;
 
@@ -84,6 +97,22 @@ exports.studyById = function(req, res, next, id) {
     }
   });
 };
+
+exports.requirementByDatabaseName = function(req, res, next, databaseName) {
+  Requirement.findOne({databaseName: databaseName}).exec(function(err, requirement) {
+    if(err) {
+      res.status(400).send(err);
+    } else {
+      req.requirement = requirement;
+      next();
+    }
+  });
+};
+
+exports.findOneRequirement = function(req, res) {
+  res.json(req.requirement);
+}
+
 
 /**
  * Render the server error page
