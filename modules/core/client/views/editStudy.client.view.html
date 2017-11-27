@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <br>
+
+  <body ng-app="app" style="background-color:#7B7D7D">
+    <div ng-controller="EditController">
+      <div ng-init="init()">
+        Study Name:
+        <input type="text" ng-model=study["study_name"]></input>
+
+        <h3><strong><em> Inclusion Criteria </em></strong></h3>
+
+      <h4 data-ng-repeat="x in study.inclusion">
+        Edit Inclusion:
+        <input type="text" ng-model=x> </input>
+      </h4>
+
+      <h3><strong><em> Exclusion Criteria </em></strong></h3>
+
+      <h4 data-ng-repeat="x in study.exclusion">
+        »{{x}}
+      </h4>
+
+      <h3><strong><em> Coordinator Information </em></strong></h3>
+
+      <h4> {{study.coordinator}}</h4>
+      <h4> {{study.coordinator_phone_number}}</h4>
+      <h4> {{study.coordinator_email}}</h4>
+      </div>
+     </div>
+      
+
+  </body>
+
+
+</html>
