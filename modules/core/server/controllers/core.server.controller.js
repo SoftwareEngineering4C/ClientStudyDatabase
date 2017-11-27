@@ -6,6 +6,18 @@ var validator = require('validator'),
   mongoose = require('mongoose'),
   Study = require('../models/study.server.model.js'),
   Requirement = require('../models/requirement.server.model.js');
+  
+  var nodemailer = require('nodemailer');
+  var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'johnaloomis91@gmail.com',    // your email here
+    pass: 'Tomgee1!'          // your password here
+  },
+  tls: {
+          rejectUnauthorized: false
+      }
+});
 
   mongoose.connect(config.db.uri);
 
@@ -145,3 +157,27 @@ exports.renderNotFound = function (req, res) {
     }
   });
 };
+
+exports.send = function(req,res){
+  var study = req.body.study;
+  console.log('Email:' + study.coordinator_email);
+  var htmlContent = '<p>Name: ' + req.body.contact.name + '</p>' +
+                    '<p>Email: ' + req.body.contact.email + '</p>' +
+                    '<p>Message: ' + req.body.contact.message + '</p>';
+					
+  var mailOptions = {
+    to: study.coordinator_email,                  // your email here
+    subject: study.study_name + 'has a potential patient',
+    from: req.body.contact.name + ' <' + req.body.contact.email + '>',
+    sender: req.body.contact.email,
+    html: htmlContent
+  };
+  transporter.sendMail(mailOptions, function(err, info){
+    if (err) {
+      console.log(err);
+    }else{
+      console.log('Message sent: ' + info.response);
+      return res.json(201, info);
+    }
+  });
+}
