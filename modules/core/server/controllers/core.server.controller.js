@@ -35,7 +35,7 @@ exports.renderIndex = function (req, res) {
   });
 };
 
-exports.listResponse = function (req, res) {
+exports.listStudies = function (req, res) {
   Study.find().exec(function (err, studies) {
     res.json(studies);
   });

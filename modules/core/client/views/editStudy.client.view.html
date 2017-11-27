@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <br>
+
+  <body ng-app="app" style="background-color:#7B7D7D">
+    <div ng-controller="EditController">
+      <div ng-init="init()">
+        <div class="col-md-8">
+          Study Name:
+          <input type="text" ng-model="study['study_name']"></input>
+
+          <h3><strong><em> Inclusion Criteria </em></strong></h3>
+          <h4 data-ng-repeat="x in study.inclusion">
+            Edit Inclusion:
+            <input type="text" ng-model=x> </input>
+          </h4>
+          <button class="btn btn-primary" ng-click="addNewInclusionPrinciple()">Add New Inclusion Princple</button>
+
+          <h3><strong><em> Exclusion Criteria </em></strong></h3>
+          <h4 data-ng-repeat="x in study.exclusion">
+            <input type="text" ng-model=x> </input>
+          </h4>
+          <br><br>
+
+          <h3><strong><em> Coordinator Information </em></strong></h3>
+          Coordinator:
+          <input type="text" ng-model=study["coordinator"]></input>
+          <br><br>
+
+          Coordinator Phone Number:
+          <input type="text" ng-model=study["coordinator_phone_number"]></input>
+          <br><br>
+
+          Coordinator Email:
+          <input type="text" ng-model=study["coordinator_email"]></input>
+        </div>
+      </div>
+     </div>
+
+
+  </body>
+
+
+</html>

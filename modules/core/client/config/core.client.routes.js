@@ -59,6 +59,13 @@
         url: '/addRequirement',
         templateUrl: '/modules/core/client/views/addRequirement.client.view.html'
       })
+      .state('editStudy', {
+        url: '/editStudy',
+        templateUrl: '/modules/core/client/views/editStudy.client.view.html',
+        params: {
+          study: {}
+        }
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
