@@ -4,15 +4,12 @@
   angular
     .module('core')
     .controller('AddStudyController', AddStudyController);
-    //AddRequirementController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
   function AddStudyController($scope, $state, $window, $sce, Requirements, Studies) {
     var vm = this;
 
     $scope.requirementsAddedToStudy = [];
     $scope.listOfDatabaseNames = {};
-
-    $scope.loading = true;
 
     $scope.findRequirements = function() {
     	Requirements.getAll().then(function(response) {
@@ -61,8 +58,14 @@
     $scope.addNewStudyToDatabase = function()
     {
       var newStudy = $scope.listOfDatabaseNames;
-      console.log(newStudy);
+
+      newStudy['inclusion'] = [];
+      newStudy['exclusion'] = [];
+
       Studies.create(newStudy);
+
+      console.log(newStudy);
+
       $window.location.href = '/administrator';
     }
 

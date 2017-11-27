@@ -60,10 +60,11 @@
       <h4> {{study.coordinator_phone_number}}</h4>
       <h4> {{study.coordinator_email}}</h4>
 <div class="row">
-      <button class="btn btn-danger left-margin" ng-click="deleteStudy(study)">Delete</button>
-      <button class="btn btn-primary .btn-default" ui-sref="editStudy(study)">Edit</button>
+      <button class="btn btn-primary .btn-default left-margin" ui-sref="editStudy({ study: study })">Edit</button>
+      <button class="btn btn-danger" ng-click="deleteStudy(study)">Delete</button>
 
-      
+
+
 
     </div>
       </h3>
@@ -79,7 +80,7 @@
 
 
 
-     <br><br><br><br>
+     <br><br>
       <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button>
 
 

@@ -7,6 +7,9 @@
 .bottom-margin {
   margin-bottom: 50px;
 }
+.sm-bottom-margin {
+  margin-bottom: 10px;
+}
 .undecorated-link:hover {
   text-decoration: none;
 }
