@@ -1,134 +1,88 @@
 <!DOCTYPE html>
 <html>
-
-<body>
-
-
-<div class="text-center">
-
-<br>
-<br>
-</div>
-
-
-
-<body ng-app="app" style="background-color:#7B7D7D">
-  <script>
-  $('.dropdown-toggle').dropdown();
-</script>
-
-  <h4 class ="text-center"><strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong></h4>
-
-  <!-- ******************* Search box ******************** -->
-
-  <div class="row">
-    <div class="col-md-4">
-      <form>
-        <input type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies">
-      </form>
-    </div>
+  <div class="text-center">
+    <br>
+    <br>
   </div>
 
-     <!-- *************** End of Search box *************** -->
-
-
-     <!-- ******************* Drop down feature with deatails info ******************** -->
-       <div class="vertical-center" ng-controller="FilterController" ng-init="find()">
-
-
-
-        <div class="col-md-6">
-         <uib-accordion close-others="oneAtATime">
-
-
-            <h3 nowrap ng-repeat="study in studiesThatMatchFilterParameters | orderBy: 'study_name'">
-
-        <div uib-accordion-group class="panel-default" is-open="status.open">
-       <uib-accordion-heading>
-        Study Name: {{study.study_name}}
-
-        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-      </uib-accordion-heading>
-
-      <h3><strong><em> Inclusion Criteria </em></strong></h3>
-
-      <h4 data-ng-repeat="x in study.inclusion">
-        »{{x}}
-      </h4>
-
-      <h3><strong><em> Exclusion Criteria </em></strong></h3>
-
-      <h4 data-ng-repeat="x in study.exclusion">
-        »{{x}}
-      </h4>
-
-      <h3><strong><em> Coordinator Information </em></strong></h3>
-
-      <h4> {{study.coordinator}}</h4>
-      <h4> {{study.coordinator_phone_number}}</h4>
-      <h4> {{study.coordinator_email}}</h4>
-	  
-	        <h1> Contact Coordinator</h1>
-		<div>
-		<form name="contactForm" novalidate>
-			<input type="text" name="name" ng-model="contact.name" placeholder="Your name" required><br>
-			<input type="email" name="email" ng-model="contact.email" placeholder="Your email" required><br>
-			<textarea name="message" ng-model="contact.message" placeholder="Your notes about the patient" required>{{message}}</textarea><br>
-			<button type="submit" ng-click="postMail(contact,study)">Send</button>
-		</form>
-		</div>
-
-      
-
-      </h3>
-    </h3>
-
-  </uib-accordion>
-</div>
-    <!-- ******************* End of Drop down feature with details info ******************** -->
-
-  <section id="filters">
-    <h2>Filter</h2>
-
-    <fieldset>
-      Age:
-      <input type="text" ng-change="filterStudies(0)" ng-model="filter.age">
-      </input>
-    </fieldset>
-
-    <fieldset>
-      Gender:
-      <select ng-change="filterStudies(0)" ng-model="filter.gender">
-        <option selected>N/A</option>
-        <option ng-value="male">Male</option>
-        <option ng-value="female">Female</option>
-      </select>
-    </fieldset>
-
-    <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies track by $index">
-      <p ng-bind="requirement.requirementName"></p>
-      <span ng-if="isBoolean(requirement)">
-        <form action="" ng-change="filterStudies($index)">
-          <input ng-change="filterStudies($index)" type="radio" ng-model=listOfAnswersByDatabaseName[requirement.databaseName] ng-value="">  N/A<br>
-          <input ng-change="filterStudies($index)" type="radio" ng-model=listOfAnswersByDatabaseName[requirement.databaseName] ng-value=true>  True<br>
-          <input ng-change="filterStudies($index)" type="radio" ng-model=listOfAnswersByDatabaseName[requirement.databaseName] ng-value=false>  False<br>
-        </form>
-      </span>
-      <span ng-if="isNumeric(requirement) || isRange(requirement)">
-        <form action="" ng-change="filterStudies($index)">
-          <input type="text" ng-model=listOfAnswersByDatabaseName[requirement.databaseName]><br>
-        </form>
-      </span>
-    </fieldset>
-
-  </section>
-    <br><br>
-
-  <button ng-click="action()">Press Me</button>
-
-
-     <br> <br><br><br> <br> <br>
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
-</body>
+  <body ng-app="app" style="background-color:#7B7D7D">
+    <script>
+      $('.dropdown-toggle').dropdown();
+    </script>
+    <h4 class ="text-center">
+      <strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong>
+    </h4>
+    <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
+      <div class="col-md-5">
+        <section id="filters">
+          <h2>Filter</h2>
+          <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies | orderBy: 'requirementName' track by $index">
+            <p ng-bind="requirement.requirementName"></p>
+            <span ng-if="isBoolean(requirement)">
+              <form action="">
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="">  N/A<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=true>  True<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=false>  False<br>
+              </form>
+            </span>
+            <span ng-if="isRange(requirement)">
+              <form action="">
+                <input ng-change="filterStudies(requirement)" type="text" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]"><br>
+              </form>
+            </span>
+            <span ng-if="isGender(requirement)">
+              <form action="">
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="male">  Male<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="female">  Female<br>
+              </form>
+            </span>
+          </fieldset>
+        </section>
+        <br><br>
+      </div>
+      <div class="col-md-7">
+        <uib-accordion close-others="oneAtATime">
+          <h3 nowrap ng-repeat="study in studiesThatMatchFilterParameters | orderBy: 'study_name'">
+            <div uib-accordion-group class="panel-default" is-open="status.open">
+              <uib-accordion-heading>
+                Study Name: {{study.study_name}}
+                <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+              </uib-accordion-heading>
+              <h3>
+                <strong>
+                  <em> Inclusion Criteria </em>
+                </strong>
+              </h3>
+              <h4 data-ng-repeat="x in study.inclusion">
+                »{{x}}
+              </h4>
+              <h3>
+                <strong>
+                  <em> Exclusion Criteria</em>
+                </strong>
+              </h3>
+              <h4 data-ng-repeat="x in study.exclusion">
+                »{{x}}
+              </h4>
+              <h3>
+                <strong>
+                  <em> Coordinator Information </em>
+                </strong>
+              </h3>
+              <h4> {{study.coordinator}}</h4>
+              <h4> {{study.coordinator_phone_number}}</h4>
+              <h4> {{study.coordinator_email}}</h4>
+              <br>
+              <button class="btn btn-primary" type="button" >Contact Coordinator</button>
+            </div>
+          </h3>
+          <div ng-if="noStudiesThatMatchParameters">
+            <br><br>
+            <h4>There are no studies that match the inclusion/exclusion principles</h4>
+          </div>
+        </uib-accordion>
+      </div>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.min.js"></script>
+  </body>
 </html>

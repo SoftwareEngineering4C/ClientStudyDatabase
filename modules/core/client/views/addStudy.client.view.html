@@ -3,7 +3,10 @@
   <title>UF Directory</title>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
   </head>
   <body ng-app="directoryApp">
     <div class="container">
@@ -15,10 +18,18 @@
         <div class="col-md-7">
           <div class="form-group row-md-6">
             <div class="input-group">
-              <div class="form-group row-md-6">
-                <label for="Study Name">Study Name:</label>
-                <input type="text" ng-model="listOfDatabaseNames.study_name" class="form-control" id="Study Name" placeholder="Study Name">
+              <div class="row">
+                <div class="form-group row-md-6">
+                  <label for="Study Name">Study Name:</label>
+                  <input type="text" ng-model="listOfDatabaseNames.study_name" class="form-control" id="Study Name" placeholder="Study Name">
+                </div>
+                <br><br>
+                <div class="form-group row-md-6">
+                  <label>Description:</label>
+                  <input type="text" ng-model="listOfDatabaseNames.description" class="form-control" id="Description" placeholder="Description">
+                </div>
               </div>
+              <br><br>
               <div class="form-group row-md-6 top-buffer">
                 <table class="table table-hover" ng-init=findRequirements()>
                   <tr>
@@ -36,9 +47,16 @@
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=false>  False<br>
                       </form>
                     </td>
-                    <td ng-if="isNumeric(requirement)">
+                    <td ng-if="isRange(requirement)">
                       <form action="">
-                        <input type="text" ng-model="listOfDatabaseNames[requirement.databaseName]"><br>
+                        <input type="text" placeholder="Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
+                        <input type="text" placeholder="Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
+                      </form>
+                    </td>
+                    <td ng-if="isGender(requirement)">
+                      <form action="">
+                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="male">  Male<br>
+                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="false">  Female<br>
                       </form>
                     </td>
                     <td><button type="button" class="form-control btn btn-danger"
@@ -61,7 +79,7 @@
         </div>
 
 
-        <div class="col-md-5 top-buffer">
+        <div class="col-md-5 top-buffer bottom-margin">
           <div class="input-group" id="searchBar">
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search" ng-model="searchEntry" ng-change="filterListOfRequirements()">
@@ -83,9 +101,15 @@
             </tr>
           </table>
 
-          </div>
+          <br><br><br>
+
+          <button type="button" class="form-control btn btn-primary" ui-sref="createNewRequirement">Create New Requirement</button>
+
+
 
         </div>
+
+      </div>
 
     </div>
 

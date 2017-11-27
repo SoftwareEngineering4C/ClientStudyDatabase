@@ -14,12 +14,19 @@
     vm.authentication = Authentication;
     vm.isCollapsed = false;
     vm.menu = menuService.getMenu('topbar');
-
+    vm.signout = signout;
+    
     $scope.$on('$stateChangeSuccess', stateChangeSuccess);
 
     function stateChangeSuccess() {
       // Collapsing the menu after navigation
       vm.isCollapsed = false;
+    }
+
+    function signout(){
+      vm.authentication = undefined;
+      console.log(vm.authentication);
+      $state.go('');
     }
   }
 }());
