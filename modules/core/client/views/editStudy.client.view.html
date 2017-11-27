@@ -14,29 +14,38 @@
   <body ng-app="app" style="background-color:#7B7D7D">
     <div ng-controller="EditController">
       <div ng-init="init()">
-        Study Name:
-        <input type="text" ng-model=study["study_name"]></input>
+        <div class="col-md-8">
+          Study Name:
+          <input type="text" ng-model="study['study_name']"></input>
 
-        <h3><strong><em> Inclusion Criteria </em></strong></h3>
+          <h3><strong><em> Inclusion Criteria </em></strong></h3>
+          <h4 data-ng-repeat="x in study.inclusion">
+            Edit Inclusion:
+            <input type="text" ng-model=x> </input>
+          </h4>
+          <button class="btn btn-primary" ng-click="addNewInclusionPrinciple()">Add New Inclusion Princple</button>
 
-      <h4 data-ng-repeat="x in study.inclusion">
-        Edit Inclusion:
-        <input type="text" ng-model=x> </input>
-      </h4>
-      <h3><strong><em> Exclusion Criteria </em></strong></h3>
+          <h3><strong><em> Exclusion Criteria </em></strong></h3>
+          <h4 data-ng-repeat="x in study.exclusion">
+            <input type="text" ng-model=x> </input>
+          </h4>
+          <br><br>
 
-      <h4 data-ng-repeat="x in study.exclusion">
-        »{{x}}
-      </h4>
+          <h3><strong><em> Coordinator Information </em></strong></h3>
+          Coordinator:
+          <input type="text" ng-model=study["coordinator"]></input>
+          <br><br>
 
-      <h3><strong><em> Coordinator Information </em></strong></h3>
+          Coordinator Phone Number:
+          <input type="text" ng-model=study["coordinator_phone_number"]></input>
+          <br><br>
 
-      <h4> {{study.coordinator}}</h4>
-      <h4> {{study.coordinator_phone_number}}</h4>
-      <h4> {{study.coordinator_email}}</h4>
+          Coordinator Email:
+          <input type="text" ng-model=study["coordinator_email"]></input>
+        </div>
       </div>
      </div>
-      
+
 
   </body>
 

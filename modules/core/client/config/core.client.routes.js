@@ -63,7 +63,7 @@
         url: '/editStudy',
         templateUrl: '/modules/core/client/views/editStudy.client.view.html',
         params: {
-          study: null,
+          study: {}
         }
       })
       .state('not-found', {
