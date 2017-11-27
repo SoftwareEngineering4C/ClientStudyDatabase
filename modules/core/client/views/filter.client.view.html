@@ -67,8 +67,18 @@
       <h4> {{study.coordinator}}</h4>
       <h4> {{study.coordinator_phone_number}}</h4>
       <h4> {{study.coordinator_email}}</h4>
+	  
+	        <h1> Contact Coordinator</h1>
+		<div>
+		<form name="contactForm" novalidate>
+			<input type="text" name="name" ng-model="contact.name" placeholder="Your name" required><br>
+			<input type="email" name="email" ng-model="contact.email" placeholder="Your email" required><br>
+			<textarea name="message" ng-model="contact.message" placeholder="Your notes about the patient" required>{{message}}</textarea><br>
+			<button type="submit" ng-click="postMail(contact,study)">Send</button>
+		</form>
+		</div>
 
-      <button class="btn btn-primary" type="button" >Contact Coordinator</button>
+      
 
       </h3>
     </h3>
