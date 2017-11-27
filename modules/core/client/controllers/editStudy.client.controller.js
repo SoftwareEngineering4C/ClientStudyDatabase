@@ -13,8 +13,6 @@
     $scope.init = function(){
       $scope.study = $stateParams.study;    
     }
-
-
   }
 
 
