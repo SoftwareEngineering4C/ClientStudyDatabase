@@ -16,6 +16,21 @@
       $scope.study.inclusion.push("");
     };
 
+    $scope.addNewExclusionPrinciple = function() {
+      $scope.study.exclusion.push("");
+    };
+
+    $scope.removeCurrentInclusionPrinciple = function(index) {
+      $scope.study.inclusion.splice(index, 1);
+    };
+
+    $scope.removeCurrentExclusionPrinciple = function(index) {
+      $scope.study.exclusion.splice(index, 1);
+    };
+
+    $scope.cancel = function() {
+      $window.location.href = '/addStudy';
+    };
 
   }
 

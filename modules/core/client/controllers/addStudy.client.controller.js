@@ -58,8 +58,14 @@
     $scope.addNewStudyToDatabase = function()
     {
       var newStudy = $scope.listOfDatabaseNames;
-      console.log(newStudy);
+
+      newStudy['inclusion'] = [];
+      newStudy['exclusion'] = [];
+
       Studies.create(newStudy);
+
+      console.log(newStudy);
+
       $window.location.href = '/administrator';
     }
 
