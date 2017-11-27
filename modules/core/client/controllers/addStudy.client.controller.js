@@ -4,15 +4,12 @@
   angular
     .module('core')
     .controller('AddStudyController', AddStudyController);
-    //AddRequirementController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
   function AddStudyController($scope, $state, $window, $sce, Requirements, Studies) {
     var vm = this;
 
     $scope.requirementsAddedToStudy = [];
     $scope.listOfDatabaseNames = {};
-
-    $scope.loading = true;
 
     $scope.findRequirements = function() {
     	Requirements.getAll().then(function(response) {

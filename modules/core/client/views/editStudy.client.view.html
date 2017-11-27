@@ -18,20 +18,23 @@
           Study Name:
           <input type="text" ng-model="study['study_name']"></input>
 
-          <h3><strong><em> Inclusion Criteria </em></strong></h3>
-          <h4 data-ng-repeat="x in study.inclusion">
-            Edit Inclusion:
-            <input type="text" ng-model=x> </input>
+          <h3><strong><em style="text-decoration: underline;"> Inclusion Criteria </em></strong></h3>
+          <h4 data-ng-repeat="x in study.inclusion track by $index">
+            <p>Inclusion <span ng-bind="$index"></span>: </p>
+            <textarea cols="80" rows="4" ng-model=x> </textarea>
           </h4>
           <button class="btn btn-primary" ng-click="addNewInclusionPrinciple()">Add New Inclusion Princple</button>
+          <br><br><br>
 
-          <h3><strong><em> Exclusion Criteria </em></strong></h3>
-          <h4 data-ng-repeat="x in study.exclusion">
-            <input type="text" ng-model=x> </input>
+          <h3><strong><em style="text-decoration: underline;"> Exclusion Criteria </em></strong></h3>
+          <h4 data-ng-repeat="x in study.exclusion track by $index">
+            <p>Exclusion <span ng-bind="$index"></span>: </p>
+            <textarea cols="80" rows="4" ng-model=x> </textarea>
           </h4>
-          <br><br>
+          <button class="btn btn-primary" ng-click="addNewExclusionPrinciple()">Add New Exclusion Princple</button>
+          <br><br><br>
 
-          <h3><strong><em> Coordinator Information </em></strong></h3>
+          <h3><strong><em style="text-decoration: underline;"> Coordinator Information </em></strong></h3>
           Coordinator:
           <input type="text" ng-model=study["coordinator"]></input>
           <br><br>

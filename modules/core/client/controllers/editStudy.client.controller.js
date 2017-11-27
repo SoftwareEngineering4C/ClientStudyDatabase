@@ -8,13 +8,12 @@
   function EditController($scope, $window, Studies, $stateParams) {
     var vm = this;
 
-
     $scope.init = function() {
       $scope.study = $stateParams.study;
     };
 
     $scope.addNewInclusionPrinciple = function() {
-      console.log($scope.study.inclusion);
+      $scope.study.inclusion.push("");
     };
 
 
