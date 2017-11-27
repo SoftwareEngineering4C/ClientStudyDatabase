@@ -9,10 +9,6 @@ module.exports = function (app) {
   app.route('/api/requirements')
     .get(core.listRequirements)
     .post(core.createNewRequirement);
-	
-  app.route('/api/contact')
-    .post(core.send);
-
 
   app.route('/api/requirements' + '/:databaseName')
     .get(core.findOneRequirement);

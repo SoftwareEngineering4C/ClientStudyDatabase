@@ -5,7 +5,7 @@
     .module('core')
     .controller('FilterController', FilterController);
 
-  function FilterController($window, $scope, Studies, Requirements,$http) {
+  function FilterController($window, $scope, Studies, Requirements) {
     var vm = this;
     var requirement = {};
     var sortedArrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies = [];
@@ -217,26 +217,6 @@
         return false;
       }
     }
-
-	$scope.postData = {};
-
-    $scope.postMail = function (contact,study) {
-      // Check form validation
-      
-      // wrap all your input values in $scope.postData
-      $scope.postData = angular.copy({contact,study});
-	  console.log($scope.postData);
-
-      $http.post('/api/contact', $scope.postData)
-        .success(function(data) {
-          // Show success message
-        })
-        .error(function(data) {
-          // Show error message
-        });
-    };
-  };
-
 
 
   };
