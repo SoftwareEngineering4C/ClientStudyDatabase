@@ -50,7 +50,6 @@
       </h4>
 
       <h3><strong><em> Exclusion Criteria </em></strong></h3>
-
       <h4 data-ng-repeat="x in study.exclusion">
         »{{x}}
       </h4>
@@ -61,25 +60,11 @@
       <h4> {{study.coordinator_phone_number}}</h4>
       <h4> {{study.coordinator_email}}</h4>
 <div class="row">
+      <button class="btn btn-primary .btn-default left-margin" ui-sref="editStudy({ study: study })">Edit</button>
       <button class="btn btn-danger" ng-click="deleteStudy(study)">Delete</button>
-      <button class="btn btn-primary .btn-default" ng-click="edit = true">Edit</button>
 
-      <form name="userForm" novalidate ng-submit="submit(study)">
-     <div class="study-view">
-     <h4 class="name">
-       <span class="study_name">
-     <span ng-show="edit">Study Name: </span>
-     <input ng-show="edit == true" ng-model="study.study_name"></span>
-   </h4>
-     <h4 class="name">
-     <span class="coordinator">
-     <span ng-show="edit">Study Coordinator: </span>
-     <input ng-show="edit" ng-model="study.coordinator" >
-   </span></h4>
 
-      </div>
-    <button ng-show="edit" class="btn btn-primary .btn-default" type="submit" ng-click="submitted = true">Submit</button>
-</form>
+
 
     </div>
       </h3>

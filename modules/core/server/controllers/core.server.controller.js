@@ -47,7 +47,7 @@ exports.renderIndex = function (req, res) {
   });
 };
 
-exports.listResponse = function (req, res) {
+exports.listStudies = function (req, res) {
   Study.find().exec(function (err, studies) {
     res.json(studies);
   });
@@ -68,6 +68,19 @@ exports.createStudy = function (req, res) {
       res.status(400).send(err);
     } else {
       res.json(study);
+    }
+  });
+};
+
+exports.createNewRequirement = function (req, res) {
+  var requirement = new Requirement(req.body);
+
+  requirement.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(requirement);
     }
   });
 };
