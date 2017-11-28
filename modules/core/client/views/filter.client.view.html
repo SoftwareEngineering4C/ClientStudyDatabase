@@ -42,7 +42,7 @@
       </div>
       <div class="col-md-7">
         <uib-accordion close-others="oneAtATime">
-          <h3 nowrap ng-repeat="study in studiesThatMatchFilterParameters | orderBy: 'study_name'">
+          <div class="sm-bottom-margin" nowrap ng-repeat="study in studiesThatMatchFilterParameters | orderBy: 'study_name'">
             <div uib-accordion-group class="panel-default" is-open="status.open">
               <uib-accordion-heading>
                 Study Name: {{study.study_name}}
@@ -73,17 +73,20 @@
               <h4> {{study.coordinator_phone_number}}</h4>
               <h4> {{study.coordinator_email}}</h4>
               <br>
-              <h1> Contact Coordinator</h1>
+              <h3>
+                <strong>
+                  <em>Contact Coordinator</em>
+                </strong>
+              </h3>
           		<div>
           		<form name="contactForm" novalidate>
-          			<input type="text" name="name" ng-model="contact.name" placeholder="Your name" required><br>
-          			<input type="email" name="email" ng-model="contact.email" placeholder="Your email" required><br>
-          			<textarea name="message" ng-model="contact.message" placeholder="Your notes about the patient" required>{{message}}</textarea><br>
+          			<input type="text" name="name" ng-model="contact.name" placeholder="Your name" required><br><br>
+          			<textarea cols="80" rows="3" name="message" ng-model="contact.message" placeholder="Your notes about the patient" required>{{message}}</textarea><br><br>
           			<button type="submit" ng-click="postMail(contact,study)">Send</button>
           		</form>
           		</div>
             </div>
-          </h3>
+          </div>
           <div ng-if="noStudiesThatMatchParameters">
             <br><br>
             <h4>There are no studies that match the inclusion/exclusion principles</h4>
