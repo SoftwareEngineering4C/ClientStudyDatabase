@@ -37,6 +37,13 @@
       $window.location.href = '/administrator';
     }
 
+    $scope.permanentlyDelete = function (study) {
+      var id = study._id;
+      Archive.delete(id);
+
+      $window.location.href = '/archive';
+    }
+
   }
 
 }());

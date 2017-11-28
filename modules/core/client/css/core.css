@@ -55,6 +55,12 @@ a:hover .header-profile-image {
   color: gray;
 }
 
+#hello {
+  background-color: white;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
 
 /* For Filter */
 
