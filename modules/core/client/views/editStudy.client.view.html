@@ -15,41 +15,59 @@
     <div ng-controller="EditController">
       <div ng-init="init()">
         <div class="col-md-8 bottom-margin">
-          Study Name:
-          <input type="text" ng-model="study['study_name']"></input>
+
+
+          <h3><strong><em style="text-decoration: underline;">Study Name</em></strong></h3>
+           <textarea class="form-control sm-bottom-margin" cols="60" rows="1"  ng-model="study['study_name']"> </textarea>
+           <button class="btn btn-danger" ng-click="removeCurrentInclusionPrinciple($index)" style="float: right;">Remove</button>
+              <br>
+
 
           <h3><strong><em style="text-decoration: underline;">Inclusion Criteria</em></strong></h3>
           <h5 data-ng-repeat="x in study.inclusion track by $index">
-            <p>Inclusion <span ng-bind="$index"></span>: </p>
+            <strong <p> Inclusion <span ng-bind="$index"></span>: </p> </strong>
             <textarea class="form-control sm-bottom-margin" cols="120" rows="3" ng-model=x> </textarea>
-            <button class="btn btn-danger" ng-click="removeCurrentInclusionPrinciple($index)">Remove</button>
+
+            <button class="btn btn-danger" ng-click="removeCurrentInclusionPrinciple($index)" style="float: right;">Remove</button>
+              <br>
           </h5>
+        
+
+          <button class="btn btn-primary" ng-click="addNewInclusionPrinciple()">Add New Inclusion Principle</button>
           <br>
-          <button class="btn btn-primary" ng-click="addNewInclusionPrinciple()">Add New Inclusion Princple</button>
-          <br><br><br>
 
           <h3><strong><em style="text-decoration: underline;">Exclusion Criteria</em></strong></h3>
           <h5 data-ng-repeat="x in study.exclusion track by $index">
-            <p>Exclusion <span ng-bind="$index"></span>: </p>
+             <strong <p> Exclusion <span ng-bind="$index"></span>: </p> </strong>
+
             <textarea class="form-control sm-bottom-margin" cols="120" rows="3" ng-model=x> </textarea>
-            <button class="btn btn-danger" ng-click="removeCurrentExclusionPrinciple($index)">Remove</button>
+            <button class="btn btn-danger" ng-click="removeCurrentExclusionPrinciple($index)" style="float: right;">Remove</button>
           </h5>
           <br>
-          <button class="btn btn-primary" ng-click="addNewExclusionPrinciple()">Add New Exclusion Princple</button>
-          <br><br><br>
+
+
+
+          <button class="btn btn-primary" ng-click="addNewExclusionPrinciple()">Add New Exclusion Principle</button>
+          <br>
 
           <h3><strong><em style="text-decoration: underline;">Coordinator Information</em></strong></h3>
-          Coordinator:
-          <input type="text" ng-model="study['coordinator']"></input>
-          <br><br>
+           <div class="form-group">
+          <label for="name" class="control-label"> Coordinator:</label>
+          <input type="text" name="name" class="form-control" id="name" ng-model="study['coordinator']"\>
+          </div>
+          
 
-          Coordinator Phone Number:
-          <input type="text" ng-model="study['coordinator_phone_number']"></input>
-          <br><br>
+           <div class="form-group">
+          <label for="name" class="control-label"> Coordinator Phone Number:</label>
+          <input type="text" name="name" class="form-control" id="name" ng-model="study['coordinator_phone_number']"\>
+          </div>
 
-          Coordinator Email:
-          <input type="text" ng-model="study['coordinator_email']"></input>
-          <br><br><br><br><br>
+          <div>
+          <label for="name" class="control-label"> Coordinator Email:</label>
+          <input type="text" name="name" class="form-control" id="name" ng-model="study['coordinator_email']"\>
+          </div>
+      
+          <br><br>
 
           <button class="btn btn-primary .btn-default">Save</button>
           <button class="btn btn-danger left-margin">Cancel</button>
