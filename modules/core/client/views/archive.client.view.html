@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 
@@ -15,20 +13,22 @@
 
   <body ng-app="app" style="background-color:#7B7D7D">
 
-      <h1 class="text-center">Ongoing Studies</h1>
+      <h1 class="text-center">Archived Studies</h1>
 
     <!-- Search Box Style -->
-      <div class="bottom-margin">
-        <button class="btn btn-primary" type="button" ui-sref="addStudy">Add New Study</button>
-      </div>
 
-      <!-- End of Search Box Styel -->
 
-         <div class="vertical-center" ng-controller="HomeController" ng-init="find()">
+        <form>
+      <input type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies"><br>
+        </form>
+
+      <!-- End of Search Box Style -->
+
+         <div class="vertical-center" ng-controller="ArchiveController" ng-init="findArchive()">
           <uib-accordion close-others="oneAtATime">
 
 
-            <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'"
+            <h3 nowrap ng-repeat="study in archive | filter: search | orderBy: 'study_name'"
              ng-click = "showDetails(studies.indexOf(study))">
 
         <div uib-accordion-group class="panel-default" is-open="status.open">
@@ -45,6 +45,7 @@
       </h4>
 
       <h3><strong><em> Exclusion Criteria </em></strong></h3>
+
       <h4 data-ng-repeat="x in study.exclusion">
         • {{x}}
       </h4>
@@ -54,12 +55,9 @@
       <h4> {{study.coordinator}}</h4>
       <h4> {{study.coordinator_phone_number}}</h4>
       <h4> {{study.coordinator_email}}</h4>
-<div class="row">
-      <button class="btn btn-primary .btn-default left-margin" ui-sref="editStudy({ study: study })">Edit</button>
-      <button class="btn btn-danger" ng-click="archiveStudy(study)" ui-sref="archive">Archive</button>
 
 
-
+      <button class="btn btn-primary" ng-click="recover(study)">Recover</button>
 
     </div>
       </h3>
@@ -73,16 +71,11 @@
 
   </div>
 
-
-
-     <br><br>
-      <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button>
-
-
+     <br><br><br><br>
+      <button class="btn btn-primary .btn-default" type="button" ui-sref="administrator">Back</button>
 
        <br> <br><br><br> <br> <br>
 
     </body>
-
 
 </html>

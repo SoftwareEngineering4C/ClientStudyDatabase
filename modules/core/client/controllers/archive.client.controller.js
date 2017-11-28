@@ -3,9 +3,10 @@
 
   angular
     .module('core')
-    .controller('HomeController', HomeController);
+    .controller('ArchiveController', ArchiveController);
+    //ArchiveController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
-  function HomeController($scope, $window, Studies, Requirements, Archive) {
+  function ArchiveController($scope, $window, Archive, Studies) {
     var vm = this;
 
     $scope.loading = true;
@@ -13,10 +14,11 @@
     $scope.submitted = false;
 
 
-    $scope.find = function() {
-    	Studies.getAll().then(function(response) {
+    $scope.findArchive = function() {
+      Archive.getAll().then(function(response) {
             $scope.loading = false; //remove loader
-            $scope.studies = response.data;
+            $scope.archive = response.data;
+            console.log($scope.archive);
             }, function(error) {
         $scope.loading = false;
         $scope.error = 'Unable to retrieve studies!\n' + error;
@@ -24,7 +26,7 @@
   	}
 
     $scope.showDetails = function(index) {
-      $scope.add = $scope.studies[index];
+      $scope.add = $scope.archive[index];
     }
 
     $scope.deleteStudy = function(study) {
@@ -33,14 +35,12 @@
       $window.location.href = '/administrator';
     }
 
-    $scope.archiveStudy = function (study) {
+    $scope.recover = function (study) {
       var id = study._id;
-      Studies.delete(id);
+      Archive.delete(id);
 
-      console.log(study);
-
-      Archive.create(study);
-
+    Studies.create(study);
+    $window.location.href = '/administrator';
     }
 
   }

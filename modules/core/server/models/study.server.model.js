@@ -5,20 +5,11 @@ var studySchema = new Schema({
   study_name: {
     type: String
   },
-  coordinator:
-  {
-    type: String
-  },
-  coordinator_phone_number:
-  {
-    type: String
-  },
-  coordinator_email:
-  {
-    type: String
-  }
+},
 
-}, {strict: false});
+  {strict: false}
+
+);
 
 var Study = mongoose.model('Study', studySchema);
 
