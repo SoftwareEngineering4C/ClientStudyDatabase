@@ -233,6 +233,9 @@
         .error(function(data) {
           // Show error message
         });
+
+        $window.location.href = '/filter';
+
     };
   };
 
