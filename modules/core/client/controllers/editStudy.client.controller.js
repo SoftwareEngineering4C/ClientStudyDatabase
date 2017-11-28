@@ -13,7 +13,10 @@
     };
 
     $scope.addNewInclusionPrinciple = function() {
+      console.log($scope.study.inclusion);
       $scope.study.inclusion.push("");
+      console.log($scope.study.inclusion);
+
     };
 
     $scope.addNewExclusionPrinciple = function() {
@@ -28,8 +31,15 @@
       $scope.study.exclusion.splice(index, 1);
     };
 
+    $scope.save = function(study) {
+
+      console.log(study);
+
+      Studies.update(study);
+    };
+
     $scope.cancel = function() {
-      $window.location.href = '/addStudy';
+      $window.location.href = '/administrator';
     };
 
   }

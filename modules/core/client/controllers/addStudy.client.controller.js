@@ -64,8 +64,6 @@
 
       Studies.create(newStudy);
 
-      console.log(newStudy);
-
       $window.location.href = '/administrator';
     }
 
@@ -75,7 +73,6 @@
       $scope.requirementsNotAddedToStudyandFiltered = [];
 
       $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudy.filter(function(requirement) {
-        console.log(requirement.requirementName);
         return requirement.requirementName.toLowerCase().search($scope.searchEntry.toLowerCase()) > -1;
       });
     }
