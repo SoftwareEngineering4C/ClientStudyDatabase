@@ -58,8 +58,12 @@
     $scope.addNewStudyToDatabase = function()
     {
       var newStudy = $scope.listOfDatabaseNames;
-      console.log(newStudy);
+
+      newStudy['inclusion'] = [];
+      newStudy['exclusion'] = [];
+
       Studies.create(newStudy);
+
       $window.location.href = '/administrator';
     }
 
@@ -69,7 +73,6 @@
       $scope.requirementsNotAddedToStudyandFiltered = [];
 
       $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudy.filter(function(requirement) {
-        console.log(requirement.requirementName);
         return requirement.requirementName.toLowerCase().search($scope.searchEntry.toLowerCase()) > -1;
       });
     }

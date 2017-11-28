@@ -14,37 +14,46 @@
   <body ng-app="app" style="background-color:#7B7D7D">
     <div ng-controller="EditController">
       <div ng-init="init()">
-        <div class="col-md-8">
+        <div class="col-md-8 bottom-margin">
           Study Name:
           <input type="text" ng-model="study['study_name']"></input>
 
-          <h3><strong><em style="text-decoration: underline;"> Inclusion Criteria </em></strong></h3>
-          <h4 data-ng-repeat="x in study.inclusion track by $index">
+          <h3><strong><em style="text-decoration: underline;">Inclusion Criteria</em></strong></h3>
+          <h5 data-ng-repeat="x in study.inclusion track by $index">
             <p>Inclusion <span ng-bind="$index"></span>: </p>
-            <textarea cols="80" rows="4" ng-model=x> </textarea>
-          </h4>
+            <textarea class="form-control sm-bottom-margin" cols="120" rows="3" ng-model=study.inclusion[$index]> </textarea>
+            <button class="btn btn-danger" ng-click="removeCurrentInclusionPrinciple($index)">Remove</button>
+          </h5>
+          <br>
           <button class="btn btn-primary" ng-click="addNewInclusionPrinciple()">Add New Inclusion Princple</button>
           <br><br><br>
 
-          <h3><strong><em style="text-decoration: underline;"> Exclusion Criteria </em></strong></h3>
-          <h4 data-ng-repeat="x in study.exclusion track by $index">
+          <h3><strong><em style="text-decoration: underline;">Exclusion Criteria</em></strong></h3>
+          <h5 data-ng-repeat="x in study.exclusion track by $index">
             <p>Exclusion <span ng-bind="$index"></span>: </p>
-            <textarea cols="80" rows="4" ng-model=x> </textarea>
-          </h4>
+            <textarea class="form-control sm-bottom-margin" cols="120" rows="3" ng-model=study.exclusion[$index]> </textarea>
+            <button class="btn btn-danger" ng-click="removeCurrentExclusionPrinciple($index)">Remove</button>
+          </h5>
+          <br>
           <button class="btn btn-primary" ng-click="addNewExclusionPrinciple()">Add New Exclusion Princple</button>
           <br><br><br>
 
-          <h3><strong><em style="text-decoration: underline;"> Coordinator Information </em></strong></h3>
+          <h3><strong><em style="text-decoration: underline;">Coordinator Information</em></strong></h3>
           Coordinator:
-          <input type="text" ng-model=study["coordinator"]></input>
+          <input type="text" ng-model="study['coordinator']"></input>
           <br><br>
 
           Coordinator Phone Number:
-          <input type="text" ng-model=study["coordinator_phone_number"]></input>
+          <input type="text" ng-model="study['coordinator_phone_number']"></input>
           <br><br>
 
           Coordinator Email:
-          <input type="text" ng-model=study["coordinator_email"]></input>
+          <input type="text" ng-model="study['coordinator_email']"></input>
+          <br><br><br><br><br>
+
+          <button class="btn btn-primary .btn-default" ng-click="save(study)">Save</button>
+          <button class="btn btn-danger left-margin" ng-click="cancel()">Cancel</button>
+
         </div>
       </div>
      </div>

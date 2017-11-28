@@ -10,12 +10,16 @@ module.exports = function (app) {
     .get(core.listRequirements)
     .post(core.createNewRequirement);
 
+  app.route('/api/contact')
+    .post(core.send);
+
   app.route('/api/requirements' + '/:databaseName')
     .get(core.findOneRequirement);
 
   app.route('/api/studies')
     .get(core.listStudies)
-    .post(core.createStudy);
+    .post(core.createStudy)
+    .put(core.updateStudy);
 
   app.route('/api/studies' + '/:studyId')
     .delete(core.deleteStudy);
