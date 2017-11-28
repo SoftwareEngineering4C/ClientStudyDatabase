@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="/modules/core/client/css/core.css">
   <div class="text-center">
     <br>
     <br>
   </div>
 
-  <body ng-app="app" style="background-color:#7B7D7D">
+  <body ng-app="app" style="background-color:#FFFFFF">
     <script>
       $('.dropdown-toggle').dropdown();
     </script>
@@ -13,7 +14,7 @@
       <strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong>
     </h4>
     <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
-      <div class="col-md-5">
+      <div id="hello" class="col-md-5">
         <section id="filters">
           <h2>Filter</h2>
           <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies | orderBy: 'requirementName' track by $index">
