@@ -14,8 +14,6 @@
     };
 
     $scope.addRequirementToDatabase = function() {
-      console.log($scope.newRequirement);
-
       //removes all consecutive spaces
       var newDatabaseName = $scope.newRequirement.name.replace(/\s+/g, ' ');
 

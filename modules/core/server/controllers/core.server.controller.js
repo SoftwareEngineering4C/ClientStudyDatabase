@@ -35,7 +35,7 @@ exports.renderIndex = function (req, res) {
   });
 };
 
-exports.listResponse = function (req, res) {
+exports.listStudies = function (req, res) {
   Study.find().exec(function (err, studies) {
     res.json(studies);
   });
@@ -49,6 +49,22 @@ exports.listRequirements = function (req, res) {
 
 exports.createStudy = function (req, res) {
   var study = new Study(req.body);
+
+  study.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(study);
+    }
+  });
+};
+
+exports.updateStudy = function (req, res) {
+  var study = new Study(req.body);
+  study.isNew = false;
+
+  console.log(req.body);
 
   study.save(function(err) {
     if(err) {

@@ -4,7 +4,6 @@
   angular
     .module('core')
     .controller('FilterController', FilterController);
-    //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
   function FilterController($window, $scope, Studies, Requirements) {
     var vm = this;
@@ -14,8 +13,6 @@
 
     $scope.listOfAnswersByDatabaseName = {};
     $scope.listOfAnswersByRequirement = [];
-
-    $scope.loading = true;
     $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = [];
 
 

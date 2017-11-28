@@ -5,7 +5,6 @@ module.exports = function (app) {
   var core = require('../controllers/core.server.controller');
 
   //Routes to access database
-  app.route('/list').get(core.listResponse);
 
   app.route('/api/requirements')
     .get(core.listRequirements)
@@ -15,7 +14,9 @@ module.exports = function (app) {
     .get(core.findOneRequirement);
 
   app.route('/api/studies')
-    .post(core.createStudy);
+    .get(core.listStudies)
+    .post(core.createStudy)
+    .put(core.updateStudy);
 
   app.route('/api/studies' + '/:studyId')
     .delete(core.deleteStudy);
