@@ -59,6 +59,10 @@
         url: '/addRequirement',
         templateUrl: '/modules/core/client/views/addRequirement.client.view.html'
       })
+      .state('newHome', {
+        url: '/newHome',
+        templateUrl: '/modules/core/client/views/newHome.client.view.html'
+      })
       .state('not-found', {
         url: '/not-found',
         templateUrl: '/modules/core/client/views/404.client.view.html',
