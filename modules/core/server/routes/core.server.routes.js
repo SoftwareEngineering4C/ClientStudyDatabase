@@ -5,18 +5,16 @@ module.exports = function (app) {
   var core = require('../controllers/core.server.controller');
 
   //Routes to access database
-  app.route('/list').get(core.listResponse);
 
   app.route('/api/requirements')
-    .get(core.listRequirements);
-	
-  app.route('/api/contact')
-    .post(core.send);
+    .get(core.listRequirements)
+    .post(core.createNewRequirement);
 
   app.route('/api/requirements' + '/:databaseName')
     .get(core.findOneRequirement);
 
   app.route('/api/studies')
+    .get(core.listStudies)
     .post(core.createStudy);
 
   app.route('/api/studies' + '/:studyId')
