@@ -22,10 +22,10 @@
       Notification.error({ message: $location.search().err });
     }
 
-    // If user is signed in then redirect back home
     if (vm.authentication.user) {
-      $location.path('');
+      $location.path('/administrator');
     }
+
 
     function signup(isValid) {
 
