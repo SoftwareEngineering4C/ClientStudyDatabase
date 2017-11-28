@@ -5,7 +5,7 @@
     .module('core')
     .controller('FilterController', FilterController);
 
-  function FilterController($window, $scope, Studies, Requirements) {
+  function FilterController($window, $scope, Studies, Requirements, $http) {
     var vm = this;
     var requirement = {};
     var sortedArrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies = [];
@@ -217,8 +217,6 @@
         return false;
       }
     }
-<<<<<<< HEAD
-=======
 
 	$scope.postData = {};
 
@@ -237,6 +235,5 @@
         });
     };
   };
->>>>>>> EmailSystem
 
 }());
