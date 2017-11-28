@@ -59,9 +59,18 @@
         url: '/addRequirement',
         templateUrl: '/modules/core/client/views/addRequirement.client.view.html'
       })
+<<<<<<< HEAD
       .state('newHome', {
         url: '/newHome',
         templateUrl: '/modules/core/client/views/newHome.client.view.html'
+=======
+      .state('editStudy', {
+        url: '/editStudy',
+        templateUrl: '/modules/core/client/views/editStudy.client.view.html',
+        params: {
+          study: {}
+        }
+>>>>>>> origin/sunnyBranch
       })
       .state('not-found', {
         url: '/not-found',
