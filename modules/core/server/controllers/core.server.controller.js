@@ -60,6 +60,22 @@ exports.createStudy = function (req, res) {
   });
 };
 
+exports.updateStudy = function (req, res) {
+  var study = new Study(req.body);
+  study.isNew = false;
+
+  console.log(req.body);
+
+  study.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(study);
+    }
+  });
+};
+
 exports.createNewRequirement = function (req, res) {
   var requirement = new Requirement(req.body);
 

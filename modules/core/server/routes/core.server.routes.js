@@ -15,7 +15,8 @@ module.exports = function (app) {
 
   app.route('/api/studies')
     .get(core.listStudies)
-    .post(core.createStudy);
+    .post(core.createStudy)
+    .put(core.updateStudy);
 
   app.route('/api/studies' + '/:studyId')
     .delete(core.deleteStudy);
