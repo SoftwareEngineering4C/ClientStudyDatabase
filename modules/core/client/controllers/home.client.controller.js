@@ -5,7 +5,7 @@
     .module('core')
     .controller('HomeController', HomeController);
 
-  function HomeController($scope, $window, Studies, Requirements) {
+  function HomeController($scope, $window, Studies, Requirements, Archive) {
     var vm = this;
 
 
