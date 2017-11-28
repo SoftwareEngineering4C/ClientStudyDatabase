@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="/modules/core/client/css/core.css">
   <title>UF Directory</title>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -15,7 +16,7 @@
         <br>
       </div>
       <div class="row" ng-controller="AddStudyController">
-        <div class="col-md-7">
+        <div id="hello" class="col-md-6">
           <div class="form-group row-md-6">
             <div class="input-group">
               <div class="row">
@@ -88,8 +89,10 @@
 
         </div>
 
+        <!-- <div id="hello" class="col-md-3">
+        </div> -->
 
-        <div class="col-md-5 top-buffer bottom-margin">
+        <div id="hello" class="col-md-5 top-buffer bottom-margin">
           <div class="input-group" id="searchBar">
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search" ng-model="searchEntry" ng-change="filterListOfRequirements()">

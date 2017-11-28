@@ -50,8 +50,9 @@ body {
     margin: 0;
 
     /* The image used */
-    background-image: url("modules/core/client/img/brand/Web-background.jpg");
+    background-image: url("http://training.health.ufl.edu/handouts/Templates/UF_background_orange_left_button.jpg");
 
 		background-position: center;
     background-attachment: fixed;
+
 }
