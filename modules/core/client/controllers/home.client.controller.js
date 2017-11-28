@@ -4,7 +4,6 @@
   angular
     .module('core')
     .controller('HomeController', HomeController);
-    //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
   function HomeController($scope, $window, Studies, Requirements, Archive) {
     var vm = this;
@@ -15,7 +14,6 @@
 
 
     $scope.find = function() {
-
     	Studies.getAll().then(function(response) {
             $scope.loading = false; //remove loader
             $scope.studies = response.data;

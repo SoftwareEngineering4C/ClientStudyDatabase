@@ -2,7 +2,7 @@ angular.module('core').factory('Studies', ['$http',
   function($http) {
     var methods = {
       getAll: function() {
-        return $http.get('http://localhost:3000/list');
+        return $http.get('http://localhost:3000/api/studies');
       },
 
       create: function(study) {
@@ -11,6 +11,10 @@ angular.module('core').factory('Studies', ['$http',
 
       delete: function(id) {
         return $http.delete('http://localhost:3000/api/studies/' + id);
+      },
+
+      update: function(study) {
+        return $http.put('http://localhost:3000/api/studies', study);
       }
     };
 

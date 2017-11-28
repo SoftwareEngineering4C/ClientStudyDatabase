@@ -4,13 +4,9 @@
   angular
     .module('core')
     .controller('AdministratorController', AdministratorController);
-    //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
   function AdministratorController($scope, Studies) {
     var vm = this;
-
-    $scope.loading = true;
-
 
     $scope.find = function() {
     	Studies.getAll().then(function(response) {

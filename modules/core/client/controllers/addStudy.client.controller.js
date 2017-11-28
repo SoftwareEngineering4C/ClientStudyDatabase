@@ -4,15 +4,12 @@
   angular
     .module('core')
     .controller('AddStudyController', AddStudyController);
-    //AddRequirementController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
   function AddStudyController($scope, $state, $window, $sce, Requirements, Studies) {
     var vm = this;
 
     $scope.requirementsAddedToStudy = [];
     $scope.listOfDatabaseNames = {};
-
-    $scope.loading = true;
 
     $scope.findRequirements = function() {
     	Requirements.getAll().then(function(response) {
@@ -61,7 +58,12 @@
     $scope.addNewStudyToDatabase = function()
     {
       var newStudy = $scope.listOfDatabaseNames;
+
+      newStudy['inclusion'] = [];
+      newStudy['exclusion'] = [];
+
       Studies.create(newStudy);
+
       $window.location.href = '/administrator';
     }
 
@@ -70,21 +72,9 @@
     {
       $scope.requirementsNotAddedToStudyandFiltered = [];
 
-      if ($scope.searchEntry != "")
-      {
-        for (var row in $scope.requirementsNotAddedToStudy)
-        {
-          if ($scope.requirementsNotAddedToStudy[row]['requirementName'].toLowerCase().search
-            ($scope.searchEntry.toLowerCase()) != -1)
-          {
-            $scope.requirementsNotAddedToStudyandFiltered.push($scope.requirementsNotAddedToStudy[row])
-          }
-        }
-      }
-      else
-      {
-        $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudy;
-      }
+      $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudy.filter(function(requirement) {
+        return requirement.requirementName.toLowerCase().search($scope.searchEntry.toLowerCase()) > -1;
+      });
     }
 
 
@@ -102,10 +92,22 @@
     }
 
 
-
-    $scope.isNumeric = function(requirement)
+    $scope.isGender = function(requirement)
     {
-      if (requirement.typeOfRequirement == 'Numeric')
+      if (requirement.typeOfRequirement == 'Gender')
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+
+
+    $scope.isRange = function(requirement)
+    {
+      if (requirement.typeOfRequirement == 'Range')
       {
         return true;
       }

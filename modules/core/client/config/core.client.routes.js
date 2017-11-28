@@ -55,9 +55,20 @@
         url: '/addStudy',
         templateUrl: '/modules/core/client/views/addStudy.client.view.html'
       })
+      .state('createNewRequirement', {
+        url: '/createNewRequirement',
+        templateUrl: '/modules/core/client/views/createNewRequirement.client.view.html'
+      })
       .state('addRequirement', {
         url: '/addRequirement',
         templateUrl: '/modules/core/client/views/addRequirement.client.view.html'
+      })
+      .state('editStudy', {
+        url: '/editStudy',
+        templateUrl: '/modules/core/client/views/editStudy.client.view.html',
+        params: {
+          study: {}
+        }
       })
       .state('not-found', {
         url: '/not-found',

@@ -8,6 +8,18 @@ var validator = require('validator'),
   Archive = require('../models/archive.server.model.js'),
   Requirement = require('../models/requirement.server.model.js');
 
+  var nodemailer = require('nodemailer');
+  var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'johnaloomis91@gmail.com',    // your email here
+    pass: 'Tomgee1!'          // your password here
+  },
+  tls: {
+      rejectUnauthorized: false
+  }
+});
+
   mongoose.connect(config.db.uri);
 
 /**
@@ -36,7 +48,7 @@ exports.renderIndex = function (req, res) {
   });
 };
 
-exports.listResponse = function (req, res) {
+exports.listStudies = function (req, res) {
   Study.find().exec(function (err, studies) {
     res.json(studies);
   });
@@ -67,8 +79,15 @@ exports.createStudy = function (req, res) {
   });
 };
 
+
 exports.archiveStudy = function (req, res) {
   var study = new Archive(req.body);
+}
+exports.updateStudy = function (req, res) {
+  var study = new Study(req.body);
+  study.isNew = false;
+
+  console.log(req.body);
 
   study.save(function(err) {
     if(err) {
@@ -76,6 +95,19 @@ exports.archiveStudy = function (req, res) {
       res.status(400).send(err);
     } else {
       res.json(study);
+    }
+  });
+};
+
+exports.createNewRequirement = function (req, res) {
+  var requirement = new Requirement(req.body);
+
+  requirement.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(requirement);
     }
   });
 };
@@ -164,3 +196,27 @@ exports.renderNotFound = function (req, res) {
     }
   });
 };
+
+exports.send = function(req,res){
+  var study = req.body.study;
+  console.log('Email:' + study.coordinator_email);
+  var htmlContent = '<p>' + study.study_name + ' has a potential patient' + '</p>' +
+                    '<p>Sent From: ' + req.body.contact.name + '</p>' +
+                    '<p>Message: ' + req.body.contact.message + '</p>';
+
+  var mailOptions = {
+    to: study.coordinator_email,                  // your email here
+    subject: study.study_name + ' has a potential patient',
+    from: req.body.contact.name,
+    sender: req.body.contact.email,
+    html: htmlContent
+  };
+  transporter.sendMail(mailOptions, function(err, info){
+    if (err) {
+      console.log(err);
+    }else{
+      console.log('Message sent: ' + info.response);
+      return res.json(201, info);
+    }
+  });
+}
