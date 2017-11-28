@@ -13,10 +13,7 @@
     };
 
     $scope.addNewInclusionPrinciple = function() {
-      console.log($scope.study.inclusion);
       $scope.study.inclusion.push("");
-      console.log($scope.study.inclusion);
-
     };
 
     $scope.addNewExclusionPrinciple = function() {
@@ -32,10 +29,8 @@
     };
 
     $scope.save = function(study) {
-
-      console.log(study);
-
       Studies.update(study);
+      $window.location.href = '/administrator'
     };
 
     $scope.cancel = function() {

@@ -5,12 +5,8 @@
     .module('core')
     .controller('HomeController', HomeController);
 
-  function HomeController($scope, $window, Studies, Requirements, Archive) {
+  function HomeController($scope, $window, Studies, Requirements) {
     var vm = this;
-
-    $scope.loading = true;
-    $scope.edit = false;
-    $scope.submitted = false;
 
 
     $scope.find = function() {
@@ -33,16 +29,15 @@
       $window.location.href = '/administrator';
     }
 
-    $scope.archiveStudy = function (study) {
+    $scope.archiveStudy = function(study) {
       var id = study._id;
       Studies.delete(id);
-
-      console.log(study);
 
       Archive.create(study);
 
     }
 
   }
+
 
 }());

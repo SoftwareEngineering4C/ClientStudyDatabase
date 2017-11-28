@@ -30,7 +30,6 @@
           typeOfRequirement: $scope.newRequirement.type,
           associatedQuestion: ""
         };
-        console.log(requirement);
 
         Requirements.create(requirement);
 

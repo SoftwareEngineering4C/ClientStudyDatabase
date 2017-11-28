@@ -18,7 +18,6 @@
       Archive.getAll().then(function(response) {
             $scope.loading = false; //remove loader
             $scope.archive = response.data;
-            console.log($scope.archive);
             }, function(error) {
         $scope.loading = false;
         $scope.error = 'Unable to retrieve studies!\n' + error;
@@ -29,18 +28,13 @@
       $scope.add = $scope.archive[index];
     }
 
-    $scope.deleteStudy = function(study) {
-      var id = study._id;
-      Studies.delete(id);
-      $window.location.href = '/administrator';
-    }
 
     $scope.recover = function (study) {
       var id = study._id;
       Archive.delete(id);
 
-    Studies.create(study);
-    $window.location.href = '/administrator';
+      Studies.create(study);
+      $window.location.href = '/administrator';
     }
 
   }

@@ -18,8 +18,7 @@ module.exports = function (app) {
 
   app.route('/api/archive')
     .get(core.listArchives)
-    .post(core.archiveStudy)
-    .post(core.createStudy);
+    .post(core.archiveStudy);
 
   app.route('/api/archive' + '/:archiveStudyId')
     .delete(core.deleteStudy);
