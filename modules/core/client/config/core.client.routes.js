@@ -37,6 +37,10 @@
         url: '/filter',
         templateUrl: '/modules/core/client/views/filter.client.view.html'
       })
+      .state('archive', {
+        url: '/archive',
+        templateUrl: '/modules/core/client/views/archive.client.view.html'
+      })
       .state('signin', {
         url: '/signin',
         templateUrl: '/modules/users/client/views/authentication/signin.client.view.html',

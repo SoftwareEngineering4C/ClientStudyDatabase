@@ -6,19 +6,12 @@
     .controller('HomeController', HomeController);
     //HomeController.$inject =  ['ngAnimate', 'ngSanitize', 'ui.bootstrap'];
 
-  function HomeController($scope, $window, Studies, Requirements) {
+  function HomeController($scope, $window, Studies, Requirements, Archive) {
     var vm = this;
 
     $scope.loading = true;
     $scope.edit = false;
     $scope.submitted = false;
-
-
-    $scope.submit = function(study){
-      console.log(people);
-      $scope.edit = false;
-      $scope.submitted = false;
-    }
 
 
     $scope.find = function() {
@@ -42,7 +35,16 @@
       $window.location.href = '/administrator';
     }
 
-  }
+    $scope.archiveStudy = function (study) {
+      var id = study._id;
+      Studies.delete(id);
 
+      console.log(study);
+
+      Archive.create(study);
+
+    }
+
+  }
 
 }());

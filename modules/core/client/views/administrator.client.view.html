@@ -46,13 +46,13 @@
       <h3><strong><em> Inclusion Criteria </em></strong></h3>
 
       <h4 data-ng-repeat="x in study.inclusion">
-        »{{x}}
+        • {{x}}
       </h4>
 
       <h3><strong><em> Exclusion Criteria </em></strong></h3>
 
       <h4 data-ng-repeat="x in study.exclusion">
-        »{{x}}
+        • {{x}}
       </h4>
 
       <h3><strong><em> Coordinator Information </em></strong></h3>
@@ -61,7 +61,7 @@
       <h4> {{study.coordinator_phone_number}}</h4>
       <h4> {{study.coordinator_email}}</h4>
 <div class="row">
-      <button class="btn btn-danger" ng-click="deleteStudy(study)">Delete</button>
+      <button class="btn btn-danger" ng-click="archiveStudy(study)" ui-sref="archive">Archive</button>
       <button class="btn btn-primary .btn-default" ng-click="edit = true">Edit</button>
 
       <form name="userForm" novalidate ng-submit="submit(study)">

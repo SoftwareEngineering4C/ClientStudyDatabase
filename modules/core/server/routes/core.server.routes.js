@@ -13,6 +13,14 @@ module.exports = function (app) {
   app.route('/api/requirements' + '/:databaseName')
     .get(core.findOneRequirement);
 
+  app.route('/api/archive')
+    .get(core.listArchives)
+    .post(core.archiveStudy)
+    .post(core.createStudy);
+
+  app.route('/api/archive' + '/:archiveStudyId')
+    .delete(core.deleteStudy);
+
   app.route('/api/studies')
     .post(core.createStudy);
 
@@ -29,5 +37,6 @@ module.exports = function (app) {
   app.route('/*').get(core.renderIndex);
 
   app.param('studyId', core.studyById);
+  app.param('archiveStudyId', core.archiveStudyById);
   app.param('databaseName', core.requirementByDatabaseName);
 };

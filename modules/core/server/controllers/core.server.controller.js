@@ -5,6 +5,7 @@ var validator = require('validator'),
   config = require(path.resolve('./config/config')),
   mongoose = require('mongoose'),
   Study = require('../models/study.server.model.js'),
+  Archive = require('../models/archive.server.model.js'),
   Requirement = require('../models/requirement.server.model.js');
 
   mongoose.connect(config.db.uri);
@@ -47,8 +48,27 @@ exports.listRequirements = function (req, res) {
   });
 };
 
+exports.listArchives = function (req, res) {
+  Archive.find().exec(function (err, archives) {
+    res.json(archives);
+  });
+};
+
 exports.createStudy = function (req, res) {
   var study = new Study(req.body);
+
+  study.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(study);
+    }
+  });
+};
+
+exports.archiveStudy = function (req, res) {
+  var study = new Archive(req.body);
 
   study.save(function(err) {
     if(err) {
@@ -74,8 +94,20 @@ exports.deleteStudy = function(req, res) {
 
 };
 
+
 exports.studyById = function(req, res, next, id) {
   Study.findById(id).exec(function(err, study) {
+    if(err) {
+      res.status(400).send(err);
+    } else {
+      req.study = study;
+      next();
+    }
+  });
+};
+
+exports.archiveStudyById = function(req, res, next, id) {
+  Archive.findById(id).exec(function(err, study) {
     if(err) {
       res.status(400).send(err);
     } else {
