@@ -19,6 +19,10 @@
       });
   	}
 
+    $scope.showDetails = function(index) {
+      $scope.add = $scope.studies[index];
+    }
+
     $scope.deleteStudy = function(study) {
       var id = study._id;
       Studies.delete(id);
