@@ -15,10 +15,9 @@
       <button class="btn btn-primary left-margin" type="button" ui-sref="archive">View Archived Studies</button>
       <button class="btn btn-primary left-margin" type="button" ui-sref="manageRequirements">Manage Requirements</button>
     </div>
-    <div class="vertical-center" ng-controller="HomeController" ng-init="find()">
+    <div class="vertical-center" ng-controller="AdministratorController" ng-init="find()">
       <uib-accordion close-others="oneAtATime">
-        <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'"
-        ng-click = "showDetails(studies.indexOf(study))">
+        <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'" ng-click = "showDetails(studies.indexOf(study))">
           <div uib-accordion-group class="panel-default" is-open="status.open">
             <uib-accordion-heading>
               Study Name: {{study.study_name}}

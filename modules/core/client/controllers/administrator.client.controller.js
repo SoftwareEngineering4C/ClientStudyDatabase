@@ -5,7 +5,7 @@
     .module('core')
     .controller('AdministratorController', AdministratorController);
 
-  function AdministratorController($scope, Studies) {
+  function AdministratorController($scope, $window, Studies, Archive) {
     var vm = this;
 
     $scope.find = function() {
@@ -21,5 +21,23 @@
     $scope.showDetails = function(index) {
       $scope.add = $scope.studies[index];
     }
+
+    $scope.deleteStudy = function(study) {
+      var id = study._id;
+      Studies.delete(id);
+      $window.location.href = '/administrator';
+    }
+
+    $scope.archiveStudy = function(study) {
+
+      var id = study._id;
+      Studies.delete(id);
+
+      Archive.create(study);
+
+      $window.location.href = '/administrator';
+
+    };
+
   }
 }());
