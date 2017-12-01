@@ -6,13 +6,13 @@
     <br>
   </div>
 
-  <body ng-app="app" style="background-color:#FFFFFF">
+  <body ng-app="app" style="background-color:#ffffff">
     <script>
       $('.dropdown-toggle').dropdown();
     </script>
-    <h4 class ="text-center">
+    <h1 class ="text-center">
       <strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong>
-    </h4>
+    </h1>
     <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
       <div id="hello" class="col-md-5">
         <section id="filters">
@@ -54,7 +54,7 @@
                   <em> Inclusion Criteria </em>
                 </strong>
               </h3>
-              <h4 data-ng-repeat="x in study.inclusion">
+              <white data-ng-repeat="x in study.inclusion">
                 »{{x}}
               </h4>
               <h3>

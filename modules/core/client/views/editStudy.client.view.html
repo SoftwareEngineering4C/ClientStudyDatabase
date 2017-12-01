@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
-
+<link rel="stylesheet" href="/modules/core/client/css/core.css">
+<link rel="stylesheet" href="/modules/core/client/css/home.client.css">
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <link rel="stylesheet" href="style.css" />
@@ -14,7 +15,7 @@
   <body ng-app="app" style="background-color:#7B7D7D">
     <div ng-controller="EditController">
       <div ng-init="init()">
-        <div class="col-md-8 bottom-margin">
+        <div id=hello  class="col-md-8 bottom-margin">
           Study Name:
           <input type="text" ng-model="study['study_name']"></input>
 

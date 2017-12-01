@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="/modules/core/client/css/core.css">
   <title>UF Directory</title>
   <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <link rel="stylesheet" href="style.css" />
@@ -17,6 +17,8 @@
       </div>
       <div class="row" ng-controller="AddStudyController">
         <div id="hello" class="col-md-5">
+
+           <!-- <div class="classWithPad"></div> -->
           <div class="form-group row-md-5">
             <div class="input-group">
               <div class="row">
@@ -86,13 +88,11 @@
               ng-click="addNewStudyToDatabase()">Add Study</button>
             </div>
           </div>
-
         </div>
 
-        <!-- < <div id="hello" class="col-md-3">
-        </div> -->
 
         <div id="hello" class="col-md-5">
+          <div class="col-md-12">
           <div class="input-group" id="searchBar">
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search" ng-model="searchEntry" ng-change="filterListOfRequirements()">
