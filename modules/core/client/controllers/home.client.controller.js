@@ -19,10 +19,6 @@
       });
   	}
 
-    $scope.showDetails = function(index) {
-      $scope.add = $scope.studies[index];
-    }
-
     $scope.deleteStudy = function(study) {
       var id = study._id;
       Studies.delete(id);
@@ -30,12 +26,17 @@
     }
 
     $scope.archiveStudy = function(study) {
+      console.log("helo");
       var id = study._id;
       Studies.delete(id);
 
+      console.log(study);
+
       Archive.create(study);
 
-    }
+      $window.location.href = '/administrator';
+
+    };
 
   }
 

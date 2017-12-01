@@ -11,7 +11,12 @@ angular.module('core').factory('Requirements', ['$http',
 
       create: function(requirement) {
         return $http.post('http://localhost:3000/api/requirements/', requirement);
+      },
+
+      delete: function(id) {
+        return $http.delete('http://localhost:3000/api/requirements/' + id);
       }
+
     }
     return methods;
   }

@@ -1,8 +1,5 @@
-
-
 <!DOCTYPE html>
 <html>
-
   <head>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -11,79 +8,48 @@
     <script src="script.js"></script>
   </head>
 
-  <br>
-
   <body ng-app="app" style="background-color:#7B7D7D">
-
-      <h1 class="text-center">Ongoing Studies</h1>
-
-    <!-- Search Box Style -->
-      <div class="bottom-margin">
-        <button class="btn btn-primary" type="button" ui-sref="addStudy">Add New Study</button>
-        <button class="btn btn-primary left-margin" type="button" ui-sref="archive">View Archived Studies</button>
-      </div>
-
-      <!-- End of Search Box Styel -->
-
-         <div class="vertical-center" ng-controller="HomeController" ng-init="find()">
-          <uib-accordion close-others="oneAtATime">
-
-
-            <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'"
-             ng-click = "showDetails(studies.indexOf(study))">
-
-        <div uib-accordion-group class="panel-default" is-open="status.open">
-       <uib-accordion-heading>
-        Study Name: {{study.study_name}}
-
-        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-      </uib-accordion-heading>
-
-      <h3><strong><em> Inclusion Criteria </em></strong></h3>
-
-      <h4 data-ng-repeat="x in study.inclusion">
-        • {{x}}
-      </h4>
-
-      <h3><strong><em> Exclusion Criteria </em></strong></h3>
-      <h4 data-ng-repeat="x in study.exclusion">
-        • {{x}}
-      </h4>
-
-      <h3><strong><em> Coordinator Information </em></strong></h3>
-
-      <h4> {{study.coordinator}}</h4>
-      <h4> {{study.coordinator_phone_number}}</h4>
-      <h4> {{study.coordinator_email}}</h4>
-<div class="row">
-      <button class="btn btn-primary .btn-default left-margin" ui-sref="editStudy({ study: study })">Edit</button>
-      <button class="btn btn-danger" ng-click="archiveStudy(study)" ui-sref="archive">Archive</button>
-
-
-
-
+    <h1 class="text-center">Ongoing Studies</h1>
+    <div class="bottom-margin">
+      <button class="btn btn-primary" type="button" ui-sref="addStudy">Add New Study</button>
+      <button class="btn btn-primary left-margin" type="button" ui-sref="archive">View Archived Studies</button>
+      <button class="btn btn-primary left-margin" type="button" ui-sref="manageRequirements">Manage Requirements</button>
     </div>
-      </h3>
+    <div class="vertical-center" ng-controller="HomeController" ng-init="find()">
+      <uib-accordion close-others="oneAtATime">
+        <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'"
+        ng-click = "showDetails(studies.indexOf(study))">
+          <div uib-accordion-group class="panel-default" is-open="status.open">
+            <uib-accordion-heading>
+              Study Name: {{study.study_name}}
+              <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+            </uib-accordion-heading>
+            <h3><strong><em> Inclusion Criteria </em></strong></h3>
+            <h4 data-ng-repeat="x in study.inclusion">
+              • {{x}}
+            </h4>
+            <h3><strong><em> Exclusion Criteria </em></strong></h3>
+            <h4 data-ng-repeat="x in study.exclusion">
+              • {{x}}
+            </h4>
+            <h3><strong><em> Coordinator Information </em></strong></h3>
+
+            <h4> {{study.coordinator}}</h4>
+            <h4> {{study.coordinator_phone_number}}</h4>
+            <h4> {{study.coordinator_email}}</h4>
+            <div class="row">
+              <button class="btn btn-primary .btn-default left-margin" ui-sref="editStudy({ study: study })">Edit</button>
+              <button class="btn btn-danger" ng-click="archiveStudy(study)">Archive</button>
+            </div>
+          </div>
+        </h3>
+      </uib-accordion>
     </div>
-    </h3>
 
-  </uib-accordion>
+    <br><br>
+    <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button>
 
+    <br><br><br><br><br><br>
 
-</div>
-
-  </div>
-
-
-
-     <br><br>
-      <button class="btn btn-primary .btn-default" type="button" ui-sref="home">Back</button>
-
-
-
-       <br> <br><br><br> <br> <br>
-
-    </body>
-
-
+  </body>
 </html>

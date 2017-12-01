@@ -69,6 +69,8 @@ exports.listArchives = function (req, res) {
 exports.createStudy = function (req, res) {
   var study = new Study(req.body);
 
+  console.log(study);
+
   study.save(function(err) {
     if(err) {
       console.log(err);
@@ -134,7 +136,20 @@ exports.deleteStudy = function(req, res) {
       res.end();
     }
   })
+};
 
+
+exports.deleteRequirement = function(req, res) {
+  var requirement = req.requirement;
+
+  requirement.remove(function(err) {
+    if(err) {
+      res.status(400).send(err);
+    }
+    else {
+      res.end();
+    }
+  })
 };
 
 
@@ -155,6 +170,17 @@ exports.archiveStudyById = function(req, res, next, id) {
       res.status(400).send(err);
     } else {
       req.study = study;
+      next();
+    }
+  });
+};
+
+exports.requirementById = function(req, res, next, id) {
+  Requirement.findById(id).exec(function(err, requirement) {
+    if(err) {
+      res.status(400).send(err);
+    } else {
+      req.requirement = requirement;
       next();
     }
   });

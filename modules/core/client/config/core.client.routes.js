@@ -63,6 +63,10 @@
         url: '/addRequirement',
         templateUrl: '/modules/core/client/views/addRequirement.client.view.html'
       })
+      .state('manageRequirements', {
+        url: '/manageRequirements',
+        templateUrl: '/modules/core/client/views/manageRequirements.client.view.html'
+      })
       .state('editStudy', {
         url: '/editStudy',
         templateUrl: '/modules/core/client/views/editStudy.client.view.html',

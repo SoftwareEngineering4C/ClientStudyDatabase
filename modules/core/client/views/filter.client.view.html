@@ -6,16 +6,16 @@
     <br>
   </div>
 
-  <body ng-app="app" style="background-color:#ffffff">
+  <body ng-app="app" style="background-color:#FFFFFF">
     <script>
       $('.dropdown-toggle').dropdown();
     </script>
-    <h1 class ="text-center">
+    <h4 class ="text-center">
       <strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong>
-    </h1>
+    </h4>
     <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
       <div id="hello" class="col-md-5">
-        <section id="filters">
+        <section class="top-margin" id="filters">
           <h2>Filter</h2>
           <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies | orderBy: 'requirementName' track by $index">
             <p ng-bind="requirement.requirementName"></p>
@@ -41,7 +41,12 @@
         </section>
         <br><br>
       </div>
-      <div class="col-md-7">
+
+      <div class="col-md-1">
+
+      </div>
+
+      <div class="col-md-6">
         <uib-accordion close-others="oneAtATime">
           <div class="sm-bottom-margin" nowrap ng-repeat="study in studiesThatMatchFilterParameters | orderBy: 'study_name'">
             <div uib-accordion-group class="panel-default" is-open="status.open">
@@ -54,7 +59,7 @@
                   <em> Inclusion Criteria </em>
                 </strong>
               </h3>
-              <white data-ng-repeat="x in study.inclusion">
+              <h4 data-ng-repeat="x in study.inclusion">
                 »{{x}}
               </h4>
               <h3>

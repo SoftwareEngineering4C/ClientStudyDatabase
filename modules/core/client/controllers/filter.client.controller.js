@@ -137,6 +137,8 @@
         $scope.noStudiesThatMatchParameters = true;
       }
 
+      console.log($scope.studiesThatMatchFilterParameters);
+
     };
 
 

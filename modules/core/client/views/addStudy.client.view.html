@@ -16,13 +16,11 @@
         <br>
       </div>
       <div class="row" ng-controller="AddStudyController">
-        <div id="hello" class="col-md-5">
-
-           <!-- <div class="classWithPad"></div> -->
-          <div class="form-group row-md-5">
+        <div id="hello" class="col-md-6">
+          <div class="form-group lg-left-margin row-md-5">
             <div class="input-group">
               <div class="row">
-                <div class="form-group row-md-5">
+                <div class="form-group row-md-5 top-margin">
                   <label>Study Name:</label>
                   <input type="text" ng-model="listOfDatabaseNames.study_name" class="form-control" placeholder="Study Name">
                 </div>
@@ -43,8 +41,8 @@
                 </div>
               </div>
               <br><br>
-              <div class="form-group row-md-5 top-buffer">
-                <table class="table table-hover" ng-init=findRequirements()>
+              <div class="form-group row-md-5">
+                <table class="table table-hover right-margin" ng-init=findRequirements()>
                   <tr>
                     <th>Requirement Name</th>
                     <th>Type of Requirement</th>
@@ -83,17 +81,16 @@
           <br>
 
           <div class="form-group row-md-5">
-            <div class="form-group col-md-5">
-              <button type="button" class="form-control"
-              ng-click="addNewStudyToDatabase()">Add Study</button>
-            </div>
+            <button type="button" class="form-control btn btn-primary" ng-click="addNewStudyToDatabase()">Add Study</button>
           </div>
         </div>
 
+        <div class="col-md-1">
 
-        <div id="hello" class="col-md-5">
-          <div class="col-md-12">
-          <div class="input-group" id="searchBar">
+        </div>
+
+        <div id="hello" class="col-md-5 bottom-margin">
+          <div class="input-group top-margin" id="searchBar">
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search" ng-model="searchEntry" ng-change="filterListOfRequirements()">
           </div>
@@ -114,11 +111,12 @@
             </tr>
           </table>
 
-          <br><br><br>
+          <br><br>
 
-          <button type="button" class="form-control btn btn-primary" ui-sref="createNewRequirement">Create New Requirement</button>
+          <div class="sm-bottom-margin">
+            <button type="button" class="form-control btn btn-primary" ui-sref="createNewRequirement">Create New Requirement</button>
+          </div>
 
-        </div>
       </div>
     </div>
   </body>
