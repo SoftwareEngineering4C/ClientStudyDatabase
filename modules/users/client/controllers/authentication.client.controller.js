@@ -23,7 +23,7 @@
     }
 
     if (vm.authentication.user) {
-      $location.path('/administrator');
+      $location.path('/newHome');
     }
 
 
