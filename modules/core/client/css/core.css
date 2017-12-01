@@ -1,3 +1,10 @@
+.space-md{
+    width:80%;
+}
+.classWithPad { margin:10px; padding:10px; }
+h1 {
+  color: white;
+}
 .content {
   margin-top: 50px;
 }
@@ -54,14 +61,73 @@ a:hover .header-profile-image {
 #eg {
   color: gray;
 }
+#color-header{
+
+  background-color: #f37021;
+}
 
 #hello {
   background-color: white;
-  border-radius: 10px;
-  opacity: 0.8;
+  border-radius: 15px;
+  /*opacity: 0.8;*/
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius:  10px;
+  border-bottom-right-radius:  10px;
+}
+
+.divider{
+    /*width:200px;*/
+    height:auto;
+    display:inline-block;
 }
 
 
+.button-orange {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #FA4616;
+  border: none;
+  border-radius: 15px;
+  /*box-shadow: 0 9px #999;*/
+}
+
+.button:hover {background-color: #FA4616}
+
+.button:active {
+  background-color: #FA4616;
+  /*box-shadow: 0 5px #666;*/
+  transform: translateY(4px);
+}
+
+.button-blue  {
+  display: inline-block;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color:  #0021A5;
+  border: none;
+  border-radius: 15px;
+  /*box-shadow: 0 9px #999;*/
+}
+
+.button:hover {background-color: #0021A5}
+
+.button:active {
+  background-color: #0021A5;
+  /*box-shadow: 0 5px #666;*/
+  transform: translateY(4px);
+}
 /* For Filter */
 
 
@@ -164,10 +230,6 @@ a:hover .header-profile-image {
 .login-help{
   font-size: 12px;
 }
-
-
-
-
 
 input[type="text"],
 select.form-control {
