@@ -77,44 +77,5 @@
       });
     }
 
-
-
-    $scope.isBoolean = function(requirement)
-    {
-      if (requirement.typeOfRequirement == 'Boolean')
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    }
-
-
-    $scope.isGender = function(requirement)
-    {
-      if (requirement.typeOfRequirement == 'Gender')
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    }
-
-
-    $scope.isRange = function(requirement)
-    {
-      if (requirement.typeOfRequirement == 'Range')
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    }
   }
 }());

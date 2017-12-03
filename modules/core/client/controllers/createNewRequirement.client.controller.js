@@ -10,8 +10,11 @@
 
     $scope.newRequirement = {
       name: "",
-      type: "Boolean"
+      type: "Boolean",
+      priority: 4,
+      customOptions: ["", ""]
     };
+
 
     $scope.addRequirementToDatabase = function() {
       //removes all consecutive spaces
@@ -28,18 +31,32 @@
           requirementName: $scope.newRequirement.name,
           databaseName: newDatabaseName,
           typeOfRequirement: $scope.newRequirement.type,
-          associatedQuestion: ""
+          priority: $scope.newRequirement.priority
         };
+
+        if (requirement.typeOfRequirement === 'Custom')
+        {
+          requirement.customOptions = $scope.newRequirement.customOptions;
+        }
 
         Requirements.create(requirement);
 
-        $window.location.href = '/addStudy';
+        $window.location.href = '/administrator';
       }
-
-
     }
 
-  }
+    $scope.removeOption = function(index) {
+      if ($scope.newRequirement.customOptions.length > 2)
+      {
+        $scope.newRequirement.customOptions.splice(index,1);
+      }
+    }
 
+    $scope.addAnotherOption = function() {
+      $scope.newRequirement.customOptions.push("");
+    }
+
+
+  }
 
 }());

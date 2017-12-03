@@ -11,10 +11,10 @@ var requirementSchema = new Schema({
   typeOfRequirement: {
     type: String
   },
-  associatedQuestion: {
-    type: String
+  priority: {
+    type: Number
   }
-});
+}, { strict: false });
 
 var Requirement = mongoose.model('Requirement', requirementSchema);
 

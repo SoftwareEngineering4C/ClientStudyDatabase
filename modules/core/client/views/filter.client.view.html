@@ -17,24 +17,30 @@
       <div id="hello" class="col-md-5">
         <section class="top-margin" id="filters">
           <h2>Filter</h2>
-          <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies | orderBy: 'requirementName' track by $index">
+          <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies track by $index">
             <p ng-bind="requirement.requirementName"></p>
-            <span ng-if="isBoolean(requirement)">
+            <span ng-if="requirement.typeOfRequirement == 'Boolean'">
               <form action="">
-                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="">  N/A<br>
                 <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=true>  True<br>
                 <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=false>  False<br>
               </form>
             </span>
-            <span ng-if="isRange(requirement)">
+            <span ng-if="requirement.typeOfRequirement == 'Range'">
               <form action="">
                 <input ng-change="filterStudies(requirement)" type="text" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]"><br>
               </form>
             </span>
-            <span ng-if="isGender(requirement)">
+            <span ng-if="requirement.typeOfRequirement == 'Gender'">
               <form action="">
                 <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="male">  Male<br>
                 <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="female">  Female<br>
+              </form>
+            </span>
+            <span ng-if="requirement.typeOfRequirement == 'Custom'">
+              <form action="">
+                <div ng-repeat="option in requirement.customOptions">
+                  <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="option">  {{option}} <br>
+                </div>
               </form>
             </span>
           </fieldset>

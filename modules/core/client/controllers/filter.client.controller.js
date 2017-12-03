@@ -34,8 +34,18 @@
     	Requirements.getAll().then(function(response) {
         $scope.loading = false; //remove loader
         $scope.requirements = response.data;
+
         $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = $scope.requirements;
-        $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.sort();
+
+        $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.sort(function(a, b) {
+          return a.requirementName < b.requirementName;
+        });
+
+        $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.sort(function(a, b) {
+          return a.priority > b.priority;
+        });
+
+
       }, function(error) {
         $scope.loading = false;
         $scope.error = 'Unable to retrieve requirements!\n' + error;
@@ -126,6 +136,20 @@
             }
           });
         }
+        else if (currentRequirement.typeOfRequirement === "Custom")
+        {
+          $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
+            if (study[currentRequirement.databaseName] != undefined)
+            {
+              //filters by checking if the study's requirement value is equal to the answer from the html page
+              return study[currentRequirement.databaseName].toLowerCase() === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName].toLowerCase();
+            }
+            else
+            {
+              return true;
+            }
+          });
+        }
       });
 
       if ($scope.studiesThatMatchFilterParameters.length > 0)
@@ -136,8 +160,6 @@
       {
         $scope.noStudiesThatMatchParameters = true;
       }
-
-      console.log($scope.studiesThatMatchFilterParameters);
 
     };
 
@@ -150,18 +172,15 @@
       for (var i = 0; i < $scope.studiesThatMatchFilterParameters.length; i++)
       {
         angular.forEach($scope.studiesThatMatchFilterParameters[i], function(value, key) {
-          if (key.includes("inclusion") || key.includes("exclusion"))
-          {
-
-          }
-          else
-          {
-            setOfAllRequirementsPossibleFromFilteredStudies.add(key);
-          }
+          setOfAllRequirementsPossibleFromFilteredStudies.add(key);
         })
       }
 
-      //adds last changed requirement
+      //adds list of answers
+      angular.forEach($scope.listOfAnswersByDatabaseName, function(value, key) {
+        setOfAllRequirementsPossibleFromFilteredStudies.add(key);
+      })
+
       setOfAllRequirementsPossibleFromFilteredStudies.add(requirement.databaseName);
 
       setOfAllRequirementsPossibleFromFilteredStudies.delete("$$hashKey");
@@ -169,56 +188,28 @@
       setOfAllRequirementsPossibleFromFilteredStudies.delete("study_name");
       setOfAllRequirementsPossibleFromFilteredStudies.delete("description");
 
-      var sortedArrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies =
-        Array.from(setOfAllRequirementsPossibleFromFilteredStudies).sort();
+      var arrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies =
+        Array.from(setOfAllRequirementsPossibleFromFilteredStudies);
 
       var arrayOfAllRequirementsPossibleFromFilteredStudies = [];
       $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = [];
 
-      sortedArrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies.forEach(function(i) {
+      arrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies.forEach(function(i) {
         $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.concat($scope.requirements.filter(function(requirement) {
-          return i === requirement.databaseName
+          return i === requirement.databaseName;
         }));
       });
+
+      $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.sort(function(a, b) {
+        return a.requirementName < b.requirementName;
+      });
+
+      $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.sort(function(a, b) {
+        return a.priority > b.priority;
+      });
+
     }
 
-
-
-    $scope.isRange = function(requirement)
-    {
-      if (requirement.typeOfRequirement == 'Range')
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    };
-
-    $scope.isBoolean = function(requirement)
-    {
-      if (requirement.typeOfRequirement == 'Boolean')
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    };
-
-    $scope.isGender = function(requirement)
-    {
-      if (requirement.typeOfRequirement == 'Gender')
-      {
-        return true;
-      }
-      else
-      {
-        return false;
-      }
-    }
 
 	$scope.postData = {};
 

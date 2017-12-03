@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="/modules/core/client/css/core.css">
-<link rel="stylesheet" href="/modules/core/client/css/home.client.css">
+  <link rel="stylesheet" href="/modules/core/client/css/core.css">
+  <link rel="stylesheet" href="/modules/core/client/css/home.client.css">
   <head>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -10,69 +10,45 @@
     <script src="script.js"></script>
   </head>
 
-  <br>
-
   <body ng-app="app" style="background-color:#ffffff">
-
       <h1 class="text-center">Archived Studies</h1>
-
-    <!-- Search Box Style -->
-
-
         <form>
-
-      <input id= hello type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies"><br>
+          <input id= hello type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies"><br>
         </form>
-
-      <!-- End of Search Box Style -->
-
-         <div class="vertical-center" ng-controller="ArchiveController" ng-init="findArchive()">
+        <div class="vertical-center" ng-controller="ArchiveController" ng-init="findArchive()">
           <uib-accordion close-others="oneAtATime">
-
-
             <h3 nowrap ng-repeat="study in archive | filter: search | orderBy: 'study_name'"
              ng-click = "showDetails(studies.indexOf(study))">
+             <div uib-accordion-group class="panel-default" is-open="status.open">
+               <uib-accordion-heading>
+                  Study Name: {{study.study_name}}
+                  <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                </uib-accordion-heading>
 
-        <div uib-accordion-group class="panel-default" is-open="status.open">
-       <uib-accordion-heading>
-        Study Name: {{study.study_name}}
+                <h3><strong><em> Inclusion Criteria </em></strong></h3>
+                <h4 data-ng-repeat="x in study.inclusion">
+                  • {{x}}
+                </h4>
 
-        <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-      </uib-accordion-heading>
+                <h3><strong><em> Exclusion Criteria </em></strong></h3>
+                <h4 data-ng-repeat="x in study.exclusion">
+                  • {{x}}
+                </h4>
 
-      <h3><strong><em> Inclusion Criteria </em></strong></h3>
+                <h3><strong><em> Coordinator Information </em></strong></h3>
 
-      <h4 data-ng-repeat="x in study.inclusion">
-        • {{x}}
-      </h4>
+                <h4> {{study.coordinator}}</h4>
+                <h4> {{study.coordinator_phone_number}}</h4>
+                <h4> {{study.coordinator_email}}</h4>
 
-      <h3><strong><em> Exclusion Criteria </em></strong></h3>
+                <button class="btn btn-primary" ng-click="recover(study)">Recover</button>
+                <button class="btn btn-danger" ng-click="permanentlyDelete(study)">Permanently Delete</button>
 
-      <h4 data-ng-repeat="x in study.exclusion">
-        • {{x}}
-      </h4>
+                </div>
+              </h3>
 
-      <h3><strong><em> Coordinator Information </em></strong></h3>
-
-      <h4> {{study.coordinator}}</h4>
-      <h4> {{study.coordinator_phone_number}}</h4>
-      <h4> {{study.coordinator_email}}</h4>
-
-
-      <button class="btn btn-primary" ng-click="recover(study)">Recover</button>
-      <button class="btn btn-danger" ng-click="permanentlyDelete(study)">Permanently Delete</button>
-
-    </div>
-      </h3>
-    </div>
-    </h3>
-
-  </uib-accordion>
-
-
-</div>
-
-  </div>
+            </uib-accordion>
+          </div>
 
      <br><br><br><br>
       <button class="btn btn-primary .btn-default" type="button" ui-sref="administrator">Back</button>
