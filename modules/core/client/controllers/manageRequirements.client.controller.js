@@ -14,7 +14,7 @@
         $scope.requirementsFiltered = $scope.requirements;
 
         $scope.requirementsFiltered.sort(function(a, b){
-          return a.requirementName > b.requirementName;
+          return a.requirementName.toLowerCase() > b.requirementName.toLowerCase();
         });
 
       }, function(error) {
@@ -31,8 +31,8 @@
         return requirement.requirementName.toLowerCase().search($scope.searchEntry.toLowerCase()) > -1;
       });
 
-      $scope.requirementsFiltered.sort(function(a, b){
-        return a.requirementName > b.requirementName;
+      $scope.requirementsFiltered.sort(function(a, b) {
+        return a.requirementName.toLowerCase() > b.requirementName.toLowerCase();
       });
     };
 

@@ -32,11 +32,13 @@
             <tr>
               <th>Requirement Name</th>
               <th>Type of Requirement</th>
+              <th>Priority of Requirement</th>
               <th></th>
             </tr>
             <tr ng-repeat="requirement in requirementsFiltered track by $index">
               <td ng-bind="requirement.requirementName"></td>
               <td ng-bind="requirement.typeOfRequirement"></td>
+              <td ng-bind="requirement.priority"></td>
               <td><button type="button" class="form-control btn btn-danger"
                 ng-click="deleteRequirementFromDatabase(requirement)">Delete Requirement</button></td>
             </tr>

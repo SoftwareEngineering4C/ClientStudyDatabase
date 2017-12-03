@@ -69,8 +69,6 @@ exports.listArchives = function (req, res) {
 exports.createStudy = function (req, res) {
   var study = new Study(req.body);
 
-  console.log(study);
-
   study.save(function(err) {
     if(err) {
       console.log(err);

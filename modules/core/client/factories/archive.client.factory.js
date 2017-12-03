@@ -1,7 +1,6 @@
 angular.module('core').factory('Archive', ['$http',
   function($http) {
     var methods = {
-
       getAll: function() {
         return $http.get('https://softwareproject.herokuapp.com/api/archive');
       },

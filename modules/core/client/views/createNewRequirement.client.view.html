@@ -30,12 +30,41 @@
           <select ng-model="newRequirement.type">
             <option value="Boolean">Boolean</option>
             <option value="Range">Range</option>
+            <option value="Custom">Custom</option>
           </select>
-          <br><br><br>
+          <br>
+          <div ng-if="newRequirement.type === 'Custom'">
+            <br><br>
+            <h3>
+              Custom Options:
+            </h3>
+            <div ng-repeat="option in newRequirement.customOptions track by $index">
+              <label>
+                Option {{$index+1}}:
+              </label>
+              <input class="sm-bottom-margin" type="text" ng-model="newRequirement.customOptions[$index]"></input>
+              <button class="btn btn-danger left-margin" ng-click="removeOption($index)">Remove</button>
+            </div>
+            <button class="btn btn-primary" ng-click="addAnotherOption()">Add Another Option</button>
+          </div>
+          <br>
+          <h3>
+            Requirement Priority:
+          </h3>
+          <h5 id="eg">
+            1 is Highest Priority, 4 is Lowest Priority
+          </h5>
+          <select ng-model="newRequirement.priority">
+            <option ng-value=1 >1</option>
+            <option ng-value=2 >2</option>
+            <option ng-value=3 >3</option>
+            <option ng-value=4 >4</option>
+          </select>
+          <br><br><br><br><br><br>
           <button class="btn btn-primary" ng-click="addRequirementToDatabase()">Create New Requirement</button>
           <br><br>
           <div class="sm-bottom-margin">
-            <button class="btn btn-primary" ui-sref="addStudy">Back</button>
+            <button class="btn btn-danger" ui-sref="addStudy">Cancel</button>
           </div>
         </div>
       </div>

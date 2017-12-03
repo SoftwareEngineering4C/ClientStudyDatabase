@@ -19,8 +19,8 @@
         <div id="hello" class="col-md-6">
           <div class="form-group lg-left-margin row-md-5">
             <div class="input-group">
-              <div class="row">
-                <div class="form-group row-md-5 top-margin">
+              <div class="row right-margin">
+                <div class="form-group row-md-5 top-margin ">
                   <label>Study Name:</label>
                   <input type="text" ng-model="listOfDatabaseNames.study_name" class="form-control" placeholder="Study Name">
                 </div>
@@ -42,33 +42,38 @@
               </div>
               <br><br>
               <div class="form-group row-md-5">
-                <table class="table table-hover right-margin" ng-init=findRequirements()>
+                <table class="table table-hover" ng-init=findRequirements()>
                   <tr>
                     <th>Requirement Name</th>
                     <th>Type of Requirement</th>
-                    <th>Parameter</th>
+                    <th>Parameters</th>
                     <th></th>
                   </tr>
                   <tr ng-repeat="requirement in requirementsAddedToStudy track by $index">
                     <td ng-bind="requirement.requirementName"></td>
                     <td ng-bind="requirement.typeOfRequirement"></td>
-                    <td ng-if="isBoolean(requirement)">
+                    <td ng-if="requirement.typeOfRequirement == 'Boolean'">
                       <form action="">
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=true>  True<br>
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=false>  False<br>
                       </form>
                     </td>
-                    <td ng-if="isRange(requirement)">
+                    <td ng-if="requirement.typeOfRequirement == 'Range'">
                       <form action="">
-                        <input type="text" placeholder="Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
-                        <input type="text" placeholder="Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
+                        <input type="number" placeholder="Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
+                        <input type="number" placeholder="Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
                       </form>
                     </td>
-                    <td ng-if="isGender(requirement)">
+                    <td ng-if="requirement.typeOfRequirement == 'Gender'">
                       <form action="">
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="male">  Male<br>
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="false">  Female<br>
                       </form>
+                    </td>
+                    <td ng-if="requirement.typeOfRequirement == 'Custom'">
+                      <div ng-repeat="option in requirement.customOptions">
+                        <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="option">  {{option}} <br>
+                      </div>
                     </td>
                     <td><button type="button" class="form-control btn btn-danger"
                       ng-click="removeRequirementFromStudy(requirement)">Remove</button></td>
@@ -80,7 +85,7 @@
 
           <br>
 
-          <div class="form-group row-md-5">
+          <div class="form-group row-md-5 bottom-margin">
             <button type="button" class="form-control btn btn-primary" ng-click="addNewStudyToDatabase()">Add Study</button>
           </div>
         </div>
@@ -110,12 +115,6 @@
                 ng-click="addRequirementToStudy(requirement)">Add Requirement</button></td>
             </tr>
           </table>
-
-          <br><br>
-
-          <div class="sm-bottom-margin">
-            <button type="button" class="form-control btn btn-primary" ui-sref="createNewRequirement">Create New Requirement</button>
-          </div>
 
       </div>
     </div>

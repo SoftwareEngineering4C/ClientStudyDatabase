@@ -13,9 +13,6 @@ module.exports = function (app) {
   app.route('/api/requirements' + '/:requirementId')
     .delete(core.deleteRequirement);
 
-  app.route('/api/contact')
-    .post(core.send);
-
   app.route('/api/requirements' + '/:databaseName')
     .get(core.findOneRequirement);
 
@@ -33,6 +30,9 @@ module.exports = function (app) {
 
   app.route('/api/studies' + '/:studyId')
     .delete(core.deleteStudy);
+
+  app.route('/api/contact')
+    .post(core.send);
 
   // Define error pages
   app.route('/server-error').get(core.renderServerError);
