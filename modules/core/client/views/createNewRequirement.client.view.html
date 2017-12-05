@@ -9,12 +9,14 @@
     <script src="script.js"></script>
   </head>
   <body ng-app="directoryApp">
+    <!--using the CreateNewRequirement Controller to manipulate data -->
     <div class="container" ng-controller="CreateNewRequirementController">
       <div class="row">
         <h1>Create New Requirement</h1>
         <br>
       </div>
       <div class="row">
+        <!-- Text box for users to create a custom requirement that is not currently listed-->
         <div id="hello" class="col-md-6">
           <h3>
             Requirement Name:
@@ -25,6 +27,7 @@
           <input type="text" ng-model="newRequirement.name">
           <br><br>
           <h3>
+            <!-- Requirements can either be true/false, a range, or a custom type-->
             Requirement Type:
           </h3>
           <select ng-model="newRequirement.type">
@@ -36,6 +39,7 @@
           <div ng-if="newRequirement.type === 'Custom'">
             <br><br>
             <h3>
+              <!-- if the user selects to make a requirement with a custom type, allow them to create the custom type-->
               Custom Options:
             </h3>
             <div ng-repeat="option in newRequirement.customOptions track by $index">
@@ -49,6 +53,7 @@
           </div>
           <br>
           <h3>
+            <!--give a priority to each requirement so that it is shown in priority order in the filter -->
             Requirement Priority:
           </h3>
           <h5 id="eg">
@@ -61,6 +66,7 @@
             <option ng-value=4 >4</option>
           </select>
           <br><br><br><br><br><br>
+          <!-- button calls function to add the requirement-->
           <button class="btn btn-primary" ng-click="addRequirementToDatabase()">Create New Requirement</button>
           <br><br>
           <div class="sm-bottom-margin">
