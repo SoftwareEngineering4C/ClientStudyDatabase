@@ -12,19 +12,23 @@
 
   <body ng-app="app" style="background-color:#ffffff">
       <h1 class="text-center">Archived Studies</h1>
+    <!-- search box to search for archived studies by name-->
         <form>
           <input id= hello type="text" name="search" class="form-control" ng-model="search" placeholder="Search for Studies"><br>
         </form>
+    <!-- using the archive controller to show all archived elements-->
         <div class="vertical-center" ng-controller="ArchiveController" ng-init="findArchive()">
           <uib-accordion close-others="oneAtATime">
             <h3 nowrap ng-repeat="study in archive | filter: search | orderBy: 'study_name'"
              ng-click = "showDetails(studies.indexOf(study))">
+              <!-- on click, show the details of the study -->
              <div uib-accordion-group class="panel-default" is-open="status.open">
                <uib-accordion-heading>
                   Study Name: {{study.study_name}}
                   <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
                 </uib-accordion-heading>
-
+                 
+               <!-- each study shows name, inclusion criteria, exclusion criteria, and coordinator information--> 
                 <h3><strong><em> Inclusion Criteria </em></strong></h3>
                 <h4 data-ng-repeat="x in study.inclusion">
                   • {{x}}
@@ -40,8 +44,10 @@
                 <h4> {{study.coordinator}}</h4>
                 <h4> {{study.coordinator_phone_number}}</h4>
                 <h4> {{study.coordinator_email}}</h4>
-
+  
+               <!-- users can recover a study and move it back into the ongoing study section with the recover function-->
                 <button class="btn btn-primary" ng-click="recover(study)">Recover</button>
+               <!-- users can permanently delete a study if they are sure the study will not be used again-->
                 <button class="btn btn-danger" ng-click="permanentlyDelete(study)">Permanently Delete</button>
 
                 </div>

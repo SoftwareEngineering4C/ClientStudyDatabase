@@ -1,3 +1,5 @@
+<!-- This is the admin page. Admins have been created account. Since no other
+ users are allowed, "sign up" is not allowed to sign up-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,15 +13,20 @@
   <body ng-app="app" style="background-color:#7B7D7D">
     <h1 class="text-center">Ongoing Studies</h1>
     <div class="bottom-margin">
+      <!-- Three buttons are added here -->
       <button class="btn btn-primary" type="button" ui-sref="addStudy">Add New Study</button>
       <button class="btn btn-primary left-margin" type="button" ui-sref="archive">View Archived Studies</button>
       <button class="btn btn-primary left-margin" type="button" ui-sref="manageRequirements">Manage Requirements</button>
     </div>
+          <!-- Note: admin controller is used here. find() is for displaying information from database.
+            More information can be found in find() function in the controller-->
     <div class="vertical-center" ng-controller="AdministratorController" ng-init="find()">
+            <!-- uib-accordion is a bootsrap function. It is used to for the drop down feature -->
       <uib-accordion close-others="oneAtATime">
         <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'">
           <div uib-accordion-group class="panel-default" is-open="status.open">
             <uib-accordion-heading>
+              <!-- once clicked, more info will be displayed -->
               Study Name: {{study.study_name}}
               <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
             </uib-accordion-heading>
