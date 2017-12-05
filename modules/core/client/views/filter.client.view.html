@@ -14,10 +14,12 @@
       <strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong>
     </h1>
     <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
-      <div id="hello" class="col-md-5">
+      <div id="hello" class="col-md-5 bottom-margin">
         <section class="top-margin" id="filters">
-          <h2>Filter</h2>
-          <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies track by $index">
+          <div class="top-margin">
+            <h2>Filter</h2>
+          </div>
+          <fieldset ng-repeat="requirement in sortedArrayOfAllRequirementsPossibleFromFilteredStudies">
             <p ng-bind="requirement.requirementName"></p>
             <span ng-if="requirement.typeOfRequirement == 'Boolean'">
               <form action="">

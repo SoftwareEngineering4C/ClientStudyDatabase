@@ -20,7 +20,8 @@ var validator = require('validator'),
   }
 });
 
-  mongoose.connect(config.db.uri);
+mongoose.createConnection(config.db.uri);
+
 
 /**
  * Render the main application page

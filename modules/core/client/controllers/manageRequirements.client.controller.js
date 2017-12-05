@@ -5,7 +5,7 @@
     .module('core')
     .controller('ManageRequirementsController', ManageRequirementsController);
 
-  function ManageRequirementsController($scope, $window, Requirements) {
+  function ManageRequirementsController($scope, $state, $window, Requirements) {
     var vm = this;
 
     $scope.findRequirements = function() {
@@ -41,10 +41,11 @@
     {
       var id = requirement._id;
 
-      Requirements.delete(id);
-
-      $window.location.href = "/manageRequirements"
-
+      Requirements.delete(id).then(function(response) {
+        $window.location.href = '/manageRequirements';
+      }, function(error) {
+        console.log(error);
+      });
     };
 
   }

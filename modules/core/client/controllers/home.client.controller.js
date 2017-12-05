@@ -5,7 +5,7 @@
     .module('core')
     .controller('HomeController', HomeController);
 
-  function HomeController($scope, $window, Studies, Requirements, Archive) {
+  function HomeController($scope, $state, $window, Studies, Requirements, Archive) {
     var vm = this;
 
 
@@ -25,21 +25,27 @@
 
     $scope.deleteStudy = function(study) {
       var id = study._id;
-      Studies.delete(id);
-      $window.location.href = '/administrator';
+      Studies.delete(id).then(function(response) {
+        $window.location.href = '/administrator';
+      }, function(error) {
+        console.log(error);
+      });
     }
 
     $scope.archiveStudy = function(study) {
-      console.log("helo");
       var id = study._id;
-      Studies.delete(id);
 
-      console.log(study);
+      Studies.delete(id).then(function(response) {
 
-      Archive.create(study);
+      }, function(error) {
+        console.log(error);
+      });
 
-      $window.location.href = '/administrator';
-
+      Archive.create(study).then(function(response) {
+        $window.location.href = '/administrator';
+      }, function(error) {
+        console.log(error);
+      });
     };
 
   }

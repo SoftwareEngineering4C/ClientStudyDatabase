@@ -5,7 +5,7 @@
     .module('core')
     .controller('EditController', EditController);
 
-  function EditController($scope, $window, Studies, $stateParams) {
+  function EditController($scope, $state, $window, Studies, $stateParams) {
     var vm = this;
 
     $scope.init = function() {
@@ -29,8 +29,11 @@
     };
 
     $scope.save = function(study) {
-      Studies.update(study);
-      $window.location.href = '/administrator'
+      Studies.update(study).then(function(response) {
+        $window.location.href = '/administrator';
+      }, function(error) {
+        console.log(error);
+      });
     };
 
     $scope.cancel = function() {
