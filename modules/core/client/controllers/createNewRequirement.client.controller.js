@@ -5,7 +5,7 @@
     .module('core')
     .controller('CreateNewRequirementController', CreateNewRequirementController);
 
-  function CreateNewRequirementController($scope, $window, Requirements) {
+  function CreateNewRequirementController($scope, $state, $window, Requirements) {
     var vm = this;
 
     $scope.newRequirement = {
@@ -39,9 +39,11 @@
           requirement.customOptions = $scope.newRequirement.customOptions;
         }
 
-        Requirements.create(requirement);
-
-        $window.location.href = '/administrator';
+        Requirements.create(requirement).then(function(response) {
+          $window.location.href = '/administrator';
+        }, function(error) {
+          console.log(error);
+        });
       }
     }
 
@@ -55,8 +57,6 @@
     $scope.addAnotherOption = function() {
       $scope.newRequirement.customOptions.push("");
     }
-
-
   }
 
 }());

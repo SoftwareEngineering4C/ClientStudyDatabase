@@ -72,7 +72,7 @@
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Custom'">
                       <div ng-repeat="option in requirement.customOptions">
-                        <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="option">  {{option}} <br>
+                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="option">  {{option}} <br>
                       </div>
                     </td>
                     <td><button type="button" class="form-control btn btn-danger"

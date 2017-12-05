@@ -62,9 +62,12 @@
       newStudy['inclusion'] = [];
       newStudy['exclusion'] = [];
 
-      Studies.create(newStudy);
+      Studies.create(newStudy).then(function(response) {
+        $window.location.href = '/administrator';
+      }, function(error) {
+        console.log(error);
+      });
 
-      $window.location.href = '/administrator';
     }
 
 
