@@ -122,20 +122,6 @@
             }
           });
         }
-        else if (currentRequirement.typeOfRequirement === "Gender")
-        {
-          $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
-            if (study[currentRequirement.databaseName] != undefined)
-            {
-              //filters by checking if the study's requirement value is equal to the answer from the html page
-              return study[currentRequirement.databaseName] === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
-            }
-            else
-            {
-              return true;
-            }
-          });
-        }
         else if (currentRequirement.typeOfRequirement === "Custom")
         {
           $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
@@ -222,12 +208,13 @@
       $http.post('/api/contact', $scope.postData)
         .success(function(data) {
           // Show success message
+          $window.location.href = '/filter';
         })
         .error(function(data) {
           // Show error message
         });
 
-        $window.location.href = '/filter';
+
 
     };
   };
