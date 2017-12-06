@@ -60,8 +60,8 @@
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Range'">
                       <form action="">
-                        <input type="number" placeholder="Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
-                        <input type="number" placeholder="Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
+                        <input type="number" placeholder="No Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
+                        <input type="number" placeholder="No Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
                       </form>
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Gender'">
