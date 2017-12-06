@@ -1,4 +1,4 @@
-  <!-- This is the add new study html page. 
+  <!-- This is the add new study html page.
   Whenever new study is added, it is added to database (MLAB)  -->
 <!DOCTYPE html>
 <html>
@@ -68,16 +68,13 @@
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Range'">
                       <form action="">
-                        <!-- It's giving option to admin to allow them requirement that is upper bound and lower bound
-                          Note: Not both of the field is required. Only upper bound can be entered and that is fine
-                          -->
-                        <input type="number" placeholder="Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
-                        <input type="number" placeholder="Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
+                        <input type="number" placeholder="No Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
+                        <input type="number" placeholder="No Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
                       </form>
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Gender'">
                       <form action="">
-                         <!-- It's giving option to admin to allow them requirement that is for gender. 
+                         <!-- It's giving option to admin to allow them requirement that is for gender.
                               This is not required.
                           -->
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="male">  Male<br>
