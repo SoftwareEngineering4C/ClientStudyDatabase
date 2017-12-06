@@ -12,8 +12,8 @@ var validator = require('validator'),
   var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'johnaloomis91@gmail.com',    // your email here
-    pass: 'Tomgee1!'          // your password here
+    user: 'ufstrokecoordinator2@gmail.com',    // your email here
+    pass: 'gatoRs4Stroke!'          // your password here
   },
   tls: {
       rejectUnauthorized: false
@@ -235,7 +235,9 @@ exports.renderNotFound = function (req, res) {
 
 exports.send = function(req,res){
   var study = req.body.study;
+
   console.log('Email:' + study.coordinator_email);
+
   var htmlContent = '<p>' + study.study_name + ' has a potential patient' + '</p>' +
                     '<p>Sent From: ' + req.body.contact.name + '</p>' +
                     '<p>Message: ' + req.body.contact.message + '</p>';
@@ -247,6 +249,7 @@ exports.send = function(req,res){
     sender: req.body.contact.email,
     html: htmlContent
   };
+
   transporter.sendMail(mailOptions, function(err, info){
     if (err) {
       console.log(err);

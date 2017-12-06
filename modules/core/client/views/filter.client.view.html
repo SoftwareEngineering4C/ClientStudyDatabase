@@ -88,9 +88,9 @@
               </h3>
           		<div>
           		<form name="contactForm" novalidate>
-          			<input type="text" name="name" ng-model="contact.name" placeholder="Your name" required><br><br>
-          			<textarea cols="80" rows="3" name="message" ng-model="contact.message" placeholder="Your notes about the patient" required>{{message}}</textarea><br><br>
-          			<button class="btn btn-primary" type="submit" ng-click="postMail(contact,study)">Send</button>
+          			<input type="text" name="name" ng-model="contact.name" placeholder="Your name"><br><br>
+          			<textarea cols="80" rows="3" name="message" ng-model="contact.message" placeholder="Your notes about the patient">{{message}}</textarea><br><br>
+          			<button class="btn btn-primary" type="submit" ng-click="postMail(study)">Send</button>
           		</form>
           		</div>
             </div>

@@ -11,12 +11,13 @@
   </head>
 
   <br>
-
+<!--using the edit controller to control data -->
   <body ng-app="app" style="background-color:#7B7D7D">
     <div ng-controller="EditController">
       <div ng-init="init()">
         <div id=hello  class="col-md-8 top-margin bottom-margin">
 
+          <!--users can edit/delete different fields of the study such as name, inclusion/exclusion criteria -->
           <label class="top-margin">Study Name:</label>
           <input type="text" ng-model="study['study_name']"></input>
 
@@ -27,9 +28,11 @@
             <button class="btn btn-danger" ng-click="removeCurrentInclusionPrinciple($index)">Remove</button>
           </h5>
           <br>
+        <!-- button calls the funciton to add a new inclusion criteria if that is necesary for the study-->
           <button class="btn btn-primary" ng-click="addNewInclusionPrinciple()">Add New Inclusion Princple</button>
           <br><br><br>
 
+        <!-- individual exclusion criteria can be edited, deleted or created-->
           <h3><strong><em style="text-decoration: underline;">Exclusion Criteria</em></strong></h3>
           <h5 data-ng-repeat="x in study.exclusion track by $index">
             <p>Exclusion <span ng-bind="$index"></span>: </p>
@@ -40,6 +43,7 @@
           <button class="btn btn-primary" ng-click="addNewExclusionPrinciple()">Add New Exclusion Princple</button>
           <br><br><br>
 
+        <!-- users can edit coordinator information such as name, phone number, and email-->
           <h3><strong><em style="text-decoration: underline;">Coordinator Information</em></strong></h3>
           Coordinator:
           <input type="text" ng-model="study['coordinator']"></input>
@@ -53,6 +57,7 @@
           <input type="text" ng-model="study['coordinator_email']"></input>
           <br><br><br><br><br>
 
+          <!--buttons that activate the functions to save the edited data or cancel the new inputs and keep the previous data -->
           <div class="sm-bottom-margin">
             <button class="btn btn-primary .btn-default" ng-click="save(study)">Save</button>
             <button class="btn btn-danger left-margin" ng-click="cancel()">Cancel</button>

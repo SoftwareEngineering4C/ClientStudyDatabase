@@ -198,9 +198,14 @@
 
 
 	$scope.postData = {};
+  $scope.contact = {
+    name: "",
+    message: ""
+  };
 
-    $scope.postMail = function (contact,study) {
+    $scope.postMail = function (study) {
       // Check form validation
+      var contact = $scope.contact;
 
       // wrap all your input values in $scope.postData
       $scope.postData = angular.copy({contact,study});
@@ -213,9 +218,6 @@
         .error(function(data) {
           // Show error message
         });
-
-
-
     };
   };
 
