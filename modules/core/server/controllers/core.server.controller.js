@@ -12,8 +12,8 @@ var validator = require('validator'),
   var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'johnaloomis91@gmail.com',    // your email here
-    pass: 'Tomgee1!'          // your password here
+    user: 'ufstrokecoordinator2@gmail.com',    // your email here
+    pass: 'gatoRs4Stroke!'          // your password here
   },
   tls: {
       rejectUnauthorized: false
