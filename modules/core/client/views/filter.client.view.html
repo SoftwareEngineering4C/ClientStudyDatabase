@@ -32,12 +32,6 @@
                 <input ng-change="filterStudies(requirement)" type="text" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]"><br>
               </form>
             </span>
-            <span ng-if="requirement.typeOfRequirement == 'Gender'">
-              <form action="">
-                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="male">  Male<br>
-                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName.gender" value="female">  Female<br>
-              </form>
-            </span>
             <span ng-if="requirement.typeOfRequirement == 'Custom'">
               <form action="">
                 <div ng-repeat="option in requirement.customOptions">

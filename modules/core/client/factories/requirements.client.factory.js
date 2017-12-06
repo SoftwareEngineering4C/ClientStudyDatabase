@@ -1,20 +1,20 @@
-angular.module('core').factory('Requirements', ['$http',
-  function($http) {
+angular.module('core').factory('Requirements', ['$http', '$window',
+  function($http, $window) {
     var methods = {
       getAll: function() {
-        return $http.get('http://localhost:3000/api/requirements/');
+        return $http.get($window.location.protocol + '//' + $window.location.host + '/api/requirements/');
       },
 
       getOne: function(databaseName) {
-        return $http.get('http://localhost:3000/api/requirements/' + databaseName);
+        return $http.get($window.location.protocol + '//' + $window.location.host + '/api/requirements/' + databaseName);
       },
 
       create: function(requirement) {
-        return $http.post('http://localhost:3000/api/requirements/', requirement);
+        return $http.post($window.location.protocol + '//' + $window.location.host + '/api/requirements/', requirement);
       },
 
       delete: function(id) {
-        return $http.delete('http://localhost:3000/api/requirements/' + id);
+        return $http.delete($window.location.protocol + '//' + $window.location.host + '/api/requirements/' + id);
       }
 
     }
