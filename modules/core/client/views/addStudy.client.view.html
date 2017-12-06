@@ -1,8 +1,9 @@
-  <!-- This is the add new study html page. 
+  <!-- This is the add new study html page.
   Whenever new study is added, it is added to database (MLAB)  -->
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="/modules/core/client/css/core.css">
+<link rel="stylesheet" href="/modules/core/client/css/home.client.css">
   <title>UF Directory</title>
   <head>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
@@ -77,7 +78,7 @@
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Gender'">
                       <form action="">
-                         <!-- It's giving option to admin to allow them requirement that is for gender. 
+                         <!-- It's giving option to admin to allow them requirement that is for gender.
                               This is not required.
                           -->
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="male">  Male<br>
