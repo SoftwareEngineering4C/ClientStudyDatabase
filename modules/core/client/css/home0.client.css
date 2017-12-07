@@ -1,5 +1,5 @@
 h1 {
-  color: black;
+  color: white;
 }
 #css3-spinner-svg-pulse-wrapper {
 	position: absolute;
@@ -53,7 +53,7 @@ body {
     margin: 0;
 
     /* The image used */
-    background-image: url("Florida-Gatorhead-Fade.jpg");
+    background-image: url("Florida-Gatorhead.jpg");
     /*background-image: url("http://training.health.ufl.edu/handouts/Templates/UF_background_orange_left_button.jpg");*/
 
 		background-position: center;

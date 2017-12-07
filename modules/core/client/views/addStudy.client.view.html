@@ -1,6 +1,9 @@
+  <!-- This is the add new study html page.
+  Whenever new study is added, it is added to database (MLAB)  -->
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="/modules/core/client/css/core.css">
+<link rel="stylesheet" href="/modules/core/client/css/home.client.css">
   <title>UF Directory</title>
   <head>
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
@@ -15,6 +18,7 @@
         <h1>Add New Study</h1>
         <br>
       </div>
+        <!-- Defining the controller here  -->
       <div class="row" ng-controller="AddStudyController">
         <div id="hello" class="col-md-6">
           <div class="form-group lg-left-margin row-md-5">
@@ -22,21 +26,25 @@
               <div class="row right-margin">
                 <div class="form-group row-md-5 top-margin ">
                   <label>Study Name:</label>
+                    <!--  study name text box to enter study name for the new study -->
                   <input type="text" ng-model="listOfDatabaseNames.study_name" class="form-control" placeholder="Study Name">
                 </div>
                 <br><br><br>
                 <div class="form-group row-md-5">
                   <label>Coordinator Name:</label>
+                   <!--  coordinator name text box to enter coordinator name for the new study  -->
                   <input type="text" ng-model="listOfDatabaseNames.coordinator" class="form-control" placeholder="Coordinator Name">
                 </div>
                 <br><br>
                 <div class="form-group row-md-5">
                   <label>Coordinator Phone Number:</label>
+                    <!--  phone number text box to enter for the new study-->
                   <input type="text" ng-model="listOfDatabaseNames.coordinator_phone_number" class="form-control" placeholder="Coordinator Phone Number">
                 </div>
                 <br><br>
                 <div class="form-group row-md-5">
                   <label>Coordinator Email:</label>
+                    <!-- Email text box to enter email for the new study  -->
                   <input type="text" ng-model="listOfDatabaseNames.coordinator_email" class="form-control" placeholder="Coordinator Email">
                 </div>
               </div>
@@ -54,6 +62,7 @@
                     <td ng-bind="requirement.typeOfRequirement"></td>
                     <td ng-if="requirement.typeOfRequirement == 'Boolean'">
                       <form action="">
+                        <!-- It's giving option to admin to allow them requirement that is boolean  -->
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=true>  True<br>
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=false>  False<br>
                       </form>
@@ -66,6 +75,9 @@
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Gender'">
                       <form action="">
+                         <!-- It's giving option to admin to allow them requirement that is for gender.
+                              This is not required.
+                          -->
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="male">  Male<br>
                         <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="false">  Female<br>
                       </form>
@@ -86,6 +98,8 @@
           <br>
 
           <div class="form-group row-md-5 bottom-margin">
+                  <!-- This is where new add study button is happening. When it's clicked, it goes to the
+                controller and study is added to the database -->
             <button type="button" class="form-control btn btn-primary" ng-click="addNewStudyToDatabase()">Add Study</button>
           </div>
         </div>
@@ -96,6 +110,7 @@
 
         <div id="hello" class="col-md-5 bottom-margin">
           <div class="input-group top-margin" id="searchBar">
+             <!-- Search bar for searching requirement for adding study such as LAR, AGE, etc -->
             <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
             <input type="text" class="form-control" placeholder="Search" ng-model="searchEntry" ng-change="filterListOfRequirements()">
           </div>

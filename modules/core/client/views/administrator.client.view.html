@@ -1,3 +1,5 @@
+<!-- This is the admin page. Admins have been created account. Since no other
+ users are allowed, "sign up" is not allowed to sign up-->
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,21 +7,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/modules/core/client/css/home.client.css">
     <script src="script.js"></script>
   </head>
 
   <body ng-app="app" style="background-color:#7B7D7D">
     <h1 class="text-center">Ongoing Studies</h1>
     <div class="bottom-margin">
+      <!-- Three buttons are added here -->
       <button class="btn btn-primary" type="button" ui-sref="addStudy">Add New Study</button>
       <button class="btn btn-primary left-margin" type="button" ui-sref="archive">View Archived Studies</button>
       <button class="btn btn-primary left-margin" type="button" ui-sref="manageRequirements">Manage Requirements</button>
     </div>
+          <!-- Note: admin controller is used here. find() is for displaying information from database.
+            More information can be found in find() function in the controller-->
     <div class="vertical-center" ng-controller="AdministratorController" ng-init="find()">
+            <!-- uib-accordion is a bootsrap function. It is used to for the drop down feature -->
       <uib-accordion close-others="oneAtATime">
         <h3 nowrap ng-repeat="study in studies | filter: search | orderBy: 'study_name'">
           <div uib-accordion-group class="panel-default" is-open="status.open">
             <uib-accordion-heading>
+              <!-- once clicked, more info will be displayed -->
               Study Name: {{study.study_name}}
               <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
             </uib-accordion-heading>
@@ -27,6 +35,7 @@
             <h4 data-ng-repeat="x in study.inclusion">
               • {{x}}
             </h4>
+
             <h3><strong><em> Exclusion Criteria </em></strong></h3>
             <h4 data-ng-repeat="x in study.exclusion">
               • {{x}}
@@ -36,6 +45,7 @@
             <h4> {{study.coordinator}}</h4>
             <h4> {{study.coordinator_phone_number}}</h4>
             <h4> {{study.coordinator_email}}</h4>
+
             <div class="row">
               <button class="btn btn-primary .btn-default left-margin" ui-sref="editStudy({ study: study })">Edit</button>
               <button class="btn btn-danger" ng-click="archiveStudy(study)">Archive</button>

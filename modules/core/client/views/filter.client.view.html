@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" href="/modules/core/client/css/core.css">
+<link rel="stylesheet" href="/modules/core/client/css/home.client.css">
   <div class="text-center">
     <br>
     <br>
   </div>
 
   <body ng-app="app" style="background-color:#FFFFFF">
+    <!-- javascript for dropdown -->
     <script>
       $('.dropdown-toggle').dropdown();
     </script>
     <h1 class ="text-center">
       <strong>Please select the patient's inclusion/exclusion criteria from the dropdown menu</strong>
     </h1>
+    <!-- using the filter controller to control data-->
     <div class="vertical-center" ng-controller="FilterController" ng-init="init()">
       <div id="hello" class="col-md-5 bottom-margin">
         <section class="top-margin" id="filters">
@@ -23,6 +26,8 @@
             <p ng-bind="requirement.requirementName"></p>
             <span ng-if="requirement.typeOfRequirement == 'Boolean'">
               <form action="">
+
+                <!--call filterStudies function which filters out studies based on requirements selected by user -->
                 <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=true>  True<br>
                 <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=false>  False<br>
               </form>
@@ -47,12 +52,14 @@
       <div class="col-md-1">
 
       </div>
-
+<!-- filter will populate with studies that match user-selected parameters-->
       <div class="col-md-6">
         <uib-accordion close-others="oneAtATime">
           <div class="sm-bottom-margin" nowrap ng-repeat="study in studiesThatMatchFilterParameters | orderBy: 'study_name'">
             <div uib-accordion-group class="panel-default" is-open="status.open">
               <uib-accordion-heading>
+
+                <!-- each study shows name, inclusion/exclusion criteria and coordinator information when clicked-->
                 Study Name: {{study.study_name}}
                 <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
               </uib-accordion-heading>
@@ -61,6 +68,7 @@
                   <em> Inclusion Criteria </em>
                 </strong>
               </h3>
+              <!-- getting inclusion criteria from database-->
               <h4 data-ng-repeat="x in study.inclusion">
                 • {{x}}
               </h4>
@@ -69,6 +77,7 @@
                   <em> Exclusion Criteria</em>
                 </strong>
               </h3>
+              <!-- getting exclusion criteria from database-->
               <h4 data-ng-repeat="x in study.exclusion">
                 • {{x}}
               </h4>
@@ -87,6 +96,7 @@
                 </strong>
               </h3>
           		<div>
+                <!-- user fills out contact form in order to notify study coordinators when a patient qualifies for their study-->
           		<form name="contactForm" novalidate>
           			<input type="text" name="name" ng-model="contact.name" placeholder="Your name"><br><br>
           			<textarea cols="80" rows="3" name="message" ng-model="contact.message" placeholder="Your notes about the patient">{{message}}</textarea><br><br>
@@ -95,6 +105,8 @@
           		</div>
             </div>
           </div>
+
+          <!-- if no studies match parameters, write message saying that no studies match parameters entered -->
           <div ng-if="noStudiesThatMatchParameters">
             <br><br>
             <h4>There are no studies that match the inclusion/exclusion principles</h4>
