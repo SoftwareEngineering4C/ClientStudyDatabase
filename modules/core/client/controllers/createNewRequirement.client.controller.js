@@ -11,7 +11,7 @@
     $scope.newRequirement = {
       name: "",
       type: "Boolean",
-      priority: 4,
+      priority: 3,
       customOptions: ["", ""]
     };
 
