@@ -76,8 +76,7 @@ back into the main study collection.
 
 -   **Home Page **
 
-![/Users/sunnypatel/Desktop/Screen Shot 2017-12-05 at 1.59.42
-PM.png](media/image1.png){width="6.472222222222222in"
+![Picture1.png](media/image1.png){width="6.472222222222222in"
 height="3.4305555555555554in"}
 
 **\
