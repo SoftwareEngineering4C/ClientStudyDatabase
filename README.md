@@ -76,8 +76,7 @@ back into the main study collection.
 
 -   **Home Page **
 
-![Picture1.png](media/image1.png){width="6.472222222222222in"
-height="3.4305555555555554in"}
+![Picture1.png](media/Picture1.png)
 
 **\
 **
@@ -85,46 +84,37 @@ height="3.4305555555555554in"}
 -   **View list of all client studies and Filtering studies
     dynamically**
 
-> ![/Users/sunnypatel/Desktop/Screen Shot 2017-12-05 at 2.01.33
-> PM.png](media/image2.png){width="6.402777777777778in"
-> height="4.375in"}
+> ![Picture2.png](media/Picture2.png)
 >
 -   **Display inclusion/exclusion criteria and Allow guest to send email
     to coordinator**
 
-![Screen%20Shot%202017-12-05%20at%202.06.04%20PM.png](media/image3.png){width="6.5in"
-height="4.791666666666667in"}
+![Picture3.png](media/Picture3.png)
 
 -   **Admin can edit client studies**
 
-![Screen%20Shot%202017-12-05%20at%202.11.14%20PM.png](media/image4.png){width="6.5in"
-height="4.625in"}
+![Picture4.png](media/Picture4.png)
 
-![Screen%20Shot%202017-12-05%20at%202.12.04%20PM.png](media/image5.png){width="6.5in"
-height="3.6277777777777778in"}
+![Picture5.png](media/Picture5.png)
 
 -   **Allow admin to Log-In**
 
-![Screen%20Shot%202017-12-05%20at%202.15.37%20PM.png](media/image6.png){width="6.5in"
-height="1.8611111111111112in"}
+![Picture6.png](media/Picture6.png)
 
 -   **Allow admin to archive studies**
 
-![Screen%20Shot%202017-12-05%20at%202.17.32%20PM.png](media/image7.png){width="6.5in"
-height="2.7083333333333335in"}
+![Picture7.png](media/Picture7.png)
 
 **\
 **
 
 -   **Allow admin to remove studies**
 
-![Screen%20Shot%202017-12-05%20at%202.19.02%20PM.png](media/image8.png){width="6.486111111111111in"
-height="3.0027777777777778in"}
+![Picture8.png](media/Picture8.png)
 
 -   **Allow admin to add studies **
 
-![Screen%20Shot%202017-12-05%20at%202.19.02%20PM.png](media/image8.png){width="6.486111111111111in"
-height="3.5277777777777777in"}
+![Picture9.png](media/Picture9.png)
 
 **\
 **
