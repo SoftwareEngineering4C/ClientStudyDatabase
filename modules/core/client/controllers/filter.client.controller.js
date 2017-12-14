@@ -37,14 +37,10 @@
 
         $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = $scope.requirements;
 
+        //sort by priority then name
         $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.sort(function(a, b) {
-          return a.requirementName < b.requirementName;
+          return [a.priority, a.requirementName] > [b.priority, b.requirementName] ? 1:-1;
         });
-
-        $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.sort(function(a, b) {
-          return a.priority > b.priority;
-        });
-
 
       }, function(error) {
         $scope.loading = false;
