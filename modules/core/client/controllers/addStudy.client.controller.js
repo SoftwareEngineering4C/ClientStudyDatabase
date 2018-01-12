@@ -62,12 +62,14 @@
       newStudy['inclusion'] = [];
       newStudy['exclusion'] = [];
 
+      console.log(newStudy);
+      console.log($scope.requirementsAddedToStudy);
+
       Studies.create(newStudy).then(function(response) {
         $window.location.href = '/administrator';
       }, function(error) {
         console.log(error);
       });
-
     }
 
 

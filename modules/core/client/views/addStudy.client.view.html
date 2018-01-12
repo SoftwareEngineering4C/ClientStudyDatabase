@@ -63,28 +63,19 @@
                     <td ng-if="requirement.typeOfRequirement == 'Boolean'">
                       <form action="">
                         <!-- It's giving option to admin to allow them requirement that is boolean  -->
-                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=true>  True<br>
-                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value=false>  False<br>
+                        <input type="radio" ng-model="listOfDatabaseNames.requirements[requirement.databaseName]" ng-value=true>  True<br>
+                        <input type="radio" ng-model="listOfDatabaseNames.requirements[requirement.databaseName]" ng-value=false>  False<br>
                       </form>
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Range'">
                       <form action="">
-                        <input type="number" placeholder="No Lower Bound" ng-model="listOfDatabaseNames[requirement.databaseName].lower_bound"><br>
-                        <input type="number" placeholder="No Upper Bound" ng-model="listOfDatabaseNames[requirement.databaseName].upper_bound"><br>
-                      </form>
-                    </td>
-                    <td ng-if="requirement.typeOfRequirement == 'Gender'">
-                      <form action="">
-                         <!-- It's giving option to admin to allow them requirement that is for gender.
-                              This is not required.
-                          -->
-                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="male">  Male<br>
-                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="false">  Female<br>
+                        <input type="number" placeholder="No Lower Bound" ng-model="listOfDatabaseNames.requirements[requirement.databaseName].lower_bound"><br>
+                        <input type="number" placeholder="No Upper Bound" ng-model="listOfDatabaseNames.requirements[requirement.databaseName].upper_bound"><br>
                       </form>
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Custom'">
                       <div ng-repeat="option in requirement.customOptions">
-                        <input type="radio" ng-model="listOfDatabaseNames[requirement.databaseName]" ng-value="option">  {{option}} <br>
+                        <input type="radio" ng-model="listOfDatabaseNames.requirements[requirement.databaseName]" ng-value="option">  {{option}} <br>
                       </div>
                     </td>
                     <td><button type="button" class="form-control btn btn-danger"

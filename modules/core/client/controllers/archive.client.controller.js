@@ -36,7 +36,7 @@
     $scope.permanentlyDelete = function (study) {
       var id = study._id;
       Archive.delete(id).then(function(response) {
-        $window.location.href = '/administrator';
+        $window.location.href = '/archive';
       }, function(error) {
         console.log(error);
       });

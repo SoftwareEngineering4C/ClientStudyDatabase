@@ -19,12 +19,12 @@
 
     $scope.find = function() {
     	Studies.getAll().then(function(response) {
-        $scope.loading = false; //remove loader
-        $scope.studies = response.data;
-        $scope.studiesThatMatchFilterParameters = $scope.studies;
-      }, function(error) {
+            $scope.loading = false; //remove loader
+            $scope.studies = response.data;
+            $scope.studiesThatMatchFilterParameters = $scope.studies;
+            }, function(error) {
         $scope.loading = false;
-        $scope.error = 'Unable to retrieve studies!\n' + error
+        $scope.error = 'Unable to retrieve studies!\n' + error;
       });
   	};
 
@@ -64,7 +64,10 @@
       $scope.listOfAnswersByRequirement = [];
       $scope.studiesThatMatchFilterParameters = $scope.studies;
 
-
+      //removes all empty requirements
+      Object.keys($scope.listOfAnswersByDatabaseName).forEach(function(i) {
+          if ($scope.listOfAnswersByDatabaseName[i] === "" || $scope.listOfAnswersByDatabaseName[i] === undefined) delete $scope.listOfAnswersByDatabaseName[i];
+      });
 
       //finds list of requirements from list of answers using database name of requirement
       Object.keys($scope.listOfAnswersByDatabaseName).forEach(function(i) {
