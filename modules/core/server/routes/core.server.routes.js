@@ -8,7 +8,8 @@ module.exports = function (app) {
 
   app.route('/api/requirements')
     .get(core.listRequirements)
-    .post(core.createNewRequirement);
+    .post(core.createNewRequirement)
+    .put(core.updateRequirement);
 
   app.route('/api/requirements' + '/:requirementId')
     .delete(core.deleteRequirement);

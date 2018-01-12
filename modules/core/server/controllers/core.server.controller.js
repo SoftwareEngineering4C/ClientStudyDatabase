@@ -99,8 +99,6 @@ exports.updateStudy = function (req, res) {
   var study = new Study(req.body);
   study.isNew = false;
 
-  console.log(req.body);
-
   study.save(function(err) {
     if(err) {
       console.log(err);
@@ -110,6 +108,22 @@ exports.updateStudy = function (req, res) {
     }
   });
 };
+
+
+exports.updateRequirement = function (req, res) {
+  var requirement = new Requirement(req.body);
+  requirement.isNew = false;
+
+  requirement.save(function(err) {
+    if(err) {
+      console.log(err);
+      res.status(400).send(err);
+    } else {
+      res.json(requirement);
+    }
+  });
+};
+
 
 exports.createNewRequirement = function (req, res) {
   var requirement = new Requirement(req.body);

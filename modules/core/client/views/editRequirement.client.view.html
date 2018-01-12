@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="/modules/core/client/css/core.css">
+<link rel="stylesheet" href="/modules/core/client/css/home.client.css">
+  <head>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <br>
+<!--using the edit controller to control data -->
+  <body ng-app="app" style="background-color:#7B7D7D">
+    <div ng-controller="EditRequirementController">
+      <div ng-init="init()">
+        <div id=hello  class="col-md-8 top-margin bottom-margin">
+
+          <label class="top-margin">Requirement Name:</label><br>
+          <input type="text" ng-model="requirement['requirementName']"></input>
+          <br><br>
+
+          <label class="top-margin">Type of Requirement:</label>
+          <p ng-bind="requirement['typeOfRequirement']"></p>
+          <br>
+
+          <label class="top-margin">Priority:</label>
+          <select ng-model="requirement['priority']">
+            <option ng-value=1 >1</option>
+            <option ng-value=2 >2</option>
+            <option ng-value=3 >3</option>
+          </select>
+          <br><br><br><br><br>
+
+          <!--buttons that activate the functions to save the edited data or cancel the new inputs and keep the previous data -->
+          <div class="sm-bottom-margin">
+            <button class="btn btn-primary .btn-default" ng-click="save(requirement)">Save</button>
+            <button class="btn btn-danger left-margin" ng-click="cancel()">Cancel</button>
+          </div>
+        </div>
+      </div>
+     </div>
+
+
+  </body>
+
+
+</html>

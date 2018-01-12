@@ -19,12 +19,12 @@
 
     $scope.find = function() {
     	Studies.getAll().then(function(response) {
-            $scope.loading = false; //remove loader
-            $scope.studies = response.data;
-            $scope.studiesThatMatchFilterParameters = $scope.studies;
-            }, function(error) {
+        $scope.loading = false; //remove loader
+        $scope.studies = response.data;
+        $scope.studiesThatMatchFilterParameters = $scope.studies;
+      }, function(error) {
         $scope.loading = false;
-        $scope.error = 'Unable to retrieve studies!\n' + error;
+        $scope.error = 'Unable to retrieve studies!\n' + error
       });
   	};
 
@@ -64,10 +64,7 @@
       $scope.listOfAnswersByRequirement = [];
       $scope.studiesThatMatchFilterParameters = $scope.studies;
 
-      //removes all empty requirements
-      Object.keys($scope.listOfAnswersByDatabaseName).forEach(function(i) {
-          if ($scope.listOfAnswersByDatabaseName[i] === "" || $scope.listOfAnswersByDatabaseName[i] === undefined) delete $scope.listOfAnswersByDatabaseName[i];
-      });
+
 
       //finds list of requirements from list of answers using database name of requirement
       Object.keys($scope.listOfAnswersByDatabaseName).forEach(function(i) {
@@ -82,10 +79,12 @@
         if (currentRequirement.typeOfRequirement === "Boolean")
         {
           $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
-            if (study[currentRequirement.databaseName] != undefined)
+            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement.databaseName];
+
+            if (requirementFromStudyMatchingCurrentFilterParameter != undefined)
             {
               //filters by checking if the study's requirement value is equal to the answer from the html page
-              return study[currentRequirement.databaseName] === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+              return requirementFromStudyMatchingCurrentFilterParameter === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
             }
             else
             {
@@ -96,20 +95,22 @@
         else if (currentRequirement.typeOfRequirement === "Range")
         {
           $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
-            if (study[currentRequirement.databaseName] != undefined && $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName] != "")
+            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement.databaseName];
+
+            if (requirementFromStudyMatchingCurrentFilterParameter != undefined && $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName] != "")
             {
-              if (study[currentRequirement.databaseName].lower_bound != undefined && study[currentRequirement.databaseName].upper_bound != undefined)
+              if (requirementFromStudyMatchingCurrentFilterParameter.lower_bound != undefined && requirementFromStudyMatchingCurrentFilterParameter.upper_bound != undefined)
               {
-                return study[currentRequirement.databaseName].lower_bound <= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName]
-                  && study[currentRequirement.databaseName].upper_bound >= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+                return requirementFromStudyMatchingCurrentFilterParameter.lower_bound <= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName]
+                  && requirementFromStudyMatchingCurrentFilterParameter.upper_bound >= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
               }
-              else if (study[currentRequirement.databaseName].lower_bound != undefined)
+              else if (requirementFromStudyMatchingCurrentFilterParameter.lower_bound != undefined)
               {
-                return study[currentRequirement.databaseName].lower_bound <= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+                return requirementFromStudyMatchingCurrentFilterParameter.lower_bound <= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
               }
-              else if (study[currentRequirement.databaseName].upper_bound != undefined)
+              else if (requirementFromStudyMatchingCurrentFilterParameter.upper_bound != undefined)
               {
-                return study[currentRequirement.databaseName].upper_bound >= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+                return requirementFromStudyMatchingCurrentFilterParameter.upper_bound >= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
               }
             }
             else
@@ -121,10 +122,12 @@
         else if (currentRequirement.typeOfRequirement === "Custom")
         {
           $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
-            if (study[currentRequirement.databaseName] != undefined)
+            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement.databaseName];
+
+            if (requirementFromStudyMatchingCurrentFilterParameter != undefined)
             {
               //filters by checking if the study's requirement value is equal to the answer from the html page
-              return study[currentRequirement.databaseName].toLowerCase() === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName].toLowerCase();
+              return requirementFromStudyMatchingCurrentFilterParameter.toLowerCase() === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName].toLowerCase();
             }
             else
             {
@@ -153,7 +156,7 @@
 
       for (var i = 0; i < $scope.studiesThatMatchFilterParameters.length; i++)
       {
-        angular.forEach($scope.studiesThatMatchFilterParameters[i], function(value, key) {
+        angular.forEach($scope.studiesThatMatchFilterParameters[i].requirements, function(value, key) {
           setOfAllRequirementsPossibleFromFilteredStudies.add(key);
         })
       }
@@ -164,11 +167,6 @@
       })
 
       setOfAllRequirementsPossibleFromFilteredStudies.add(requirement.databaseName);
-
-      setOfAllRequirementsPossibleFromFilteredStudies.delete("$$hashKey");
-      setOfAllRequirementsPossibleFromFilteredStudies.delete("_id");
-      setOfAllRequirementsPossibleFromFilteredStudies.delete("study_name");
-      setOfAllRequirementsPossibleFromFilteredStudies.delete("description");
 
       var arrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies =
         Array.from(setOfAllRequirementsPossibleFromFilteredStudies);
