@@ -17,30 +17,22 @@
 
 
     $scope.addRequirementToDatabase = function() {
-      //removes all consecutive spaces
-      var newDatabaseName = $scope.newRequirement.name.replace(/\s+/g, ' ');
 
-      newDatabaseName = newDatabaseName.toLowerCase();
-
-      //replaces all spaces with underscores
-      newDatabaseName = newDatabaseName.replace(/ /g,"_");
-
-      if (newDatabaseName != "")
+      if ($scope.newRequirement.name != "")
       {
         var requirement = {
           requirementName: $scope.newRequirement.name,
-          databaseName: newDatabaseName,
           typeOfRequirement: $scope.newRequirement.type,
           priority: $scope.newRequirement.priority
         };
 
-        if (requirement.typeOfRequirement === 'Custom')
+        if (requirement.typeOfRequirement == 'Custom')
         {
           requirement.customOptions = $scope.newRequirement.customOptions;
         }
 
         Requirements.create(requirement).then(function(response) {
-          $window.location.href = '/administrator';
+          $window.location.href = '/manageRequirements';
         }, function(error) {
           console.log(error);
         });

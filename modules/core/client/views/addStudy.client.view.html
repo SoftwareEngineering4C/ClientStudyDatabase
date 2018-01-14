@@ -27,25 +27,25 @@
                 <div class="form-group row-md-5 top-margin ">
                   <label>Study Name:</label>
                     <!--  study name text box to enter study name for the new study -->
-                  <input type="text" ng-model="listOfDatabaseNames.study_name" class="form-control" placeholder="Study Name">
+                  <input type="text" ng-model="newStudy.study_name" class="form-control" placeholder="Study Name">
                 </div>
                 <br><br><br>
                 <div class="form-group row-md-5">
                   <label>Coordinator Name:</label>
                    <!--  coordinator name text box to enter coordinator name for the new study  -->
-                  <input type="text" ng-model="listOfDatabaseNames.coordinator" class="form-control" placeholder="Coordinator Name">
+                  <input type="text" ng-model="newStudy.coordinator" class="form-control" placeholder="Coordinator Name">
                 </div>
                 <br><br>
                 <div class="form-group row-md-5">
                   <label>Coordinator Phone Number:</label>
                     <!--  phone number text box to enter for the new study-->
-                  <input type="text" ng-model="listOfDatabaseNames.coordinator_phone_number" class="form-control" placeholder="Coordinator Phone Number">
+                  <input type="text" ng-model="newStudy.coordinator_phone_number" class="form-control" placeholder="Coordinator Phone Number">
                 </div>
                 <br><br>
                 <div class="form-group row-md-5">
                   <label>Coordinator Email:</label>
                     <!-- Email text box to enter email for the new study  -->
-                  <input type="text" ng-model="listOfDatabaseNames.coordinator_email" class="form-control" placeholder="Coordinator Email">
+                  <input type="text" ng-model="newStudy.coordinator_email" class="form-control" placeholder="Coordinator Email">
                 </div>
               </div>
               <br><br>
@@ -63,19 +63,19 @@
                     <td ng-if="requirement.typeOfRequirement == 'Boolean'">
                       <form action="">
                         <!-- It's giving option to admin to allow them requirement that is boolean  -->
-                        <input type="radio" ng-model="listOfDatabaseNames.requirements[requirement.databaseName]" ng-value=true>  True<br>
-                        <input type="radio" ng-model="listOfDatabaseNames.requirements[requirement.databaseName]" ng-value=false>  False<br>
+                        <input type="radio" ng-model="listOfAnswersByIDs[requirement._id]" ng-value=true>  True<br>
+                        <input type="radio" ng-model="listOfAnswersByIDs[requirement._id]" ng-value=false>  False<br>
                       </form>
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Range'">
                       <form action="">
-                        <input type="number" placeholder="No Lower Bound" ng-model="listOfDatabaseNames.requirements[requirement.databaseName].lower_bound"><br>
-                        <input type="number" placeholder="No Upper Bound" ng-model="listOfDatabaseNames.requirements[requirement.databaseName].upper_bound"><br>
+                        <input type="number" placeholder="No Lower Bound" ng-model="listOfAnswersByIDs[requirement._id].lower_bound"><br>
+                        <input type="number" placeholder="No Upper Bound" ng-model="listOfAnswersByIDs[requirement._id].upper_bound"><br>
                       </form>
                     </td>
                     <td ng-if="requirement.typeOfRequirement == 'Custom'">
                       <div ng-repeat="option in requirement.customOptions">
-                        <input type="radio" ng-model="listOfDatabaseNames.requirements[requirement.databaseName]" ng-value="option">  {{option}} <br>
+                        <input type="radio" ng-model="listOfAnswersByIDs[requirement._id]" ng-value="option">  {{option}} <br>
                       </div>
                     </td>
                     <td><button type="button" class="form-control btn btn-danger"

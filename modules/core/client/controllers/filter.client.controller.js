@@ -8,10 +8,10 @@
   function FilterController($window, $scope, Studies, Requirements, $http) {
     var vm = this;
     var requirement = {};
-    var sortedArrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies = [];
+    var sortedArrayOfAllIDssOfRequirementsPossibleFromFilteredStudies = [];
     var setOfAllRequirementsPossibleFromFilteredStudies = new Set();
 
-    $scope.listOfAnswersByDatabaseName = {};
+    $scope.listOfAnswersByIDs = {};
     $scope.listOfAnswersByRequirement = [];
     $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = [];
 
@@ -65,14 +65,14 @@
       $scope.studiesThatMatchFilterParameters = $scope.studies;
 
       //removes all empty requirements
-      Object.keys($scope.listOfAnswersByDatabaseName).forEach(function(i) {
-          if ($scope.listOfAnswersByDatabaseName[i] === "" || $scope.listOfAnswersByDatabaseName[i] === undefined) delete $scope.listOfAnswersByDatabaseName[i];
+      Object.keys($scope.listOfAnswersByIDs).forEach(function(i) {
+          if ($scope.listOfAnswersByIDs[i] === "" || $scope.listOfAnswersByIDs[i] === undefined) delete $scope.listOfAnswersByIDs[i];
       });
 
       //finds list of requirements from list of answers using database name of requirement
-      Object.keys($scope.listOfAnswersByDatabaseName).forEach(function(i) {
+      Object.keys($scope.listOfAnswersByIDs).forEach(function(i) {
         $scope.listOfAnswersByRequirement = $scope.listOfAnswersByRequirement.concat($scope.requirements.filter(function(requirement) {
-          return i === requirement.databaseName
+          return i === requirement._id
         }));
       });
 
@@ -82,12 +82,12 @@
         if (currentRequirement.typeOfRequirement === "Boolean")
         {
           $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
-            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement.databaseName];
+            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement._id];
 
             if (requirementFromStudyMatchingCurrentFilterParameter != undefined)
             {
               //filters by checking if the study's requirement value is equal to the answer from the html page
-              return requirementFromStudyMatchingCurrentFilterParameter === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+              return requirementFromStudyMatchingCurrentFilterParameter === $scope.listOfAnswersByIDs[currentRequirement._id];
             }
             else
             {
@@ -98,22 +98,22 @@
         else if (currentRequirement.typeOfRequirement === "Range")
         {
           $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
-            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement.databaseName];
+            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement._id];
 
-            if (requirementFromStudyMatchingCurrentFilterParameter != undefined && $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName] != "")
+            if (requirementFromStudyMatchingCurrentFilterParameter != undefined && $scope.listOfAnswersByIDs[currentRequirement._id] != "")
             {
               if (requirementFromStudyMatchingCurrentFilterParameter.lower_bound != undefined && requirementFromStudyMatchingCurrentFilterParameter.upper_bound != undefined)
               {
-                return requirementFromStudyMatchingCurrentFilterParameter.lower_bound <= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName]
-                  && requirementFromStudyMatchingCurrentFilterParameter.upper_bound >= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+                return requirementFromStudyMatchingCurrentFilterParameter.lower_bound <= $scope.listOfAnswersByIDs[currentRequirement._id]
+                  && requirementFromStudyMatchingCurrentFilterParameter.upper_bound >= $scope.listOfAnswersByIDs[currentRequirement._id];
               }
               else if (requirementFromStudyMatchingCurrentFilterParameter.lower_bound != undefined)
               {
-                return requirementFromStudyMatchingCurrentFilterParameter.lower_bound <= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+                return requirementFromStudyMatchingCurrentFilterParameter.lower_bound <= $scope.listOfAnswersByIDs[currentRequirement._id];
               }
               else if (requirementFromStudyMatchingCurrentFilterParameter.upper_bound != undefined)
               {
-                return requirementFromStudyMatchingCurrentFilterParameter.upper_bound >= $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName];
+                return requirementFromStudyMatchingCurrentFilterParameter.upper_bound >= $scope.listOfAnswersByIDs[currentRequirement._id];
               }
             }
             else
@@ -125,12 +125,12 @@
         else if (currentRequirement.typeOfRequirement === "Custom")
         {
           $scope.studiesThatMatchFilterParameters = $scope.studiesThatMatchFilterParameters.filter(function(study) {
-            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement.databaseName];
+            var requirementFromStudyMatchingCurrentFilterParameter = study.requirements[currentRequirement._id];
 
             if (requirementFromStudyMatchingCurrentFilterParameter != undefined)
             {
               //filters by checking if the study's requirement value is equal to the answer from the html page
-              return requirementFromStudyMatchingCurrentFilterParameter.toLowerCase() === $scope.listOfAnswersByDatabaseName[currentRequirement.databaseName].toLowerCase();
+              return requirementFromStudyMatchingCurrentFilterParameter.toLowerCase() === $scope.listOfAnswersByIDs[currentRequirement._id].toLowerCase();
             }
             else
             {
@@ -165,21 +165,21 @@
       }
 
       //adds list of answers
-      angular.forEach($scope.listOfAnswersByDatabaseName, function(value, key) {
+      angular.forEach($scope.listOfAnswersByIDs, function(value, key) {
         setOfAllRequirementsPossibleFromFilteredStudies.add(key);
       })
 
-      setOfAllRequirementsPossibleFromFilteredStudies.add(requirement.databaseName);
+      setOfAllRequirementsPossibleFromFilteredStudies.add(requirement._id);
 
-      var arrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies =
+      var arrayOfAllIDssOfRequirementsPossibleFromFilteredStudies =
         Array.from(setOfAllRequirementsPossibleFromFilteredStudies);
 
       var arrayOfAllRequirementsPossibleFromFilteredStudies = [];
       $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = [];
 
-      arrayOfAllDatabaseNamesOfRequirementsPossibleFromFilteredStudies.forEach(function(i) {
+      arrayOfAllIDssOfRequirementsPossibleFromFilteredStudies.forEach(function(i) {
         $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies = $scope.sortedArrayOfAllRequirementsPossibleFromFilteredStudies.concat($scope.requirements.filter(function(requirement) {
-          return i === requirement.databaseName;
+          return i === requirement._id;
         }));
       });
 

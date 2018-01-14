@@ -5,12 +5,22 @@
     .module('core')
     .controller('ArchiveController', ArchiveController);
 
-  function ArchiveController($scope, $state, $window, Archive, Studies) {
+  function ArchiveController($scope, $state, $window, Archive, Requirements, Studies) {
     var vm = this;
 
     $scope.findArchive = function() {
       Archive.getAll().then(function(response) {
             $scope.archive = response.data;
+            $scope.findRequirements();
+            }, function(error) {
+        $scope.error = 'Unable to retrieve studies!\n' + error;
+      });
+  	};
+
+    $scope.findRequirements = function() {
+      Requirements.getAll().then(function(response) {
+            $scope.requirements = response.data;
+            $scope.replaceRequirementIDssWithIds();
             }, function(error) {
         $scope.error = 'Unable to retrieve studies!\n' + error;
       });

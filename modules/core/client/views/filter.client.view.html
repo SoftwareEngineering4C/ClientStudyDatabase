@@ -28,19 +28,19 @@
               <form action="">
 
                 <!--call filterStudies function which filters out studies based on requirements selected by user -->
-                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=true>  True<br>
-                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value=false>  False<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByIDs[requirement._id]" ng-value=true>  True<br>
+                <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByIDs[requirement._id]" ng-value=false>  False<br>
               </form>
             </span>
             <span ng-if="requirement.typeOfRequirement == 'Range'">
               <form action="">
-                <input ng-change="filterStudies(requirement)" type="text" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]"><br>
+                <input ng-change="filterStudies(requirement)" type="text" ng-model="listOfAnswersByIDs[requirement._id]"><br>
               </form>
             </span>
             <span ng-if="requirement.typeOfRequirement == 'Custom'">
               <form action="">
                 <div ng-repeat="option in requirement.customOptions">
-                  <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByDatabaseName[requirement.databaseName]" ng-value="option">  {{option}} <br>
+                  <input ng-change="filterStudies(requirement)" type="radio" ng-model="listOfAnswersByIDs[requirement._id]" ng-value="option">  {{option}} <br>
                 </div>
               </form>
             </span>

@@ -12,6 +12,10 @@ angular.module('core').factory('Archive', ['$http', '$window',
 
       delete: function(id) {
         return $http.delete($window.location.protocol + '//' + $window.location.host + '/api/archive/' + id);
+      },
+
+      update: function(study) {
+        return $http.put($window.location.protocol + '//' + $window.location.host + '/api/archive/', study);
       }
     };
 

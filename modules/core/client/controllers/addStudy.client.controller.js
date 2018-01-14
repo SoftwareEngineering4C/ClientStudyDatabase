@@ -8,8 +8,10 @@
   function AddStudyController($scope, $state, $window, $sce, Requirements, Studies) {
     var vm = this;
 
+    $scope.newStudy = {};
     $scope.requirementsAddedToStudy = [];
-    $scope.listOfDatabaseNames = {};
+    $scope.listOfAnswersByIDs = {};
+    $scope.searchEntry = "";
 
     $scope.findRequirements = function() {
     	Requirements.getAll().then(function(response) {
@@ -32,11 +34,9 @@
       //this function removes the requirement from the array
       //that has the same unique database name
       $scope.requirementsNotAddedToStudy = $scope.requirementsNotAddedToStudy.filter(function(el) {
-        return el.databaseName !== requirement.databaseName;
+        return el._id !== requirement._id;
       });
-      $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudyandFiltered.filter(function(el) {
-        return el.databaseName !== requirement.databaseName;
-      });
+      $scope.filterListOfRequirements();
     }
 
 
@@ -44,33 +44,45 @@
     $scope.removeRequirementFromStudy = function(requirement)
     {
       //this function removes the requirement from the array
-      //that has the same unique database name
+      //that has the same unique id
       $scope.requirementsAddedToStudy = $scope.requirementsAddedToStudy.filter(function(el) {
-        return el.databaseName !== requirement.databaseName;
+        return el._id !== requirement._id;
       });
 
       $scope.requirementsNotAddedToStudy.push(requirement);
-      $scope.requirementsNotAddedToStudyandFiltered.push(requirement);
+      $scope.filterListOfRequirements();
     }
 
 
 
     $scope.addNewStudyToDatabase = function()
     {
-      var newStudy = $scope.listOfDatabaseNames;
+      var listOfRequirementsForNewStudy = {};
 
-      newStudy['inclusion'] = [];
-      newStudy['exclusion'] = [];
+      for (var i in $scope.requirementsAddedToStudy)
+      {
+        var currentRequirementID = $scope.requirementsAddedToStudy[i]._id;
 
-      console.log(newStudy);
-      console.log($scope.requirementsAddedToStudy);
+        if ($scope.listOfAnswersByIDs[currentRequirementID] != undefined)
+        {
+          listOfRequirementsForNewStudy[currentRequirementID] = $scope.listOfAnswersByIDs[currentRequirementID];
+        }
 
-      Studies.create(newStudy).then(function(response) {
+      }
+
+      $scope.newStudy.requirements = listOfRequirementsForNewStudy;
+
+      $scope.newStudy['inclusion'] = [];
+      $scope.newStudy['exclusion'] = [];
+
+
+      Studies.create($scope.newStudy).then(function(response) {
         $window.location.href = '/administrator';
       }, function(error) {
         console.log(error);
       });
-    }
+
+    };
 
 
     $scope.filterListOfRequirements = function()
@@ -80,7 +92,9 @@
       $scope.requirementsNotAddedToStudyandFiltered = $scope.requirementsNotAddedToStudy.filter(function(requirement) {
         return requirement.requirementName.toLowerCase().search($scope.searchEntry.toLowerCase()) > -1;
       });
-    }
+    };
+
+
 
   }
 }());
