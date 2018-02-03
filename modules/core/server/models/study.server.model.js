@@ -6,7 +6,7 @@ var studySchema = new Schema({
     type: String
   },
 
-}, {strict: false}
+}, { strict: false, minimize: false }
 
 );
 
